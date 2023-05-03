@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1023.05 1023.05">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 12px;
+      }
+
+      .cls-3 {
+        fill: url(#Dégradé_sans_nom_167);
+      }
+
+      .cls-4 {
+        fill: #ffce39;
+      }
+    </style>
+    <linearGradient id="Dégradé_sans_nom_167" data-name="Dégradé sans nom 167" x1="25.83" y1="25.83" x2="863.69" y2="863.69" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e62e1f"/>
+      <stop offset="1" stop-color="#f6a66c"/>
+    </linearGradient>
+  </defs>
+  <g id="Goldie_HELPER" data-name="Goldie HELPER">
+    <g id="Goldie_HELPER-2" data-name="Goldie HELPER">
+      <rect class="cls-3" width="1023.05" height="1023.05"/>
+      <path class="cls-1" d="m498.79,618.27c-11.22,5.08-6.64-22.93,5.29-25.96l251.61-57.95c8.14-1.43,11.98,9.59,4.74,13.59-42.17,23.33-83.46,63.88-100.52,113.61-54.9,160.07-144.28,166.99-39.88-9.6,26.94-45.57-27.98-75.9-121.25-33.69Z"/>
+      <circle class="cls-1" cx="626.55" cy="505.65" r="40.91"/>
+      <path class="cls-4" d="m533.28,623.87c-68.55-14.76,133.33-233.76,88.46-303.46-63.86-99.21-123.04,79.21-123.04,79.21,0,0-180.74-31.3-116.5,74.99"/>
+      <g>
+        <g>
+          <rect class="cls-2" x="193.46" y="257.45" width="644.55" height="483.41" rx="22.52" ry="22.52" transform="translate(-147.15 774.34) rotate(-66.61)"/>
+          <rect class="cls-2" x="212.16" y="269.34" width="644.55" height="483.41" rx="22.52" ry="22.52" transform="translate(-146.79 798.67) rotate(-66.61)"/>
+          <rect class="cls-2" x="230.86" y="281.24" width="644.55" height="483.41" rx="22.52" ry="22.52" transform="translate(-146.43 823.01) rotate(-66.61)"/>
+        </g>
+        <path class="cls-1" d="m250.45,628.52l-37.81,87.4,395.68,171.16,37.81-87.4-395.68-171.16Zm168.91,158.14c-15.96,0-28.9-12.94-28.9-28.9s12.94-28.9,28.9-28.9,28.9,12.94,28.9,28.9-12.94,28.9-28.9,28.9Z"/>
+        <path class="cls-1" d="m463.26,136.25l-19.1,44.16,394.13,170.48,19.1-44.16-394.13-170.48Zm216.53,115.71h0c-.51,1.17-1.88,1.72-3.05,1.21l-29.49-12.76c-1.17-.51-1.72-1.88-1.21-3.05.51-1.17,1.88-1.72,3.05-1.21l29.49,12.76c1.17.51,1.72,1.88,1.21,3.05Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
