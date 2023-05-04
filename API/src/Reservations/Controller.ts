@@ -26,7 +26,7 @@ reservationsController.get("/:id", (req, res) => {
     res.status(200).send(reservation)
 })
 
-reservationsController.post("/", authMiddleware(["user", "admin"]), async (req, res) => {
+reservationsController.post("/", authMiddleware(["admin"]), async (req, res) => {
     const errors = await reservationsRepository.createOne(
         req.body
     )
@@ -62,7 +62,7 @@ reservationsController.delete("/:id",async (req, res) => {
 
 
 reservationsController.patch("/cancel/:id",
-    authMiddleware(["user", "admin"]),
+    authMiddleware([ "admin"]),
     (req, res) => {
         const id = req.params.id
 

@@ -24,7 +24,7 @@ authController.post("/login", async (req, res) => {
     }
 
     const token = res.jwt({
-        username: user.username,
+        email: user.email,
         role: user.role
     })
 
