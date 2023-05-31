@@ -1,4 +1,5 @@
 import Joi from 'joi';
+import con from '../services/mysql';
 
 export interface User {
     id: number;
@@ -20,3 +21,7 @@ export const UserValidationSchema = Joi.object({
     profession: Joi.number().required(),
     role: Joi.number().required()
 });
+
+export const validateUser = (user: User): Joi.ValidationResult<User> => {
+    return UserValidationSchema.validate(user, { abortEarly: false });
+  };
