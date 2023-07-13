@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goldie_studio/widgets/side_bar.dart';
 import 'package:goldie_studio/widgets/top_bar.dart';
 
 void main() {
@@ -30,35 +31,21 @@ class MyApp extends StatelessWidget {
     );
 
     return MaterialApp(
-      title: 'Flutter Interface',
       theme: darkTheme,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: TopBarWidget(),
-      body: Center(
-        child: Text(
-          '',
-        ),
-      ),
+      body: SideBarWidget(),
     );
   }
 }
