@@ -3,7 +3,7 @@ import { UserRepository } from "../users/Repository";
 
 const authController = Router();
 
-authController.post('/login', async (req, res) => {
+authController.post('/', async (req, res) => {
     const { email, password } = req.body;
     const user = await UserRepository.getUserByLogs(email,password);
 
