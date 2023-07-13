@@ -44,6 +44,29 @@ app.get('/', (req: Request, res: Response) => {
  *    responses:
  *      '200':
  *        description: A successful response
+ *      '404':
+ *        description: Not found
+ *  delete:
+ *    description: Use to delete users by id
+ *    responses:
+ *      '204':
+ *        description: Delete successful
+ *      '404':
+ *        description: Not found
+ *  post:
+ *    description: Use to creat a user
+ *    responses:
+ *      '200':
+ *        description: A successful response
+ *      '401':
+ *        description: Invalid credentials
+ *  put:
+ *    description: Use to update a user
+ *    responses:
+ *      '200':
+ *        description: A successful response
+ *      '401':
+ *        description: Invalid credentials
  * 
  */
 app.use("/users", usersController)
@@ -51,11 +74,13 @@ app.use("/users", usersController)
 /**
  * @swagger
  * /login:
- * post:
- * description: Use to get a user by email and password
- * responses:
- * '200':
- * description: A successful response
+ *  post:
+ *    description: Use to get a user by email and password
+ *    responses:
+ *      '200':
+ *        description: A successful response
+ *      '401':
+ *        description: Invalid credentials
  *  
  */
 app.use("/login", authController)
