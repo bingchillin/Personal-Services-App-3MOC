@@ -1,16 +1,64 @@
 import express, { Request, Response } from 'express';
 import usersController from './users/Controller';
+import authController from './auth/authController';
+import swaggerUi from 'swagger-ui-express';
+import swaggerJSDoc from 'swagger-jsdoc';
 
+//Server
 const app = express();
 const port = 3000;
 
+//swagger
+const swaggerOptions = {
+  swaggerDefinition: {
+    info: {
+      title: 'API',
+      version: '1.0.0',
+      description: 'Users API Information',
+      contact: {
+        name: 'Amazing Developer'
+      },
+    }
+  },
+  apis: ['src/index.ts'],
+};
+
+const swaggerDocs = swaggerJSDoc(swaggerOptions);
+
+
+//Routes
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use(express.json());
+
+
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello, World!');
 });
 
+/**
+ * @swagger
+ * /users:
+ *  get:
+ *    description: Use to request all users
+ *    responses:
+ *      '200':
+ *        description: A successful response
+ * 
+ */
 app.use("/users", usersController)
+
+/**
+ * @swagger
+ * /login:
+ * post:
+ * description: Use to get a user by email and password
+ * responses:
+ * '200':
+ * description: A successful response
+ *  
+ */
+app.use("/login", authController)
 
 app.listen(process.env.PORT || port, () => {
     console.log('Server started');

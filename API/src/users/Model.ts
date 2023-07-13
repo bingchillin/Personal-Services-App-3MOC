@@ -1,5 +1,4 @@
 import Joi from 'joi';
-import con from '../services/mysql';
 
 export interface User {
     id: number;
