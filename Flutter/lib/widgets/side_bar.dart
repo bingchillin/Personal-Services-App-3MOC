@@ -12,6 +12,8 @@ class SideBarWidget extends StatelessWidget {
             padding: EdgeInsets.zero,
             children: [
               ListTile(
+                leading: const Icon(Icons.home),
+                iconColor: Colors.white,
                 title: const Text('Accueil'),
                 onTap: () {
                   Navigator.pop(context);
@@ -19,6 +21,8 @@ class SideBarWidget extends StatelessWidget {
                 },
               ),
               ListTile(
+                leading: const Icon(Icons.person_2_rounded),
+                iconColor: Colors.white,
                 title: const Text('Profil'),
                 onTap: () {
                   Navigator.pop(context);
@@ -26,6 +30,8 @@ class SideBarWidget extends StatelessWidget {
                 },
               ),
               ListTile(
+                leading: const Icon(Icons.settings),
+                iconColor: Colors.white,
                 title: const Text('Paramètres'),
                 onTap: () {},
               ),
