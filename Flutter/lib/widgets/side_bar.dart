@@ -38,11 +38,6 @@ class SideBarWidget extends StatelessWidget {
             ],
           ),
         ),
-        const Expanded(
-          child: Center(
-            child: Text('Contenu de l\'écran principal'),
-          ),
-        ),
       ],
     );
   }

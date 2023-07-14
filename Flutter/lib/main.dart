@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goldie_studio/pages/home.dart';
 import 'package:goldie_studio/widgets/side_bar.dart';
 import 'package:goldie_studio/widgets/top_bar.dart';
 
@@ -32,20 +33,39 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       theme: darkTheme,
-      home: const MyHomePage(),
+      home: const MyNavigationWidget(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+class MyNavigationWidget extends StatefulWidget {
+  const MyNavigationWidget({super.key});
+
+  @override
+  State<MyNavigationWidget> createState() => _MyNavigationWidgetState();
+}
+
+class _MyNavigationWidgetState extends State<MyNavigationWidget> {
+  int currentPageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: TopBarWidget(),
-      body: SideBarWidget(),
+    return Scaffold(
+      appBar: const TopBarWidget(),
+      body: Row(
+        children: [
+          const Drawer(
+            child: SideBarWidget(),
+          ),
+          Expanded(
+            child: [
+              const MyHomePage(),
+            ][currentPageIndex],
+          ),
+        ],
+      ),
     );
   }
 }
+
