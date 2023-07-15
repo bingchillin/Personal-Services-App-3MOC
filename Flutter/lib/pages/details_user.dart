@@ -16,7 +16,11 @@ class UserDetailsWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('ID: ${user.id}'),
+            Text('Email: ${user.email}'),
+            Text('Mot de passe: ${user.password}'),
             Text('Prénom: ${user.firstname}'),
+            Text('Date de naissance: ${user.birthdate}'),
+            Text('Note: ${user.note}'),
             Text('Profession: ${user.profession}'),
             Text('Rôle: ${user.role}'),
             Text('Validé: ${user.validated}'),
