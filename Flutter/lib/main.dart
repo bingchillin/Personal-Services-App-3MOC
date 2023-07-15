@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:goldie_studio/pages/home.dart';
+import 'package:goldie_studio/pages/users_list.dart';
 import 'package:goldie_studio/widgets/side_bar.dart';
 import 'package:goldie_studio/widgets/top_bar.dart';
 
@@ -35,6 +36,10 @@ class MyApp extends StatelessWidget {
       theme: darkTheme,
       home: const MyNavigationWidget(),
       debugShowCheckedModeBanner: false,
+      initialRoute: MyHomePage.routeName,
+      routes: {
+        UsersWidget.routeName: (context) => const UsersWidget(),
+      },
     );
   }
 }
@@ -47,7 +52,14 @@ class MyNavigationWidget extends StatefulWidget {
 }
 
 class _MyNavigationWidgetState extends State<MyNavigationWidget> {
-  int currentPageIndex = 0;
+  final darkTheme = ThemeData.dark();
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,17 +67,17 @@ class _MyNavigationWidgetState extends State<MyNavigationWidget> {
       appBar: const TopBarWidget(),
       body: Row(
         children: [
-          const Drawer(
-            child: SideBarWidget(),
-          ),
+          NavigationRailWidget(
+              selectedIndex: _selectedIndex,
+              onDestinationSelected: _onItemTapped),
           Expanded(
             child: [
               const MyHomePage(),
-            ][currentPageIndex],
+              const UsersWidget(),
+            ][_selectedIndex],
           ),
         ],
       ),
     );
   }
 }
-

@@ -1,42 +1,37 @@
 import 'package:flutter/material.dart';
 
-class SideBarWidget extends StatelessWidget {
-  const SideBarWidget({super.key});
+class NavigationRailWidget extends StatelessWidget {
+  final int selectedIndex;
+  final ValueChanged<int> onDestinationSelected;
+
+  const NavigationRailWidget({
+    super.key,
+    required this.selectedIndex,
+    required this.onDestinationSelected,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              ListTile(
-                leading: const Icon(Icons.home),
-                iconColor: Colors.white,
-                title: const Text('Accueil'),
-                onTap: () {
-                  Navigator.pop(context);
-                  //Navigator.pushNamed(context, '/');
-                },
+    return NavigationRail(
+      selectedIndex: selectedIndex,
+      onDestinationSelected: onDestinationSelected,
+      labelType: NavigationRailLabelType.all,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      unselectedIconTheme: Theme.of(context).iconTheme,
+      unselectedLabelTextStyle:
+          Theme.of(context).textTheme.titleSmall?.copyWith(
+                color: Theme.of(context).colorScheme.onPrimary,
               ),
-              ListTile(
-                leading: const Icon(Icons.person_2_rounded),
-                iconColor: Colors.white,
-                title: const Text('Profil'),
-                onTap: () {
-                  Navigator.pop(context);
-                  //Navigator.pushNamed(context, '/favorites');
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.settings),
-                iconColor: Colors.white,
-                title: const Text('Paramètres'),
-                onTap: () {},
-              ),
-            ],
-          ),
+      destinations: const [
+        NavigationRailDestination(
+          icon: Icon(Icons.home_outlined),
+          selectedIcon: Icon(Icons.home),
+          label: Text('Accueil'),
+        ),
+        NavigationRailDestination(
+          icon: Icon(Icons.person_2_outlined),
+          selectedIcon: Icon(Icons.person_2_outlined),
+          label: Text('Utilisateurs'),
         ),
       ],
     );
