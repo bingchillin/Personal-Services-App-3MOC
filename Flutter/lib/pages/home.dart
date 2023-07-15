@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:goldie_studio/widgets/title.dart';
-import 'package:goldie_studio/widgets/user.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -9,12 +8,14 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        //const TitleWidget(title: "Bienvenue sur Goldie Studio"),
-        UserWidget(),
-      ],
+    return const Padding(
+      padding: EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TitleWidget(title: "Bienvenue sur Goldie STUDIO"),
+        ],
+      ),
     );
   }
 }

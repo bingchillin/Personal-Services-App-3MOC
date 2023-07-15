@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goldie_studio/widgets/title.dart';
 
 class UserWidget extends StatelessWidget {
   UserWidget({super.key});
@@ -24,12 +25,7 @@ class UserWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 15),
-            Text(
-              'Utilisateurs',
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-            const SizedBox(height: 15),
+            const TitleWidget(title: "Utilisateurs"),
             Expanded(
               child: ListView.builder(
                 itemCount: _allUsers.length,
