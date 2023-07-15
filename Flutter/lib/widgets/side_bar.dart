@@ -16,12 +16,18 @@ class NavigationRailWidget extends StatelessWidget {
       selectedIndex: selectedIndex,
       onDestinationSelected: onDestinationSelected,
       labelType: NavigationRailLabelType.all,
+
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      selectedIconTheme: Theme.of(context).iconTheme,
       unselectedIconTheme: Theme.of(context).iconTheme,
       unselectedLabelTextStyle:
           Theme.of(context).textTheme.titleSmall?.copyWith(
                 color: Theme.of(context).colorScheme.onPrimary,
               ),
+
+      elevation: 5,
+      useIndicator: true,
+
       destinations: const [
         NavigationRailDestination(
           icon: Icon(Icons.home_outlined),

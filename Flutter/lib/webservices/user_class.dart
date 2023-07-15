@@ -1,4 +1,5 @@
 class User {
+  final int? id;
   final String? email;
   final String? password;
   final String? firstname;
@@ -9,6 +10,7 @@ class User {
   final int? role;
 
   User({
+    required this.id,
     required this.email,
     required this.password,
     required this.firstname,
@@ -21,6 +23,7 @@ class User {
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
+      id: json['id'] is int ? json['id'] : null,
       email: json['email'] is String ? json['email'] : null,
       password: json['password'] is String ? json['password'] : null,
       firstname: json['firstname'] is String ? json['firstname'] : null,
@@ -34,7 +37,7 @@ class User {
 
   @override
   String toString() {
-    return 'User{firstname: $firstname}';
+    return 'User{id: $id, firstname: $firstname, profession: $profession, role: $role, validated: $validated}';
     //return 'User{email: $email, password: $password, firstname: $firstname, birthdate: $birthdate, validated: $validated, note: $note, profession: $profession, role: $role}';
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:goldie_studio/widgets/user.dart';
+import 'package:goldie_studio/webservices/user_futurebuilder.dart';
 
 class UsersWidget extends StatelessWidget {
   const UsersWidget({super.key});
@@ -8,10 +8,13 @@ class UsersWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        UserWidget(),
+        //UserWidget(),
+        Expanded(
+          child: UserWebServicesFutureBuilder(),
+        ),
       ],
     );
   }
