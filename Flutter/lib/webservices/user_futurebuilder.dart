@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goldie_studio/pages/details_user.dart';
 import 'package:goldie_studio/webservices/user_class.dart';
 import 'package:goldie_studio/webservices/user_webservices.dart';
 import 'package:goldie_studio/widgets/title.dart';
@@ -66,6 +67,12 @@ class UserWebServicesFutureBuilder extends StatelessWidget {
                           children: [
                             IconButton(
                               onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => UserDetailsWidget(user: user),
+                                  ),
+                                );
                               },
                               icon: const Icon(Icons.edit),
                               color: Colors.blue,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goldie_studio/pages/details_user.dart';
 import 'package:goldie_studio/pages/home.dart';
 import 'package:goldie_studio/pages/users_list.dart';
 import 'package:goldie_studio/widgets/side_bar.dart';
