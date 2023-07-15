@@ -9,15 +9,12 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          //const TitleWidget(title: "Bienvenue sur Goldie Studio"),
-          UserWidget(),
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        //const TitleWidget(title: "Bienvenue sur Goldie Studio"),
+        UserWidget(),
+      ],
     );
   }
 }
