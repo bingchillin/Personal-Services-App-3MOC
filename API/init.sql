@@ -7,6 +7,7 @@ CREATE TABLE users (
     birthdate DATE NOT NULL,
     validated BOOLEAN NOT NULL DEFAULT FALSE,
     note FLOAT NOT NULL DEFAULT 0,
+    dateSignIn DATE NOT NULL,
     profession INT,
     role INT
 );
@@ -16,6 +17,7 @@ CREATE TABLE files (
     user_id INT NOT NULL,
     title VARCHAR(255) NOT NULL,
     file VARCHAR(255) NOT NULL,
+    dateAdd DATE NOT NULL,
     validated BOOLEAN NOT NULL DEFAULT FALSE,
     type INT NOT NULL
 );

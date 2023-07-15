@@ -16,23 +16,6 @@ export const UserRepository = {
     }
   },
 
-  createUser: async (user: User): Promise<User> => {
-    try {
-      const connection: PoolConnection = await db.getConnection();
-
-      const { error } = validateUser(user);
-      if (error) {
-        throw new Error('Données utilisateur invalides');
-      }
-      const [rows] = await connection.query('INSERT INTO users SET ?', user);
-      const createdUser: User = { ...user};
-
-      return createdUser;
-    } catch (error) {
-      throw error;
-    }
-  },
-
   getUserById: async (id: String): Promise<User | null> => {
     try {
       const connection: PoolConnection = await db.getConnection();
@@ -82,6 +65,59 @@ export const UserRepository = {
         return null;
       }
       
+    } catch (error) {
+      throw error;
+    }
+  },
+
+  getUserByRole: async (role: String): Promise<User[] | null> => {
+    try {
+      const connection: PoolConnection = await db.getConnection();
+
+      const [rows] = await connection.query('SELECT * FROM users WHERE role = ?', role);
+
+      if (Array.isArray(rows) && rows.length > 0) {
+        const user = rows as any;
+        return user;
+      } else {
+        return null;
+      }
+      
+    } catch (error) {
+      throw error;
+    }
+  },
+
+  getValidedUsers: async (bool:String): Promise<User[] | null> => {
+    try {
+      const connection: PoolConnection = await db.getConnection();
+
+      const [rows] = await connection.query('SELECT * FROM users WHERE validated = ?', bool);
+
+      if (Array.isArray(rows) && rows.length > 0) {
+        const user = rows as any;
+        return user;
+      } else {
+        return null;
+      }
+      
+    } catch (error) {
+      throw error;
+    }
+  },
+
+  createUser: async (user: User): Promise<User> => {
+    try {
+      const connection: PoolConnection = await db.getConnection();
+
+      const { error } = validateUser(user);
+      if (error) {
+        throw new Error('Données utilisateur invalides');
+      }
+      const [rows] = await connection.query('INSERT INTO users SET ?', user);
+      const createdUser: User = { ...user};
+
+      return createdUser;
     } catch (error) {
       throw error;
     }
