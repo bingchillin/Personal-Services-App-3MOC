@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:goldie_studio/webservices/user_class.dart';
 
+import '../webservices/user_webservices.dart';
+
 class UserDetailsWidget extends StatefulWidget {
   final User user;
 
@@ -58,11 +60,32 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
               ),
             const SizedBox(height: 16),
             ElevatedButton(
-              onPressed: () {
-                // TODO: Ajouter la logique de mise à jour des informations de l'utilisateur
+              onPressed: () async {
+                final updatedUser = User(
+                  id: widget.user.id,
+                  firstname: _textControllers[0].text,
+                  lastname: _textControllers[1].text,
+                  email: _textControllers[2].text,
+                  birthdate: _textControllers[3].text,
+                  validated: int.tryParse(_textControllers[4].text),
+                  note: double.tryParse(_textControllers[5].text),
+                  profession: int.tryParse(_textControllers[6].text),
+                  role: int.tryParse(_textControllers[7].text),
+                );
+
+                await UserWebServices.updateUser(updatedUser);
+
+                // Afficher une snackbar ou une boîte de dialogue pour confirmer la mise à jour
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Utilisateur mis à jour')),
+                );
+
+                // Naviguer en arrière après la mise à jour
+                Navigator.pop(context);
               },
               child: const Text('Enregistrer'),
             ),
+
           ],
         ),
       ),

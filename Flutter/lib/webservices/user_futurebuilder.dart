@@ -58,7 +58,7 @@ class _UserWebServicesFutureBuilderState
     setState(() {
       _filteredUsers = _users
           .where((user) =>
-      user.firstname
+      user.email
           ?.toLowerCase()
           .contains(searchText.toLowerCase()) ??
           false)
@@ -76,7 +76,7 @@ class _UserWebServicesFutureBuilderState
             controller: _searchController,
             onChanged: _updateFilteredUsers,
             decoration: const InputDecoration(
-              hintText: 'Rechercher par prénom',
+              hintText: 'Rechercher par email',
             ),
           ),
           const SizedBox(height: 16),
