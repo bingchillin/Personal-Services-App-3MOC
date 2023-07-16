@@ -1,9 +1,8 @@
-import { User,validateUser } from './Model';
-import { Pool, PoolConnection } from 'mysql2/promise';
+import {User, validateUser} from './Model';
+import {PoolConnection} from 'mysql2/promise';
 import bcrypt from 'bcrypt';
 
 import db from '../services/mysql';
-import { debug } from 'console';
 
 export const UserRepository = {
 

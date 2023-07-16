@@ -1,7 +1,5 @@
 import {Router} from "express";
-import { TypeTaskRepository } from "./Repository";
-import { debug } from "console";
-import usersController from "../users/Controller";
+import {TypeTaskRepository} from "./Repository";
 
 const typeTasksController = Router();
 

@@ -55,7 +55,7 @@ public class LoginController implements Initializable {
                     try {
                         if(DataProvider.getInstance().checklogin(txtUsername.getText(),password)){
                             FXMLLoader loader = new FXMLLoader();
-                            loader.setLocation(getClass().getResource("../Views/Home.fxml"));
+                            loader.setLocation(getClass().getResource("Home.fxml"));
                             Parent root = null;
                             try {
                                 root = loader.load();
