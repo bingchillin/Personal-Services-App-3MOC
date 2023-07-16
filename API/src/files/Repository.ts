@@ -47,5 +47,17 @@ export const FileRepository = {
           throw error;
         }
       },
+
+      getFileById: async (id: number): Promise<File> => {
+        try {
+          const connection: PoolConnection = await db.getConnection();
+          const rows = await connection.query('SELECT * FROM files WHERE id = ?', [id]);
+      
+          const file = rows as any;
+          return file;
+        } catch (error) {
+          throw error;
+        }
+      }
     
 }
