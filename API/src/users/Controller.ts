@@ -97,7 +97,7 @@ usersController.put("/:id", async (req, res) => {
         return
     }
 
-    const updatedUser = await UserRepository.updateUser(req.body);
+    const updatedUser = await UserRepository.updateUser(req.body, req.params.id);
 
     res.status(200).send(updatedUser)
 })
