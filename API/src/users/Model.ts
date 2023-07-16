@@ -18,7 +18,7 @@ export const UserValidationSchema = Joi.object({
     lastname: Joi.string().required(),
     firstname: Joi.string().required(),
     birthdate: Joi.date().required(),
-    dateSignIn: Joi.date().required(),
+    dateSignIn: Joi.date().optional(),
     profession: Joi.number().required(),
     role: Joi.number().required()
 });
