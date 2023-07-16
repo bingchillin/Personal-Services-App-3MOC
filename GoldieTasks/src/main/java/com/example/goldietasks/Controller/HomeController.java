@@ -124,7 +124,9 @@ public class HomeController implements Initializable {
     }
 
     public void defaultView() {
-        AllTaskController controller = addToPanel("AllTask").getController();
+        FXMLLoader loader = addToPanel("AllTask");
+        AllTaskController controller = loader.getController();
+       // AllTaskController controller = addToPanel("AllTask").getController();
         controller.setList(listTasks);
         controller.setHomeController(this);
         controller.fillList();
@@ -138,7 +140,7 @@ public class HomeController implements Initializable {
         Parent rootPanel = null;
         FXMLLoader loader = new FXMLLoader();
         try{
-            loader.setLocation(getClass().getResource("../Views/"+layoutName+".fxml"));
+            loader.setLocation(getClass().getResource(layoutName+".fxml"));
             rootPanel = loader.load();
             for(Node node: leftMenuPanel.getChildren()){
                 node.getStyleClass().remove("MenuActive");
@@ -149,29 +151,6 @@ public class HomeController implements Initializable {
         }
         mainPanel.setCenter(rootPanel);
         return loader;
-    }
-
-
-    public void HideShowMenu(MouseEvent mouseEvent) {
-        TranslateTransition openNav=new TranslateTransition(new Duration(350), leftMenuPanel);
-        openNav.setToX(0);
-        TranslateTransition closeNav=new TranslateTransition(new Duration(350), leftMenuPanel);
-        closeNav.setOnFinished(event -> {
-            leftMenuPanel.setPrefWidth(0);
-        });
-        if(leftMenuPanel.getTranslateX()!=0){
-            leftMenuPanel.setPrefWidth(277);
-            leftMenuPanel.setLayoutX(0);
-            openNav.play();
-
-        }else{
-            closeNav.setToX(-(leftMenuPanel.getWidth()));
-            closeNav.play();
-        }
-    }
-
-    public void HomeBtnClick(MouseEvent event){
-        defaultView();
     }
 
     public void AddTaskShow(MouseEvent event){

@@ -14,7 +14,7 @@ public class Main extends Application {
     public void start(Stage primarystage) throws IOException {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Login.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(),900,600);
+            Scene scene = new Scene(fxmlLoader.load());
             primarystage.setTitle("Connexion");
             primarystage.setResizable(false);
             primarystage.setScene(scene);

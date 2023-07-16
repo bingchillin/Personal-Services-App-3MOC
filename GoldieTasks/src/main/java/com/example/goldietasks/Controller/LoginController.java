@@ -59,7 +59,7 @@ public class LoginController implements Initializable {
                         String userId = "2";
                         if(userId != null){
                             UserSession.setLoggedInUserId(userId);
-                            FXMLLoader loader = new FXMLLoader(getClass().getResource("../../resources/com/example/goldietasks/Home.fxml"));
+                            FXMLLoader loader = new FXMLLoader(Main.class.getResource("Home.fxml"));
                             hiddenText.setVisible(false);
                             Scene scene = new Scene(loader.load());
                             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();

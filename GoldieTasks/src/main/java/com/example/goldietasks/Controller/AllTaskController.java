@@ -34,6 +34,7 @@ public class AllTaskController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        fillList();
     }
     public void DelItem(Node n){
         ListAllTask.getChildren().remove(n);
@@ -43,10 +44,9 @@ public class AllTaskController implements Initializable {
         ArrayList<Node> listnode = new ArrayList<>();
         for(Task t : list){
             try {
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("TaskItem.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("TaskItem.fxml"));
                 Node node = loader.load();
-                TaskItem control  = loader.getController();
+                TaskItem control = loader.getController();
                 control.FillData(t);
                 control.setAllTaskController(this);
                 control.setHomeController(homeController);
