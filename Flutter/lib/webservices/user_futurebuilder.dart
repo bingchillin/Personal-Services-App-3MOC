@@ -4,6 +4,17 @@ import 'package:goldie_studio/webservices/user_class.dart';
 import 'package:goldie_studio/webservices/user_webservices.dart';
 import 'package:goldie_studio/widgets/title.dart';
 
+class UsersWidget extends StatelessWidget {
+  const UsersWidget({Key? key}) : super(key: key);
+
+  static const String routeName = '/users';
+
+  @override
+  Widget build(BuildContext context) {
+    return const UserWebServicesFutureBuilder();
+  }
+}
+
 class UserWebServicesFutureBuilder extends StatefulWidget {
   const UserWebServicesFutureBuilder({Key? key}) : super(key: key);
 
@@ -47,10 +58,10 @@ class _UserWebServicesFutureBuilderState
     setState(() {
       _filteredUsers = _users
           .where((user) =>
-              user.email
-                  ?.toLowerCase()
-                  .contains(searchText.toLowerCase()) ??
-              false)
+      user.firstname
+          ?.toLowerCase()
+          .contains(searchText.toLowerCase()) ??
+          false)
           .toList();
     });
   }
@@ -65,7 +76,7 @@ class _UserWebServicesFutureBuilderState
             controller: _searchController,
             onChanged: _updateFilteredUsers,
             decoration: const InputDecoration(
-              hintText: 'Rechercher par email',
+              hintText: 'Rechercher par prénom',
             ),
           ),
           const SizedBox(height: 16),

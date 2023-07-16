@@ -2,6 +2,7 @@ class User {
   final int? id;
   final String? email;
   final String? password;
+  final String? lastname;
   final String? firstname;
   final String? birthdate;
   final int? validated;
@@ -13,6 +14,7 @@ class User {
     required this.id,
     required this.email,
     required this.password,
+    required this.lastname,
     required this.firstname,
     required this.birthdate,
     required this.validated,
@@ -26,6 +28,7 @@ class User {
       id: json['id'] is int ? json['id'] : null,
       email: json['email'] is String ? json['email'] : null,
       password: json['password'] is String ? json['password'] : null,
+      lastname: json['lastname'] is String ? json['lastname'] : null,
       firstname: json['firstname'] is String ? json['firstname'] : null,
       birthdate: json['birthdate'] is String ? json['birthdate'] : null,
       validated: json['validated'] is int ? json['validated'] : null,
@@ -37,7 +40,7 @@ class User {
 
   @override
   String toString() {
-    return 'User{id: $id, firstname: $firstname, profession: $profession, role: $role, validated: $validated}';
+    return 'User{id: $id, lastname: $lastname, firstname: $firstname, profession: $profession, role: $role, validated: $validated}';
     //return 'User{email: $email, password: $password, firstname: $firstname, birthdate: $birthdate, validated: $validated, note: $note, profession: $profession, role: $role}';
   }
 }

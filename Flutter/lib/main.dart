@@ -69,13 +69,17 @@ class _MyNavigationWidgetState extends State<MyNavigationWidget> {
       body: Row(
         children: [
           NavigationRailWidget(
-              selectedIndex: _selectedIndex,
-              onDestinationSelected: _onItemTapped),
+            selectedIndex: _selectedIndex,
+            onDestinationSelected: _onItemTapped,
+          ),
           Expanded(
-            child: [
-              const MyHomePage(),
-              const UsersWidget(),
-            ][_selectedIndex],
+            child: IndexedStack(
+              index: _selectedIndex,
+              children: const [
+                MyHomePage(),
+                UsersWidget(),
+              ],
+            ),
           ),
         ],
       ),
