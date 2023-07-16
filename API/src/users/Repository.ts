@@ -121,6 +121,7 @@ export const UserRepository = {
       }
 
       user.password = await bcrypt.hash(user.password, 10);
+      user.dateSignIn = new Date();
 
       const [rows] = await connection.query('INSERT INTO users SET ?', user);
       const createdUser: User = { ...user};
@@ -131,11 +132,11 @@ export const UserRepository = {
     }
   },
 
-  updateUser: async (user: User): Promise<User> => {
+  updateUser: async (user: User,id:String): Promise<User> => {
     try {
       const connection: PoolConnection = await db.getConnection();
 
-      await connection.query('UPDATE users SET ? WHERE id = ?', [user, user.id]);
+      await connection.query('UPDATE users SET ? WHERE id = ?', [user, id]);
 
       return user;
     } catch (error) {

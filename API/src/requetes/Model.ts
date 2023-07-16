@@ -1,15 +1,15 @@
 import Joi from 'joi';
 
 export interface Requete {
-    id: number;
+    id?: number;
     client: number;
     timer: string;
     type: number;
     title: string;
     slots: number;
     medicalNeed: boolean;
-    accepted: boolean;
-    done: boolean;
+    accepted?: boolean;
+    done?: boolean;
 }
 
 export const RequeteValidationSchema = Joi.object({
@@ -19,8 +19,8 @@ export const RequeteValidationSchema = Joi.object({
     title: Joi.string().required(),
     slots: Joi.number().required(),
     medicalNeed: Joi.boolean().required(),
-    accepted: Joi.boolean().required(),
-    done: Joi.boolean().required()
+    accepted: Joi.boolean().optional().default(false),
+    done: Joi.boolean().optional().default(false)
 });
 
 export const validateRequete = (requete: Requete): Joi.ValidationResult<Requete> => {
