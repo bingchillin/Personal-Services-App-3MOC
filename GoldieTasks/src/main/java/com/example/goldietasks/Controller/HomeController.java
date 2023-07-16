@@ -50,9 +50,6 @@ public class HomeController implements Initializable {
     private String menuTypeTaskLabe;
     private ArrayList<Task> listTasks;
     private  ArrayList<Task> SearchList;
-    private int SortDayStatus=0;
-    private int SortTimeStatus=0;
-
     private  Stage thisStage;
     public void setThisStage(Stage thisStage) {
         this.thisStage = thisStage;

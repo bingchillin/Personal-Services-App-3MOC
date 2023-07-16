@@ -1,5 +1,6 @@
 package com.example.goldietasks.Controller;
 
+import com.example.goldietasks.Main;
 import com.example.goldietasks.Model.DataProvider;
 import com.example.goldietasks.Model.UserSession;
 import javafx.concurrent.Task;
@@ -54,20 +55,13 @@ public class LoginController implements Initializable {
                 @Override
                 public void handle(WorkerStateEvent evt) {
                     try {
-                        String userId = DataProvider.getInstance().checklogin(txtEmail.getText(),txtPassword.getText());
+                        //String userId = DataProvider.getInstance().checklogin(txtEmail.getText(),txtPassword.getText());
+                        String userId = "2";
                         if(userId != null){
                             UserSession.setLoggedInUserId(userId);
-                            FXMLLoader loader = new FXMLLoader();
-                            loader.setLocation(getClass().getResource("Home.fxml"));
-                            Parent root = null;
-                            try {
-                                root = loader.load();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource("../../resources/com/example/goldietasks/Home.fxml"));
                             hiddenText.setVisible(false);
-                            Scene scene = new Scene(root);
-                            //scene.getStylesheets().add(getClass().getResource("../Style/Light.css").toExternalForm());
+                            Scene scene = new Scene(loader.load());
                             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
                             stage.setResizable(true);
                             stage.setTitle("GoldieTasks - Liste des taches");
@@ -81,6 +75,8 @@ public class LoginController implements Initializable {
                             processBar.setVisible(false);
                         }
                     } catch (MalformedURLException e) {
+                        throw new RuntimeException(e);
+                    } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
 

@@ -109,18 +109,21 @@ public class DataProvider {
         APIConnector apiConnectorTask = new APIConnector(apiTask);
 
         JSONObject taskJSONObject = apiConnectorTask.getJSONObject("/user/" + userid + "/");
-        Iterator x = taskJSONObject.keySet().iterator();
-
-        while (x.hasNext()) {
-            String key = (String) x.next();
-            Task task = new Task();
-            task.setId((Integer) taskJSONObject.get("id"));
-            task.setTitle(taskJSONObject.get("title").toString());
-            task.setType(DataProvider.getInstance().getTypeTaskById((Integer) taskJSONObject.get("type")));
-            task.setContent(taskJSONObject.get("description").toString());
-            list.add(task);
+        if (taskJSONObject != null){
+            Iterator x = taskJSONObject.keySet().iterator();
+            while (x.hasNext()) {
+                String key = (String) x.next();
+                Task task = new Task();
+                task.setId((Integer) taskJSONObject.get("id"));
+                task.setTitle(taskJSONObject.get("title").toString());
+                task.setType(DataProvider.getInstance().getTypeTaskById((Integer) taskJSONObject.get("type")));
+                task.setContent(taskJSONObject.get("description").toString());
+                list.add(task);
+            }
+            return list;
         }
         return list;
+
     }
 
     public boolean DelTask(String id) throws SQLException {
