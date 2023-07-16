@@ -6,6 +6,7 @@ export interface File {
     title: string;
     file: string;
     validated: boolean;
+    dateAdd?: Date;
     type: number;
 }
 
@@ -15,6 +16,7 @@ export const FileValidationSchema = Joi.object({
     title: Joi.string().required(),
     file: Joi.string().required(),
     validated: Joi.boolean().required(),
+    dateAdd: Joi.date().optional(),
     type: Joi.number().required()
 });
 

@@ -3,6 +3,7 @@ import { Pool, PoolConnection } from 'mysql2/promise';
 import {upload} from "../services/multer";
 
 import db from '../services/mysql';
+import { debug } from 'console';
 
 export const FileRepository = {
 
@@ -35,7 +36,7 @@ export const FileRepository = {
           const fileId = (rows as any).insertId;
       
           // Mettre à jour le chemin du fichier avec le chemin de destination Multer
-          const filePath = `uploads/${fileId}`;
+          const filePath = `uploads/${file.user_id}/${file.file}`;
           
           // Mettre à jour l'objet File avec le chemin du fichier
           const updatedFile: File = { ...file, file: filePath };

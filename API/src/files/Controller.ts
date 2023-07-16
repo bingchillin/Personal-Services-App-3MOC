@@ -1,7 +1,7 @@
 import {Router} from "express";
 import { FileRepository } from "./Repository";
 import { debug } from "console";
-import {upload} from "../services/multer";
+import {upload } from "../services/multer";
 
 const filesController = Router();
 
@@ -19,19 +19,18 @@ filesController.get("/", async (req, res) => {
     res.status(200).send(files)
 })
 
-filesController.post('/', upload.single('file'), async (req, res) => {
+filesController.post('/',upload.single('file'), async (req, res, next) => {
     try {
       if(req.file != undefined) {
-        const path = req.file.path.replace(/\\/g, "/"); // Remplace les antislashs par des slashs
-
-        debug(req.body)
-        debug(path)
-
+        const fileName = req.file.filename;
+        const filePath = req.file.path.replace(/\\/g, "/"); // Remplace les antislashs par des slashs
+        debug(fileName);
         const file = {
           user_id: req.body.user_id,
           title: req.body.title,
-          file: path, // Enregistre le chemin d'accès au fichier dans la base de données
+          file: filePath, // Enregistre le chemin d'accès au fichier dans la base de données
           validated: false,
+          dateAdd: new Date(),
           type: req.body.type
         };
   
