@@ -30,6 +30,8 @@ class UserWebServices {
       final response =
           await http.delete(Uri.parse('http://localhost:3000/users/$id'));
       switch (response.statusCode) {
+        case 200:
+          return;
         case 204:
           return;
         default:

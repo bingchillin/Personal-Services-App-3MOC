@@ -54,14 +54,22 @@ class _UserWebServicesFutureBuilderState
     }
   }
 
+  void updateUsers() {
+    setState(() {
+      _usersFuture = UserWebServices.getAllUsers().then((users) {
+        _users = users;
+        _filteredUsers = users;
+        return users;
+      });
+    });
+  }
+
   void _updateFilteredUsers(String searchText) {
     setState(() {
       _filteredUsers = _users
           .where((user) =>
-      user.email
-          ?.toLowerCase()
-          .contains(searchText.toLowerCase()) ??
-          false)
+              user.email?.toLowerCase().contains(searchText.toLowerCase()) ??
+              false)
           .toList();
     });
   }
@@ -78,6 +86,10 @@ class _UserWebServicesFutureBuilderState
             decoration: const InputDecoration(
               hintText: 'Rechercher par email',
             ),
+          ),
+          IconButton(
+            onPressed: updateUsers,
+            icon: const Icon(Icons.refresh),
           ),
           const SizedBox(height: 16),
           Expanded(
