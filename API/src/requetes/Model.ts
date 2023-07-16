@@ -13,7 +13,6 @@ export interface Requete {
 }
 
 export const RequeteValidationSchema = Joi.object({
-    id: Joi.number().optional(),
     client: Joi.number().required(),
     timer: Joi.string().required(),
     type: Joi.number().required(),

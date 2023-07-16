@@ -63,11 +63,15 @@ requetesController.get("/valide/:bool", async (req, res) => {
 requetesController.delete("/:id", async (req, res) => {
     try{
         await RequeteRepository.deleteRequete(req.params.id);
-        res.status(200).send()
+        res.status(200).send({
+            status: 200,
+            message: "Deleted"
+        })
     }catch(error){
         res.status(404).send({
             status: 404,
-            message: "Not found!"
+            message: "Not found!",
+            error: error
         })
     }
 })
@@ -97,7 +101,7 @@ requetesController.put("/:id", async (req, res) => {
         return
     }
 
-    const updatedRequete = await RequeteRepository.updateRequete(req.body);
+    const updatedRequete = await RequeteRepository.updateRequete(req.body,req.params.id);
 
     res.status(200).send(updatedRequete)
 })
