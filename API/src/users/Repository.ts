@@ -133,11 +133,11 @@ export const UserRepository = {
     }
   },
 
-  updateUser: async (user: User): Promise<User> => {
+  updateUser: async (user: User,id:String): Promise<User> => {
     try {
       const connection: PoolConnection = await db.getConnection();
 
-      await connection.query('UPDATE users SET ? WHERE id = ?', [user, user.id]);
+      await connection.query('UPDATE users SET ? WHERE id = ?', [user, id]);
 
       return user;
     } catch (error) {
