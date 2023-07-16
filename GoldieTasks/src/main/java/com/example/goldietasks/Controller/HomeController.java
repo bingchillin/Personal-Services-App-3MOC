@@ -3,6 +3,7 @@ package com.example.goldietasks.Controller;
 import com.example.goldietasks.Model.DataProvider;
 import com.example.goldietasks.Model.Task;
 import com.example.goldietasks.Model.TypeTask;
+import com.example.goldietasks.Model.UserSession;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -218,7 +219,7 @@ public class HomeController implements Initializable {
     }
     public void refeshData(){
         try {
-            listTasks = DataProvider.getInstance().getListTask(SortDayStatus,SortTimeStatus);
+            listTasks = DataProvider.getInstance().getListTask(Integer.parseInt(UserSession.getLoggedInUserId()));
         } catch (SQLException | MalformedURLException throwables) {
             throwables.printStackTrace();
         }

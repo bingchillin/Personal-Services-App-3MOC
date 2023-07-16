@@ -1,6 +1,7 @@
 package com.example.goldietasks.Controller;
 
 import com.example.goldietasks.Model.DataProvider;
+import com.example.goldietasks.Model.UserSession;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
 import javafx.event.ActionEvent;
@@ -25,7 +26,7 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
     @FXML
-    private TextField txtUsername;
+    private TextField txtEmail;
     @FXML
     private PasswordField txtPassword;
     @FXML
@@ -53,7 +54,9 @@ public class LoginController implements Initializable {
                 @Override
                 public void handle(WorkerStateEvent evt) {
                     try {
-                        if(DataProvider.getInstance().checklogin(txtUsername.getText(),password)){
+                        String userId = DataProvider.getInstance().checklogin(txtEmail.getText(),txtPassword.getText());
+                        if(userId != null){
+                            UserSession.setLoggedInUserId(userId);
                             FXMLLoader loader = new FXMLLoader();
                             loader.setLocation(getClass().getResource("Home.fxml"));
                             Parent root = null;
@@ -98,7 +101,7 @@ public class LoginController implements Initializable {
         processBar.setVisible(false);
         checkName=false;
         checkPass=false;
-        txtUsername.textProperty().addListener((observableValue, oldValue, newValue) ->{
+        txtEmail.textProperty().addListener((observableValue, oldValue, newValue) ->{
             if(newValue.trim().equals("")){
                 checkName = false;
             }else{

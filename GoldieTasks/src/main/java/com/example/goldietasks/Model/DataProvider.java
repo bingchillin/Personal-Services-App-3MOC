@@ -15,9 +15,10 @@ public class DataProvider {
     private static DataProvider instance;
     private APIConnector apiConnector;
 
-    String apiTypetask = "http://localhost:3000/typeTask/";
-    String apiTask = "http://localhost:3000/task/";
-    String apiUser = "http://localhost:3000/users/";
+    String apiAuth = "http://localhost:3000/login";
+    String apiTypetask = "http://localhost:3000/typetask";
+    String apiTask = "http://localhost:3000/task";
+    String apiUser = "http://localhost:3000/users";
 
 
     public static DataProvider getInstance() {
@@ -30,13 +31,12 @@ public class DataProvider {
     }
 
     public TypeTask getTypeTask(String name) throws SQLException, MalformedURLException {
-        String apiTypetask = "http://localhost:3000/typeTask/";
 
         TypeTask typetask = new TypeTask();
 
         APIConnector apiConnectorTypeTask = new APIConnector(apiTypetask);
 
-        JSONObject typeTaskJSONObject = apiConnectorTypeTask.getJSONObject(name + "/");
+        JSONObject typeTaskJSONObject = apiConnectorTypeTask.getJSONObject("/" + name + "/");
 
 
         if (typeTaskJSONObject != null) {
@@ -46,13 +46,12 @@ public class DataProvider {
     }
 
     public TypeTask getTypeTaskById(int id) throws SQLException, MalformedURLException {
-        String apiTypetask = "http://localhost:3000/typeTask/";
 
         TypeTask typetask = new TypeTask();
 
         APIConnector apiConnectorTypeTask = new APIConnector(apiTypetask);
 
-        JSONObject typeTaskJSONObject = apiConnectorTypeTask.getJSONObject(id + "/");
+        JSONObject typeTaskJSONObject = apiConnectorTypeTask.getJSONObject("/" + id + "/");
 
 
         if (typeTaskJSONObject != null) {
@@ -61,14 +60,24 @@ public class DataProvider {
         return typetask;
     }
 
-    public boolean checklogin(String username, String password) throws MalformedURLException {
-        String apiUser = "http://localhost:3000/users/";
+    public String checklogin(String email, String password) throws MalformedURLException {
 
-        APIConnector apiConnectorUser = new APIConnector(apiUser);
+        try {
+            APIConnector apiConnector = new APIConnector(apiAuth);
 
-        JSONObject UserJSONObject = apiConnectorUser.getJSONObject(username + "/");
+            JSONObject requestObject = new JSONObject();
+            requestObject.put("email", email);
+            requestObject.put("password", password);
 
-        return UserJSONObject != null;
+            JSONObject response = apiConnector.postJSONObject("", requestObject);
+
+            if (response != null && response.get("role") == "1") {
+                return response.get("id").toString();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public ArrayList<TypeTask> getListType() throws SQLException, MalformedURLException {
@@ -94,12 +103,12 @@ public class DataProvider {
         return result > 0;
     }
 
-    public ArrayList<Task> getListTask(int SortDay, int SortTime) throws SQLException, MalformedURLException {
+    public ArrayList<Task> getListTask(int userid) throws SQLException, MalformedURLException {
         ArrayList<Task> list = new ArrayList<>();
 
         APIConnector apiConnectorTask = new APIConnector(apiTask);
 
-        JSONObject taskJSONObject = apiConnectorTask.getJSONObject("");
+        JSONObject taskJSONObject = apiConnectorTask.getJSONObject("/user/" + userid + "/");
         Iterator x = taskJSONObject.keySet().iterator();
 
         while (x.hasNext()) {
@@ -126,7 +135,7 @@ public class DataProvider {
 
         APIConnector apiConnectorTask = new APIConnector(apiTask);
 
-        JSONObject taskJSONObject = apiConnectorTask.getJSONObject(id + "/");
+        JSONObject taskJSONObject = apiConnectorTask.getJSONObject("/" + id + "/");
 
         if (taskJSONObject != null) {
             myTask.setId((Integer) taskJSONObject.get("id"));
