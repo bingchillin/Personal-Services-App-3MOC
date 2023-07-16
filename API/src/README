@@ -1,0 +1,40 @@
+ESGI Project 3MOC - API Goldie App
+
+Groupe :
+- MADAWALA KANKANAMGE Thanudi
+- EL FAKHARANY Mohamed
+- SU Kenny
+
+Description :
+This is a API for the Goldie App. It's a project for the 3MOC at ESGI.
+Our Goldie App aims to help old people to ask for some help to do some tasks like shopping, cleaning, etc.
+The API is used to manage the users, the tasks and the offers.
+We have 3 types of users :
+- The old people
+- The helpers (With medical certificate or not)
+- The admins
+
+Goals :
+- Create an API for the Goldie App
+- Create a database for the API
+
+Dependencies :
+- NodeJS
+- Typescript
+- Express
+- MySQL
+- JOI
+- Multer
+- Nodemon
+- bCrypt
+- body-parser
+- swagger
+- Docker
+- Docker-compose
+
+
+# Build the containers
+npm run docStart
+
+# Run the API server
+npm run start_node
