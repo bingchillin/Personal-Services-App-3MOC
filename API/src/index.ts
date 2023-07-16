@@ -6,6 +6,8 @@ import requetesController from './requetes/Controller';
 import swaggerUi from 'swagger-ui-express';
 import swaggerJSDoc from 'swagger-jsdoc';
 import bodyParser from 'body-parser';
+import tasksController from "./tasks/Controller";
+import typeTasksController from "./typetasks/Controller";
 
 //Server
 const app = express();
@@ -116,6 +118,10 @@ app.use("/login", authController)
 app.use("/files",fileController)
 
 app.use("/requetes",requetesController)
+
+app.use("/tasks",tasksController)
+
+app.use("/typetask",typeTasksController)
 
 app.listen(process.env.PORT || port, () => {
     console.log('Server started');
