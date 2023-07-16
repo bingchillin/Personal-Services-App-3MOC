@@ -1,8 +1,11 @@
 import express, { Request, Response } from 'express';
 import usersController from './users/Controller';
 import authController from './auth/authController';
+import fileController from './files/Controller';
+import requetesController from './requetes/Controller';
 import swaggerUi from 'swagger-ui-express';
 import swaggerJSDoc from 'swagger-jsdoc';
+import bodyParser from 'body-parser';
 
 //Server
 const app = express();
@@ -29,8 +32,7 @@ const swaggerDocs = swaggerJSDoc(swaggerOptions);
 //Routes
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use(express.json());
-
-
+app.use(bodyParser.json());
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello, World!');
@@ -48,6 +50,8 @@ app.get('/', (req: Request, res: Response) => {
  *        description: Not found
  *  post:
  *    description: Use to creat a user
+ *    consumes:
+ *       - application/json
  *    responses:
  *      '200':
  *        description: A successful response
@@ -68,7 +72,7 @@ app.get('/', (req: Request, res: Response) => {
  *      - id: id
  *        description: user id
  *    responses:
- *      '204':
+ *      '200':
  *        description: Delete successful
  *      '404':
  *        description: Not found
@@ -108,6 +112,10 @@ app.use("/users", usersController)
  *  
  */
 app.use("/login", authController)
+
+app.use("/files",fileController)
+
+app.use("/requetes",requetesController)
 
 app.listen(process.env.PORT || port, () => {
     console.log('Server started');
