@@ -75,7 +75,7 @@ CREATE TABLE tasks
 CREATE TABLE typetasks
 (
     id   INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL
 );
 
 
