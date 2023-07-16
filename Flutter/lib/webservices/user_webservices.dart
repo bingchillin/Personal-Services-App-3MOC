@@ -22,4 +22,21 @@ class UserWebServices{
       rethrow;
     }
   }
+
+  // delete user
+  static Future<void> deleteUser(int id) async{
+    try{
+      final response = await http.delete(Uri.parse('http://localhost:3000/users/$id'));
+      switch(response.statusCode){
+        case 204:
+          return;
+        default:
+          debugPrint(response.statusCode.toString());
+          throw Exception('Failed to delete user');
+      }
+    }catch(error){
+      debugPrint('Error deleting user : $error');
+      rethrow;
+    }
+  }
 }
