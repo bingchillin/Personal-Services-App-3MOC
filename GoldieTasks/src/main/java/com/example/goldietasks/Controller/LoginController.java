@@ -55,8 +55,10 @@ public class LoginController implements Initializable {
                 @Override
                 public void handle(WorkerStateEvent evt) {
                     try {
-                        //String userId = DataProvider.getInstance().checklogin(txtEmail.getText(),txtPassword.getText());
-                        String userId = "2";
+                        System.out.println(txtEmail.getText());
+                        System.out.println(txtPassword.getText());
+                        String userId = DataProvider.getInstance().checklogin(txtEmail.getText(),txtPassword.getText());
+                        //String userId = "2";
                         if(userId != null){
                             UserSession.setLoggedInUserId(userId);
                             FXMLLoader loader = new FXMLLoader(Main.class.getResource("Home.fxml"));

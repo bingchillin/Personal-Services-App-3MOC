@@ -69,6 +69,8 @@ public class DataProvider {
             requestObject.put("email", email);
             requestObject.put("password", password);
 
+            System.out.println(requestObject);
+
             JSONObject response = apiConnector.postJSONObject("", requestObject);
 
             if (response != null && response.get("role") == "1") {
