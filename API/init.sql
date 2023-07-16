@@ -65,6 +65,7 @@ INSERT INTO users (
     firstname, 
     birthdate,
     profession,
+    dateSignIn,
     role)
 VALUES (
     'bob@email.fr',
@@ -73,6 +74,7 @@ VALUES (
     'bob',
     '1990-01-01',
     1,
+    '1990-01-01',
     1
 );
 
@@ -83,6 +85,7 @@ INSERT INTO users (
     firstname, 
     birthdate,
     profession,
+    dateSignIn,
     role)
 VALUES (
     'bob2@email.fr',
@@ -91,5 +94,6 @@ VALUES (
     'bob2',
     '1990-01-01',
     1,
+    '1990-01-01',
     1
 );
