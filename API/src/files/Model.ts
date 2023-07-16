@@ -1,7 +1,7 @@
 import Joi from 'joi';
 
 export interface File {
-    id: number;
+    id?: number;
     user_id: number;
     title: string;
     file: string;
@@ -10,6 +10,7 @@ export interface File {
 }
 
 export const FileValidationSchema = Joi.object({
+    id: Joi.number().optional(),
     user_id: Joi.number().required(),
     title: Joi.string().required(),
     file: Joi.string().required(),

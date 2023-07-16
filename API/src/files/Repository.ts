@@ -1,11 +1,8 @@
 import { validateFile,File } from './Model';
 import { Pool, PoolConnection } from 'mysql2/promise';
-import multer from 'multer';
+import {upload} from "../services/multer";
 
 import db from '../services/mysql';
-
-// Configurer Multer
-const upload = multer({ dest: 'uploads/' });
 
 export const FileRepository = {
 
@@ -33,13 +30,13 @@ export const FileRepository = {
       
           // Insérer les informations du fichier dans la base de données
           const [rows] = await connection.query('INSERT INTO files SET ?', file);
-      
+          
           // Récupérer l'ID généré pour le fichier inséré
           const fileId = (rows as any).insertId;
       
           // Mettre à jour le chemin du fichier avec le chemin de destination Multer
           const filePath = `uploads/${fileId}`;
-      
+          
           // Mettre à jour l'objet File avec le chemin du fichier
           const updatedFile: File = { ...file, file: filePath };
       

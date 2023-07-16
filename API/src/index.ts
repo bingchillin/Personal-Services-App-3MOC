@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import usersController from './users/Controller';
 import authController from './auth/authController';
 import fileController from './files/Controller';
+import requetesController from './requetes/Controller';
 import swaggerUi from 'swagger-ui-express';
 import swaggerJSDoc from 'swagger-jsdoc';
 import bodyParser from 'body-parser';
@@ -113,6 +114,8 @@ app.use("/users", usersController)
 app.use("/login", authController)
 
 app.use("/files",fileController)
+
+app.use("/requetes",requetesController)
 
 app.listen(process.env.PORT || port, () => {
     console.log('Server started');

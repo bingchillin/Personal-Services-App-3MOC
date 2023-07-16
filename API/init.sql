@@ -37,6 +37,26 @@ CREATE TABLE types (
     name VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE requetes(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    client INT NOT NULL,
+    timer VARCHAR(255) NOT NULL,
+    type INT NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    slots INT NOT NULL,
+    medicalNeed BOOLEAN NOT NULL DEFAULT TRUE,
+    accepted BOOLEAN NOT NULL DEFAULT FALSE,
+    done BOOLEAN NOT NULL DEFAULT FALSE
+);
+
+CREATE TABLE requetes_inscriptions(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    requete INT NOT NULL,
+    user INT NOT NULL,
+    accepted BOOLEAN NOT NULL DEFAULT FALSE
+);
+
+
 
 INSERT INTO users (
     email, 
