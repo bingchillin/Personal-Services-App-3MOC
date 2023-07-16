@@ -64,4 +64,25 @@ class UserWebServices {
       rethrow;
     }
   }
+
+  static Future<void> createUser(User user) async {
+    try {
+      final response = await http.post(
+        Uri.parse('http://localhost:3000/users'),
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode(user.toJson()),
+      );
+      switch (response.statusCode) {
+        case 201:
+          return;
+        default:
+          debugPrint(response.statusCode.toString());
+          throw Exception('Failed to create user');
+      }
+    } catch (error) {
+      debugPrint('Error creating user : $error');
+      rethrow;
+    }
+  }
+
 }

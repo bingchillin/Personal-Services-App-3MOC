@@ -8,9 +8,11 @@ class User {
   final double? note;
   final int? profession;
   final int? role;
+  final String? dateSignIn;
+  final String? password;
 
   User({
-    required this.id,
+    this.id,
     required this.email,
     required this.lastname,
     required this.firstname,
@@ -18,7 +20,9 @@ class User {
     required this.validated,
     required this.note,
     required this.profession,
+    required this.dateSignIn,
     required this.role,
+    required this.password,
   });
 
   factory User.fromJson(Map<String, dynamic> json) {
@@ -31,7 +35,9 @@ class User {
       validated: json['validated'] is int ? json['validated'] : null,
       note: json['note'] is double ? json['note'] : null,
       profession: json['profession'] is int ? json['profession'] : null,
+      dateSignIn: json['dateSignIn'] is String ? json['dateSignIn'] : null,
       role: json['role'] is int ? json['role'] : null,
+      password: json['password'] is String ? json['password'] : null,
     );
   }
 
@@ -46,7 +52,9 @@ class User {
       'validated': validated,
       'note': note,
       'profession': profession,
+      'dateSignIn' : dateSignIn,
       'role': role,
+      'password':password
     };
   }
 

@@ -28,6 +28,8 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
       {'Note': widget.user.note?.toString() ?? ''},
       {'Profession': widget.user.profession?.toString() ?? ''},
       {'Rôle': widget.user.role?.toString() ?? ''},
+      {'Password': widget.user.password?.toString() ?? ''},
+
     ];
 
     _textControllers = _fieldList
@@ -70,7 +72,9 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                   validated: int.tryParse(_textControllers[4].text),
                   note: double.tryParse(_textControllers[5].text),
                   profession: int.tryParse(_textControllers[6].text),
-                  role: int.tryParse(_textControllers[7].text),
+                  dateSignIn: _textControllers[7].text,
+                  role: int.tryParse(_textControllers[8].text),
+                  password: _textControllers[9].text,
                 );
 
                 await UserWebServices.updateUser(updatedUser);

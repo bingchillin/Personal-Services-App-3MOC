@@ -4,6 +4,8 @@ import 'package:goldie_studio/webservices/user_class.dart';
 import 'package:goldie_studio/webservices/user_webservices.dart';
 import 'package:goldie_studio/widgets/title.dart';
 
+import '../pages/add_user.dart';
+
 class UsersWidget extends StatelessWidget {
   const UsersWidget({Key? key}) : super(key: key);
 
@@ -87,9 +89,26 @@ class _UserWebServicesFutureBuilderState
               hintText: 'Rechercher par email',
             ),
           ),
-          IconButton(
-            onPressed: updateUsers,
-            icon: const Icon(Icons.refresh),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                onPressed: updateUsers,
+                icon: const Icon(Icons.refresh),
+              ),
+              IconButton(
+                onPressed:() {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          AddUserWidget(),
+                    ),
+                  );
+                },
+                icon: const Icon(Icons.add),
+              ),
+            ],
           ),
           const SizedBox(height: 16),
           Expanded(
