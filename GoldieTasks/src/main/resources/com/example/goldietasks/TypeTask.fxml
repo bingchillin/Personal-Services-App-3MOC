@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox accessibleText="NewTypeTask" alignment="CENTER_LEFT" minHeight="33.0" onMouseClicked="#ShowType" prefHeight="33.0" prefWidth="235.0" styleClass="MenuItem" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.goldietasks.Controller.TypeTaskController">
+   <children>
+      <Label fx:id="name" prefHeight="17.0" prefWidth="155.0" styleClass="LabelMenuItem" text="Nouvelle catégorie" />
+   </children>
+</HBox>
