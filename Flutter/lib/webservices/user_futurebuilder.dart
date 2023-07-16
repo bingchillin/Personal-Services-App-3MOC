@@ -17,7 +17,7 @@ class _UserWebServicesFutureBuilderState
   Future<List<User>>? _usersFuture;
   List<User> _users = [];
   List<User> _filteredUsers = [];
-  TextEditingController _searchController = TextEditingController();
+  final TextEditingController _searchController = TextEditingController();
 
   @override
   void initState() {
@@ -47,7 +47,7 @@ class _UserWebServicesFutureBuilderState
     setState(() {
       _filteredUsers = _users
           .where((user) =>
-              user.firstname
+              user.email
                   ?.toLowerCase()
                   .contains(searchText.toLowerCase()) ??
               false)
@@ -64,8 +64,8 @@ class _UserWebServicesFutureBuilderState
           TextField(
             controller: _searchController,
             onChanged: _updateFilteredUsers,
-            decoration: InputDecoration(
-              hintText: 'Rechercher par prénom',
+            decoration: const InputDecoration(
+              hintText: 'Rechercher par email',
             ),
           ),
           const SizedBox(height: 16),
