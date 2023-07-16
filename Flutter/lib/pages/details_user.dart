@@ -23,7 +23,7 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
       {'Prénom': widget.user.firstname ?? ''},
       {'Nom': widget.user.lastname ?? ''},
       {'Email': widget.user.email ?? ''},
-      {'Date de naissance': widget.user.birthdate ?? ''},
+      {'Date de naissance': convertDate(widget.user.birthdate) ?? ''},
       {'Validé': widget.user.validated?.toString() ?? ''},
       {'Note': widget.user.note?.toString() ?? ''},
       {'Profession': widget.user.profession?.toString() ?? ''},
@@ -66,7 +66,7 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                   firstname: _textControllers[0].text,
                   lastname: _textControllers[1].text,
                   email: _textControllers[2].text,
-                  birthdate: _textControllers[3].text,
+                  birthdate: convertDateBack(_textControllers[3].text),
                   validated: int.tryParse(_textControllers[4].text),
                   note: double.tryParse(_textControllers[5].text),
                   profession: int.tryParse(_textControllers[6].text),
@@ -85,10 +85,41 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
               },
               child: const Text('Enregistrer'),
             ),
-
           ],
         ),
       ),
     );
+  }
+
+  String? convertDate(String? dateString) {
+    if (dateString != null && dateString.isNotEmpty) {
+      DateTime dateTime = DateTime.parse(dateString);
+      String formattedDate =
+          '${dateTime.year}-${_twoDigits(dateTime.month)}-${_twoDigits(dateTime.day)}';
+      return formattedDate;
+    }
+    return null;
+  }
+
+  String _twoDigits(int n) {
+    if (n >= 10) return '$n';
+    return '0$n';
+  }
+
+  String? convertDateBack(String? dateString) {
+    if (dateString != null && dateString.isNotEmpty) {
+      List<String> parts = dateString.split('-');
+      if (parts.length == 3) {
+        int year = int.tryParse(parts[0]) ?? 0;
+        int month = int.tryParse(parts[1]) ?? 0;
+        int day = int.tryParse(parts[2]) ?? 0;
+
+        if (year != 0 && month != 0 && day != 0) {
+          DateTime dateTime = DateTime(year, month, day);
+          return dateTime.toIso8601String();
+        }
+      }
+    }
+    return null;
   }
 }
