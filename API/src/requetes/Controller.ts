@@ -62,8 +62,9 @@ requetesController.get("/valide/:bool", async (req, res) => {
 
 requetesController.delete("/:id", async (req, res) => {
     try{
-        const requete = RequeteRepository.getRequetesById(req.params.id);
-        if(!requete){
+        const requete = await RequeteRepository.getRequetesById(req.params.id);
+        
+        if(requete){
             await RequeteRepository.deleteRequete(req.params.id);
             res.status(200).send({
                 status: 200,
