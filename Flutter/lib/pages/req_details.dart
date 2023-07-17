@@ -67,7 +67,7 @@ class _RequestDetailsWidgetState extends State<RequestDetailsWidget> {
                   client: int.tryParse(_textControllers[2].text),
                   type: int.tryParse(_textControllers[3].text),
                   slots: int.tryParse(_textControllers[4].text),
-                  done: int.tryParse(_textControllers[6].text),
+                  done: int.tryParse(_textControllers[5].text),
                 );
 
                 await RequestWebServices.updateRequest(updatedRequest);
