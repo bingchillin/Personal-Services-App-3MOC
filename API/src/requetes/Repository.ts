@@ -2,6 +2,7 @@ import { Requete,validateRequete } from './Model';
 import { Pool, PoolConnection } from 'mysql2/promise';
 
 import db from '../services/mysql';
+import { debug } from 'console';
 
 export const RequeteRepository = {
 
@@ -93,9 +94,11 @@ export const RequeteRepository = {
       const connection: PoolConnection = await db.getConnection();
 
       const { error } = validateRequete(requete);
+
       if (error) {
-        throw new Error('Données requetes invalides');
+        throw new Error('Données requetes invalides ' + error);
       }
+
       const [rows] = await connection.query('INSERT INTO requetes SET ?', requete);
       const createdRequete: Requete = { ...requete};
 
@@ -105,11 +108,11 @@ export const RequeteRepository = {
     }
   },
 
-  updateRequete: async (requete: Requete): Promise<Requete> => {
+  updateRequete: async (requete: Requete,id: String): Promise<Requete> => {
     try {
       const connection: PoolConnection = await db.getConnection();
 
-      await connection.query('UPDATE requetes SET ? WHERE id = ?', [requete, requete.id]);
+      await connection.query('UPDATE requetes SET ? WHERE id = ?', [requete, id]);
 
       return requete;
     } catch (error) {
@@ -121,7 +124,7 @@ export const RequeteRepository = {
     try {
       const connection: PoolConnection = await db.getConnection();
 
-      await connection.query('DELETE FROM requete WHERE id = ?', [id]);
+      await connection.query('DELETE FROM requetes WHERE id = ?', [id]);
     } catch (error) {
       throw error;
     }
