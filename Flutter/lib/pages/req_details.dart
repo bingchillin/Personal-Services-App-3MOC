@@ -24,7 +24,7 @@ class _RequestDetailsWidgetState extends State<RequestDetailsWidget> {
       {'Client': widget.request.client?.toString() ?? ''},
       {'Type': widget.request.type?.toString() ?? ''},
       {'Slots': widget.request.slots?.toString() ?? ''},
-      {'Acceptée': widget.request.accepted?.toString() ?? ''},
+      {'Besoin Medical': widget.request.medicalNeed?.toString() ?? ''},
       {'Complétée': widget.request.done?.toString() ?? ''},
     ];
 
@@ -68,7 +68,7 @@ class _RequestDetailsWidgetState extends State<RequestDetailsWidget> {
                   client: int.tryParse(_textControllers[2].text),
                   type: int.tryParse(_textControllers[3].text),
                   slots: int.tryParse(_textControllers[4].text),
-                  accepted: int.tryParse(_textControllers[5].text),
+                  medicalNeed: int.tryParse(_textControllers[5].text),
                   done: int.tryParse(_textControllers[6].text),
                 );
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:goldie_studio/webservices/request/request_class.dart';
 import 'package:goldie_studio/webservices/request/request_webservices.dart';
+import '../../pages/req_add.dart';
 import '../../pages/req_details.dart';
 import '../../widgets/title.dart';
 
@@ -95,13 +96,13 @@ class _RequestWebServicesFutureBuilderState
               ),
               IconButton(
                 onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (context) =>
-                  //         AddRequestWidget(),
-                  //   ),
-                  // );
+                   Navigator.push(
+                     context,
+                     MaterialPageRoute(
+                       builder: (context) =>
+                           const RequestAddWidget(),
+                     ),
+                   );
                 },
                 icon: const Icon(Icons.add),
               ),
@@ -164,7 +165,7 @@ class _RequestWebServicesFutureBuilderState
                             const Spacer(),
                             Expanded(child: Text('${request.timer}')),
                             const Spacer(),
-                            Expanded(child: Text('${request.accepted}')),
+                            Expanded(child: Text('${request.medicalNeed}')),
                             const Spacer(),
                             Expanded(child: Text('${request.done}')),
                             ButtonBar(

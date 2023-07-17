@@ -65,4 +65,27 @@ class RequestWebServices {
       rethrow;
     }
   }
+
+  // create request
+
+  static Future<void> createRequest(Request request) async {
+    try {
+      final response = await http.post(
+        Uri.parse('http://localhost:3000/requetes'),
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode(request.toJson()),
+      );
+      switch (response.statusCode) {
+        case 200:
+          return;
+        default:
+          debugPrint(response.statusCode.toString());
+          debugPrint(response.body);
+          throw Exception('Failed to create request');
+      }
+    } catch (error) {
+      debugPrint('Error creating request : $error');
+      rethrow;
+    }
+  }
 }

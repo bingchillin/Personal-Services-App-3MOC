@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../webservices/request/request_class.dart';
+import '../webservices/request/request_webservices.dart';
+
 class RequestAddWidget extends StatefulWidget {
   const RequestAddWidget({super.key});
 
@@ -20,8 +23,7 @@ class _RequestAddWidgetState extends State<RequestAddWidget> {
       {'Type': ''},
       {'Titre': ''},
       {'Place': ''},
-      {'Acceptée': ''},
-      {'Terminée': ''},
+      {'Besoin Medical': ''},
     ];
 
     _textControllers = _fieldList
@@ -55,17 +57,16 @@ class _RequestAddWidgetState extends State<RequestAddWidget> {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () async {
-                final newUser = User(
-                  firstname: _textControllers[0].text,
-                  lastname: _textControllers[1].text,
-                  email: _textControllers[2].text,
-                  birthdate: _textControllers[3].text,
-                  profession: int.tryParse(_textControllers[4].text),
-                  role: int.tryParse(_textControllers[5].text),
-                  password: _textControllers[6].text,
+                final newRequest = Request(
+                  client: int.tryParse(_textControllers[0].text),
+                  timer: _textControllers[1].text,
+                  type: int.tryParse(_textControllers[2].text),
+                  title: _textControllers[3].text,
+                  slots: int.tryParse(_textControllers[4].text),
+                  medicalNeed: int.tryParse(_textControllers[5].text),
                 );
 
-                await UserWebServices.createUser(newUser);
+                await RequestWebServices.createRequest(newRequest);
 
                 // Afficher une snackbar ou une boîte de dialogue pour confirmer la création
                 ScaffoldMessenger.of(context).showSnackBar(
