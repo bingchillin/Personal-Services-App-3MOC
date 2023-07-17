@@ -55,37 +55,4 @@ public class UserRepository {
 
         return user;
     }
-
-  /*  public User connexion(String email, String password) {
-        User user = null;
-        String endpoint = "login";
-
-        try {
-            APIConnector apiConnector = new APIConnector("http://localhost:3000/");
-            JSONObject requestBody = new JSONObject();
-            requestBody.put("email", email);
-            requestBody.put("password", password);
-
-            String response = apiConnector.post(endpoint, requestBody.toString());
-
-            if (response != null) {
-                JSONObject jsonResponse = (JSONObject) JSONValue.parse(response);
-                JSONObject userObject = (JSONObject) jsonResponse.get("user");
-                Object idObject = userObject.get("id");
-
-                if (idObject != null) {
-                    int userId = ((Long) idObject).intValue();
-                    user = new User(userId);
-                    System.out.println(user);
-                }
-
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return user;
-    }
-
-   */
 }

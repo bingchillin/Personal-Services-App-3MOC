@@ -28,12 +28,16 @@ public class TaskRepository {
 
             if (response != null) {
                 JSONObject responseJson = (JSONObject) JSONValue.parse(response);
-                System.out.println("response" + responseJson);
-                System.out.println("response get" + responseJson.get("id"));
-                System.out.println("Long get" + ((Long) responseJson.get("id")).intValue());
-                int taskId = ((Long) responseJson.get("id")).intValue();
-                task.setId(taskId);
+                if (responseJson.get("id") != null) {
+                    JSONArray idArray = (JSONArray) responseJson.get("id");
+                    JSONArray idSubArray = (JSONArray) idArray.get(0);
+                    JSONObject idObject = (JSONObject) idSubArray.get(0);
+                    Long lastInsertId = (Long) idObject.get("LAST_INSERT_ID()");
+                    int taskId = lastInsertId.intValue();
+                    task.setId(taskId);
+                }
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         }

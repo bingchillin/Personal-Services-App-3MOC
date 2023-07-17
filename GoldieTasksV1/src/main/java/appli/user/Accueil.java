@@ -1,17 +1,18 @@
 package appli.user;
 
 import appli.StartApplication;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import modele.Task;
 import modele.User;
 import repository.TaskRepository;
-import repository.UserRepository;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -37,42 +38,41 @@ public class Accueil implements Initializable {
 
     public Accueil(User u) {
         this.user = u;
-        System.out.println("Accueil" + u);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String[][] colonnes = {
-                {"Id","id"},
-                {"User","userid"},
-                {"Type","type"},
-                {"Titre","title"},
-                {"Description","content"},
+                {"Id", "id"},
+                {"User", "userid"},
+                {"Type", "type"},
+                {"Titre", "title"},
+                {"Description", "content"},
         };
-        for (int i = 0 ; i < colonnes.length ; i ++){
-            TableColumn<Task,String> myTable= new TableColumn<>(colonnes[i][0]);
-            myTable.setCellValueFactory(new PropertyValueFactory<Task,String>(colonnes[i][1]));
+        for (int i = 0; i < colonnes.length; i++) {
+            TableColumn<Task, String> myTable = new TableColumn<>(colonnes[i][0]);
+            myTable.setCellValueFactory(new PropertyValueFactory<Task, String>(colonnes[i][1]));
             tbl.getColumns().add(myTable);
         }
         TaskRepository taskRepository = new TaskRepository();
-        System.out.println(taskRepository.getTasksByUserId(user.getIdUser()));
 
-        if(taskRepository.getTasksByUserId(user.getIdUser()) != null) {
+        if (taskRepository.getTasksByUserId(user.getIdUser()) != null) {
             tbl.getItems().addAll(taskRepository.getTasksByUserId(user.getIdUser()));
-        }else{
+        } else {
             System.out.println("vide");
         }
 
     }
+
     @FXML
     void AddAction(ActionEvent event) {
-        StartApplication.changeScene("/appli/user/form",new Form(this.user));
+        StartApplication.changeScene("/appli/user/form", new Form(this.user));
     }
 
     @FXML
     void delAction(ActionEvent event) throws SQLException {
-        Optional<ButtonType> resultat = StartApplication.validationDialog("Supression d'une tâche","êtes-vous sûr de vouloir supprimer la tache : "+this.taskSelected);
-        if (resultat.get() == ButtonType.OK){
+        Optional<ButtonType> resultat = StartApplication.validationDialog("Supression d'une tâche", "êtes-vous sûr de vouloir supprimer la tache : " + this.taskSelected);
+        if (resultat.get() == ButtonType.OK) {
             TaskRepository taskRepository = new TaskRepository();
             taskRepository.deleteTask(this.taskSelected);
             tbl.getItems().remove(this.taskSelected);
@@ -82,17 +82,17 @@ public class Accueil implements Initializable {
 
     @FXML
     void editAction(ActionEvent event) {
-        StartApplication.changeScene("/appli/user/form",new Form(this.user,this.taskSelected));
+        StartApplication.changeScene("/appli/user/form", new Form(this.user, this.taskSelected));
     }
 
     @FXML
     void onSelIntem(MouseEvent event) {
-        System.out.println("hey ! ");
+        System.out.println("selected");
         this.taskSelected = tbl.getSelectionModel().getSelectedItem();
-        if (taskSelected != null){
+        if (taskSelected != null) {
             btnDelete.setDisable(false);
             btnModif.setDisable(false);
-        }else{
+        } else {
             btnDelete.setDisable(true);
             btnModif.setDisable(true);
         }
@@ -100,7 +100,7 @@ public class Accueil implements Initializable {
 
     @FXML
     void menuAction(ActionEvent event) {
-        System.out.println("hey !");
+        System.out.println("Action selected !");
     }
 
     @FXML
