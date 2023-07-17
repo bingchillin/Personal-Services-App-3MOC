@@ -59,6 +59,8 @@ public class Accueil implements Initializable {
 
         if(taskRepository.getTasksByUserId(user.getIdUser()) != null) {
             tbl.getItems().addAll(taskRepository.getTasksByUserId(user.getIdUser()));
+        }else{
+            System.out.println("vide");
         }
 
     }

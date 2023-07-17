@@ -28,6 +28,9 @@ public class TaskRepository {
 
             if (response != null) {
                 JSONObject responseJson = (JSONObject) JSONValue.parse(response);
+                System.out.println("response" + responseJson);
+                System.out.println("response get" + responseJson.get("id"));
+                System.out.println("Long get" + ((Long) responseJson.get("id")).intValue());
                 int taskId = ((Long) responseJson.get("id")).intValue();
                 task.setId(taskId);
             }

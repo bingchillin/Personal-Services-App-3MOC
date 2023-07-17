@@ -124,7 +124,7 @@ app.use("/requetesSub",requetesSubController)
 
 app.use("/tasks",tasksController)
 
-app.use("/typetask",typeTasksController)
+app.use("/typetasks",typeTasksController)
 
 app.listen(process.env.PORT || port, () => {
     console.log('Server started');

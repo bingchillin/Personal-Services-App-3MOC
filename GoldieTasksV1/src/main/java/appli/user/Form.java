@@ -50,6 +50,7 @@ public class Form implements Initializable {
         TaskRepository taskRepository = new TaskRepository();
         if(task == null){
                 task = new Task(Integer.parseInt(fldType.getText()),userConnecte.getIdUser(),fldTitle.getText(),fldContent.getText());
+            System.out.println(task);
             taskRepository.sauvegarder(task);
             StartApplication.changeScene("/appli/user/Accueil",new Accueil(this.userConnecte));
 
