@@ -44,6 +44,7 @@ public class Accueil implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String[][] colonnes = {
                 {"Id","id"},
+                {"User","userid"},
                 {"Type","type"},
                 {"Titre","title"},
                 {"Description","content"},
@@ -54,8 +55,11 @@ public class Accueil implements Initializable {
             tbl.getColumns().add(myTable);
         }
         TaskRepository taskRepository = new TaskRepository();
+        System.out.println(taskRepository.getTasksByUserId(user.getIdUser()));
 
-        tbl.getItems().addAll(taskRepository.getTasksByUserId(user.getIdUser()));
+        if(taskRepository.getTasksByUserId(user.getIdUser()) != null) {
+            tbl.getItems().addAll(taskRepository.getTasksByUserId(user.getIdUser()));
+        }
 
     }
     @FXML

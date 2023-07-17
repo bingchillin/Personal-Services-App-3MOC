@@ -5,108 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59c64eb1-336e-4235-94f3-3b58cd7170f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Flutter/android/app/src/profile/AndroidManifest 2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/android/settings 2.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/.gitignore 2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Flutter/AppFrameworkInfo 2.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Flutter/Debug 2.xcconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Flutter/Release 2.xcconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner 2.xcodeproj/project.pbxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner 2.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner 2.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner 2.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner 2.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner 2.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner 2.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner 2.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/AppDelegate 2.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Assets.xcassets/LaunchImage.imageset/README 2.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Base.lproj/LaunchScreen 2.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Base.lproj/Main 2.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/Runner/Runner-Bridging-Header 2.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/ios/RunnerTests/RunnerTests 2.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/lib/main 2.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/lib/pages/details_user 2.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/lib/pages/home 2.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/lib/pages/users_list 2.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/lib/webservices/user_futurebuilder 2.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/lib/webservices/user_webservices 2.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/lib/widgets/title 2.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/lib/widgets/top_bar 2.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/linux/.gitignore 2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/linux/CMakeLists 2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/linux/flutter/generated_plugin_registrant 2.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/linux/flutter/generated_plugin_registrant 2.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/linux/flutter/generated_plugins 2.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/linux/main 2.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/linux/my_application 2.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/linux/my_application 2.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/.gitignore 2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Flutter/Flutter-Debug 2.xcconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Flutter/Flutter-Release 2.xcconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Flutter/GeneratedPluginRegistrant 2.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Runner 2.xcodeproj/project.pbxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Runner 2.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Runner 2.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Runner 2.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Runner 2.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Runner/AppDelegate 2.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_1024 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_128 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_16 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_256 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Runner/Configs/Debug 2.xcconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Runner/Configs/Release 2.xcconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Runner/Configs/Warnings 2.xcconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Runner/DebugProfile 2.entitlements" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Runner/Info 2.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Runner/MainFlutterWindow 2.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/Runner/Release 2.entitlements" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/macos/RunnerTests/RunnerTests 2.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/pubspec 2.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/pubspec 2.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/web/favicon 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/web/icons/Icon-512 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/web/icons/Icon-maskable-192 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/web/icons/Icon-maskable-512 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/web/index 2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/web/manifest 2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/windows/.gitignore 2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/windows/CMakeLists 2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/windows/flutter/generated_plugin_registrant 2.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/windows/flutter/generated_plugin_registrant 2.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/windows/flutter/generated_plugins 2.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/windows/runner/Runner 2.rc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/windows/runner/flutter_window 2.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/windows/runner/flutter_window 2.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/windows/runner/main 2.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/windows/runner/resource 2.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/windows/runner/runner.exe 2.manifest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/windows/runner/utils 2.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/windows/runner/utils 2.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/windows/runner/win32_window 2.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Flutter/windows/runner/win32_window 2.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../API/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../API/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/src/tasks/Model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../API/src/tasks/Model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/appli/user/Accueil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appli/user/Accueil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/appli/user/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appli/user/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/appli/user/Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appli/user/Form.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modele/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modele/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/TaskRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/appli/user/accueil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/appli/user/accueil.fxml" afterDir="false" />
     </list>
@@ -172,7 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1689537782046</updated>
       <workItem from="1689537783170" duration="456000" />
-      <workItem from="1689543615664" duration="4777000" />
+      <workItem from="1689543615664" duration="13596000" />
     </task>
     <servers />
   </component>

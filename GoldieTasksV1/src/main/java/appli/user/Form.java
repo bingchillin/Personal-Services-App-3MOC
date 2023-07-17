@@ -49,7 +49,7 @@ public class Form implements Initializable {
     void SaveAction(ActionEvent event) {
         TaskRepository taskRepository = new TaskRepository();
         if(task == null){
-                task = new Task(Integer.parseInt(fldType.getText()),fldTitle.getText(),fldContent.getText());
+                task = new Task(Integer.parseInt(fldType.getText()),userConnecte.getIdUser(),fldTitle.getText(),fldContent.getText());
             taskRepository.sauvegarder(task);
             StartApplication.changeScene("/appli/user/Accueil",new Accueil(this.userConnecte));
 
