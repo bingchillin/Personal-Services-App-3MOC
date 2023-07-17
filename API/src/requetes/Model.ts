@@ -7,7 +7,6 @@ export interface Requete {
     type: number;
     title: string;
     slots: number;
-    medicalNeed: boolean;
     accepted?: boolean;
     done?: boolean;
 }
@@ -18,7 +17,6 @@ export const RequeteValidationSchema = Joi.object({
     type: Joi.number().required(),
     title: Joi.string().required(),
     slots: Joi.number().required(),
-    medicalNeed: Joi.boolean().required(),
     accepted: Joi.boolean().optional().default(false),
     done: Joi.boolean().optional().default(false)
 });
