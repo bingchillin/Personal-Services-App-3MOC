@@ -31,6 +31,7 @@ class _RequestWebServicesFutureBuilderState
   void initState() {
     super.initState();
     _requestsFuture = RequestWebServices.getAllRequests().then((requests) {
+      debugPrint('requests: $requests');
       _requests = requests;
       _filteredRequests = requests;
       return requests;
@@ -138,13 +139,13 @@ class _RequestWebServicesFutureBuilderState
                           children: [
                             Expanded(child: TitleWidget(title: 'ID')),
                             Spacer(),
-                            Expanded(child: TitleWidget(title: 'Prénom')),
+                            Expanded(child: TitleWidget(title: 'Titre')),
                             Spacer(),
-                            Expanded(child: TitleWidget(title: 'Profession')),
+                            Expanded(child: TitleWidget(title: 'Timer')),
                             Spacer(),
-                            Expanded(child: TitleWidget(title: 'Rôle')),
+                            Expanded(child: TitleWidget(title: 'Acceptée')),
                             Spacer(),
-                            Expanded(child: TitleWidget(title: 'Validé')),
+                            Expanded(child: TitleWidget(title: 'Complétée')),
                             Spacer(),
                           ],
                         ),

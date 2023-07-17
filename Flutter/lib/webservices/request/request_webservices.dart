@@ -6,17 +6,18 @@ import 'dart:convert';
 class RequestWebServices {
   static Future<List<Request>> getAllRequests() async {
     try {
-      final response = await http.get(Uri.parse('http://localhost:3000/requetes'));
+      final response =
+          await http.get(Uri.parse('http://localhost:3000/requetes'));
       switch (response.statusCode) {
         case 200:
           final List<dynamic> requetesJson =
               json.decode(response.body) as List<dynamic>;
+          debugPrint(response.body);
 
           return requetesJson.map((requestJson) {
             return Request.fromJson(requestJson as Map<String, dynamic>);
           }).toList();
         default:
-          debugPrint(response.statusCode.toString());
           throw Exception('Failed to load requetes');
       }
     } catch (error) {

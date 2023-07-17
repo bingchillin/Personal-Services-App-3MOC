@@ -5,8 +5,8 @@ class Request{
   final int? client;
   final int? type;
   final int? slots;
-  final bool? accepted;
-  final bool? done;
+  final int? accepted;
+  final int? done;
 
   Request({
     this.id,
@@ -27,8 +27,8 @@ class Request{
       client: json['client'] is int ? json['client'] : null,
       type: json['type'] is int ? json['type'] : null,
       slots: json['slots'] is int ? json['slots'] : null,
-      accepted: json['accepted'] is bool ? json['accepted'] : null,
-      done: json['done'] is bool ? json['done'] : null,
+      accepted: json['accepted'] is int ? json['accepted'] : null,
+      done: json['done'] is int ? json['done'] : null,
     );
   }
 
