@@ -56,9 +56,19 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
         child: Column(
           children: [
             for (var i = 0; i < _fieldList.length; i++)
-              TextField(
+              _fieldList[i].keys.first == 'Date inscription'
+                  ? TextFormField(
                 controller: _textControllers[i],
-                decoration: InputDecoration(labelText: _fieldList[i].keys.first),
+                decoration: InputDecoration(
+                  labelText: _fieldList[i].keys.first,
+                ),
+                enabled: false,
+              )
+                  : TextField(
+                controller: _textControllers[i],
+                decoration: InputDecoration(
+                  labelText: _fieldList[i].keys.first,
+                ),
               ),
             const SizedBox(height: 16),
             ElevatedButton(
