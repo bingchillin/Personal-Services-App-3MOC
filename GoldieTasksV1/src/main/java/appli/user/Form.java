@@ -57,6 +57,7 @@ public class Form implements Initializable {
             task.setType(type);
             task.setTitle(title);
             task.setContent(content);
+            task.setUserid(userConnecte.getIdUser());
             taskRepository.mettreAJour(task);
         }
 

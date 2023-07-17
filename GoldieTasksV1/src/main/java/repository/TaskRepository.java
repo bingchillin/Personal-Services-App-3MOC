@@ -45,6 +45,8 @@ public class TaskRepository {
 
     public void mettreAJour(Task task) {
         String endpoint = "tasks/" + task.getId();
+        System.out.println(task);
+        System.out.println(task.getId());
         try {
             APIConnector apiConnector = new APIConnector("http://localhost:3000/");
             JSONObject requestBody = new JSONObject();
@@ -52,6 +54,8 @@ public class TaskRepository {
             requestBody.put("title", task.getTitle());
             requestBody.put("content", task.getContent());
             requestBody.put("user_id", task.getUserid());
+
+            System.out.println(requestBody);
 
             String response = apiConnector.put(endpoint, requestBody.toString());
 
