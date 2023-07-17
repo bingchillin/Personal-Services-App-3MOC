@@ -17,10 +17,10 @@ class User {
     required this.lastname,
     required this.firstname,
     required this.birthdate,
-    required this.validated,
-    required this.note,
+    this.validated,
+    this.note,
     required this.profession,
-    required this.dateSignIn,
+    this.dateSignIn,
     required this.role,
     required this.password,
   });

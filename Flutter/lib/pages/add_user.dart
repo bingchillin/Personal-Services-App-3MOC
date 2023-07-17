@@ -19,10 +19,7 @@ class _AddUserWidgetState extends State<AddUserWidget> {
       {'Nom': ''},
       {'Email': ''},
       {'Date de naissance': ''},
-      {'Validé': ''},
-      {'Note': ''},
       {'Profession': ''},
-      {'Date inscription': ''},
       {'Rôle': ''},
       {'Mot de passe': ''},
     ];
@@ -44,7 +41,7 @@ class _AddUserWidgetState extends State<AddUserWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ajouter un utilisateur'),
+        title: const Text('Ajouter un utilisateur'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -63,12 +60,9 @@ class _AddUserWidgetState extends State<AddUserWidget> {
                   lastname: _textControllers[1].text,
                   email: _textControllers[2].text,
                   birthdate: _textControllers[3].text,
-                  validated: int.tryParse(_textControllers[4].text),
-                  note: double.tryParse(_textControllers[5].text),
-                  profession: int.tryParse(_textControllers[6].text),
-                  dateSignIn: _textControllers[7].text,
-                  role: int.tryParse(_textControllers[8].text),
-                  password: _textControllers[9].text,
+                  profession: int.tryParse(_textControllers[4].text),
+                  role: int.tryParse(_textControllers[5].text),
+                  password: _textControllers[6].text,
                 );
 
                 await UserWebServices.createUser(newUser);
