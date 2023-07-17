@@ -37,6 +37,7 @@ public class Accueil implements Initializable {
 
     public Accueil(User u) {
         this.user = u;
+        System.out.println("Accueil" + u);
     }
 
     @Override

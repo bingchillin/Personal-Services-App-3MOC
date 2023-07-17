@@ -15,8 +15,6 @@
         <menus>
           <Menu id="user" mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#editUserAction" text="Editer" />
-                  <MenuItem mnemonicParsing="false" onAction="#editPasswordAction" text="Changer mdp" />
                   <MenuItem mnemonicParsing="false" onAction="#deconnecterAction" text="Deconnecter" />
             </items>
           </Menu>

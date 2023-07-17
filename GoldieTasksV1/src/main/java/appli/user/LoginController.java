@@ -26,6 +26,7 @@ public class LoginController {
         System.out.println(fldMotDePasse.getText());
         UserRepository userRepository = new UserRepository();
         User u = userRepository.connexion(fldEmail.getText(),fldMotDePasse.getText());
+        System.out.println("login controller" + u);
         if(u != null){
             StartApplication.changeScene("/appli/user/accueil",new Accueil(u));
             System.out.println("User connecté");

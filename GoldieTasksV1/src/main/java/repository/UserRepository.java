@@ -26,10 +26,13 @@ public class UserRepository {
 
             if (response != null) {
                 JSONObject jsonResponse = (JSONObject) JSONValue.parse(response);
-                Object idObject = jsonResponse.get("id");
+                JSONObject userObject = (JSONObject) jsonResponse.get("user");
+                Object idObject = userObject.get("id");
+
                 if (idObject != null) {
                     int userId = ((Long) idObject).intValue();
                     user = new User(userId);
+                    System.out.println(user);
                 }
 
             }
