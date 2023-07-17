@@ -44,21 +44,25 @@ public class Form implements Initializable {
     @FXML
     void SaveAction(ActionEvent event) {
         TaskRepository taskRepository = new TaskRepository();
-        if (task == null) {
-            task = new Task(Integer.parseInt(fldType.getText()), userConnecte.getIdUser(), fldTitle.getText(), fldContent.getText());
-            taskRepository.sauvegarder(task);
-            StartApplication.changeScene("/appli/user/Accueil", new Accueil(this.userConnecte));
+        int type = Integer.parseInt(fldType.getText());
+        String title = fldTitle.getText();
+        String content = fldContent.getText();
 
+        if (task == null) {
+            // Création d'une nouvelle tâche
+            Task newTask = new Task(type, userConnecte.getIdUser(), title, content);
+            taskRepository.sauvegarder(newTask);
         } else {
-            this.task.setTitle(fldTitle.getText());
-            this.task.setType(Integer.parseInt(fldType.getText()));
-            this.task.setContent(fldContent.getText());
-            taskRepository.sauvegarder(task);
-            StartApplication.changeScene("/appli/user/Accueil", new Accueil(this.userConnecte));
+            // Modification d'une tâche existante
+            task.setType(type);
+            task.setTitle(title);
+            task.setContent(content);
+            taskRepository.mettreAJour(task);
         }
 
-
+        StartApplication.changeScene("/appli/user/accueil", new Accueil(this.userConnecte));
     }
+
 
     @FXML
     void backAction(ActionEvent event) {

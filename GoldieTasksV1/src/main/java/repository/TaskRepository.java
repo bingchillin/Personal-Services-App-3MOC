@@ -43,6 +43,27 @@ public class TaskRepository {
         }
     }
 
+    public void mettreAJour(Task task) {
+        String endpoint = "tasks/" + task.getId();
+        try {
+            APIConnector apiConnector = new APIConnector("http://localhost:3000/");
+            JSONObject requestBody = new JSONObject();
+            requestBody.put("type", task.getType());
+            requestBody.put("title", task.getTitle());
+            requestBody.put("content", task.getContent());
+            requestBody.put("user_id", task.getUserid());
+
+            String response = apiConnector.put(endpoint, requestBody.toString());
+
+            if (response != null) {
+                System.out.println("Task updated successfully");
+            } else {
+                System.out.println("Failed to update task");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
     public List<Task> getTasksByUserId(int userId) {
