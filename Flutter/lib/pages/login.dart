@@ -13,19 +13,37 @@ class _LoginWidgetState extends State<LoginWidget> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  Future<void> _loginUser() async {
+  void _loginUser() async {
     final email = _emailController.text;
     final password = _passwordController.text;
 
     try {
-      await UserWebServices.loginUser(email, password);
-      // Connexion réussie, naviguer vers la page principale
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const MyNavigationWidget(),
-        ),
-      );
+      final loggedInUser = await UserWebServices.loginUser(email, password);
+
+      if (loggedInUser.role != 1) {
+        // Le rôle n'est pas autorisé, afficher un message d'erreur
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: const Text('Erreur de connexion'),
+            content: const Text('Vous n\'êtes pas autorisé à accéder à cette page.'),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('OK'),
+              ),
+            ],
+          ),
+        );
+      } else {
+        // Connexion réussie, naviguer vers la page principale
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const MyNavigationWidget(),
+          ),
+        );
+      }
     } catch (error) {
       // Gérer les erreurs de connexion
       showDialog(
@@ -44,6 +62,7 @@ class _LoginWidgetState extends State<LoginWidget> {
       );
     }
   }
+
 
   @override
   Widget build(BuildContext context) {
