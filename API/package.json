@@ -30,7 +30,7 @@
     "typescript": "^5.0.4"
   },
   "scripts": {
-    "start_node": "nodemon --exec ts-node src/index.ts",
+    "start_node": "npm install && nodemon --exec ts-node src/index.ts",
     "start": "tsc && node dist/index.js",
     "test": "test",
     "docStart": "docker-compose up",

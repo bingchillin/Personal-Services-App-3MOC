@@ -1,29 +1,29 @@
-import { Requete,validateRequete } from './Model';
+import { RequeteSub,validateRequeteSub } from './Model';
 import { Pool, PoolConnection } from 'mysql2/promise';
 
 import db from '../services/mysql';
 
-export const RequeteRepository = {
+export const RequeteSubRepository = {
 
-  getAll: async (): Promise<Requete[]> => {
+  getAll: async (): Promise<RequeteSub[]> => {
     try {
       const connection: PoolConnection = await db.getConnection();
-      const [rows] = await connection.query('SELECT * FROM requetes');
-      const requetes = rows as any;
-      return requetes;
+      const [rows] = await connection.query('SELECT * FROM requetes_inscriptions');
+      const requetesSub = rows as any;
+      return requetesSub;
     } catch (error) {
       throw error;
     }
   },
 
-  getRequetesById: async (id: String): Promise<Requete | null> => {
+  getRequetesSubById: async (id: String): Promise<RequeteSub | null> => {
     try {
       const connection: PoolConnection = await db.getConnection();
 
       const [rows] = await connection.query('SELECT * FROM requetes WHERE id = ?', [id]);
 
       if (Array.isArray(rows) && rows.length > 0) {
-        const user: Requete = rows[0] as Requete;
+        const user: RequeteSub = rows[0] as RequeteSub;
         return user;
       } else {
         return null;
@@ -34,15 +34,15 @@ export const RequeteRepository = {
     }
   },
 
-  getRequeteByUser: async (id: String): Promise<Requete[] | null> => {
+  getRequeteSubByUser: async (id: String): Promise<RequeteSub[] | null> => {
     try {
       const connection: PoolConnection = await db.getConnection();
 
-      const [rows] = await connection.query('SELECT * FROM requetes WHERE client = ?', id);
+      const [rows] = await connection.query('SELECT * FROM requetes_inscriptions WHERE user = ?', id);
 
       if (Array.isArray(rows) && rows.length > 0) {
-        const requete = rows as Requete[];
-        return requete;
+        const requeteSub = rows as RequeteSub[];
+        return requeteSub;
       } else {
         return null;
       }
@@ -52,15 +52,15 @@ export const RequeteRepository = {
     }
   },
 
-  getRequeteByType: async (type: String): Promise<Requete[] | null> => {
+  getRequeteSubByRequete: async (id_req: String): Promise<RequeteSub[] | null> => {
     try {
       const connection: PoolConnection = await db.getConnection();
 
-      const [rows] = await connection.query('SELECT * FROM requetes WHERE type = ?', type);
+      const [rows] = await connection.query('SELECT * FROM requetes_inscriptions WHERE requete = ?', id_req);
 
       if (Array.isArray(rows) && rows.length > 0) {
-        const requetes = rows as any;
-        return requetes;
+        const requeteSub = rows as any;
+        return requeteSub;
       } else {
         return null;
       }
@@ -70,11 +70,11 @@ export const RequeteRepository = {
     }
   },
 
-  getValidedRequete: async (bool:String): Promise<Requete[] | null> => {
+  getValidedRequeteSub: async (bool:String): Promise<RequeteSub[] | null> => {
     try {
       const connection: PoolConnection = await db.getConnection();
 
-      const [rows] = await connection.query('SELECT * FROM users WHERE validated = ?', bool);
+      const [rows] = await connection.query('SELECT * FROM requetes_inscriptions WHERE accepted = ?', bool);
 
       if (Array.isArray(rows) && rows.length > 0) {
         const user = rows as any;
@@ -88,16 +88,16 @@ export const RequeteRepository = {
     }
   },
 
-  createRequete: async (requete: Requete): Promise<Requete> => {
+  createRequeteSub: async (requete: RequeteSub): Promise<RequeteSub> => {
     try {
       const connection: PoolConnection = await db.getConnection();
 
-      const { error } = validateRequete(requete);
+      const { error } = validateRequeteSub(requete);
       if (error) {
-        throw new Error('Données requetes invalides');
+        throw new Error('Données requetes inscriptions invalides');
       }
-      const [rows] = await connection.query('INSERT INTO requetes SET ?', requete);
-      const createdRequete: Requete = { ...requete};
+      const [rows] = await connection.query('INSERT INTO requetes_inscriptions SET ?', requete);
+      const createdRequete: RequeteSub = { ...requete};
 
       return createdRequete;
     } catch (error) {
@@ -105,11 +105,11 @@ export const RequeteRepository = {
     }
   },
 
-  updateRequete: async (requete: Requete): Promise<Requete> => {
+  updateRequeteSub: async (requete: RequeteSub,id: String): Promise<RequeteSub> => {
     try {
       const connection: PoolConnection = await db.getConnection();
 
-      await connection.query('UPDATE requetes SET ? WHERE id = ?', [requete, requete.id]);
+      await connection.query('UPDATE requetes_inscriptions SET ? WHERE id = ?', [requete, id]);
 
       return requete;
     } catch (error) {

@@ -121,7 +121,7 @@ export const UserRepository = {
       }
 
       user.password = await bcrypt.hash(user.password, 10);
-      user.dateSignIn = new Date();
+      user.dateSignIn = new Date(Date.now());
 
       const [rows] = await connection.query('INSERT INTO users SET ?', user);
       const createdUser: User = { ...user};
