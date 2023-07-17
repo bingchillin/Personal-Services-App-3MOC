@@ -39,6 +39,11 @@ class NavigationRailWidget extends StatelessWidget {
           selectedIcon: Icon(Icons.person_2_outlined),
           label: Text('Utilisateurs'),
         ),
+        NavigationRailDestination(
+          icon: Icon(Icons.request_page_outlined),
+          selectedIcon: Icon(Icons.request_page_outlined),
+          label: Text('Requêtes'),
+        ),
       ],
     );
   }

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:goldie_studio/webservices/user_futurebuilder.dart';
 
-class UsersWidget extends StatelessWidget {
-  const UsersWidget({super.key});
+class RequestsWidget extends StatelessWidget {
+  const RequestsWidget({super.key});
 
-  static const String routeName = '/users';
+  static const String routeName = '/requests';
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +11,7 @@ class UsersWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
-          child: UserWebServicesFutureBuilder(),
+          child: Text('Requests'),
         ),
       ],
     );
