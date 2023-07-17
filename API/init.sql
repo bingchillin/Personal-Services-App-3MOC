@@ -94,20 +94,9 @@ VALUES ('bob@email.fr',
         1,
         1);
 
-INSERT INTO users (email,
-                   password,
-                   lastname,
-                   firstname,
-                   birthdate,
-                   profession,
-                   role)
-VALUES ('bob2@email.fr',
-        'bob2',
-        'bob2',
-        'bob2',
-        '1990-01-01',
-        1,
-        1);
-
-INSERT INTO type (name)
-VALUES ('A faire'),('En cours'),('Terminé');
+INSERT INTO typetasks (name)
+VALUES ('A faire');
+INSERT INTO typetasks (name)
+VALUES ('En cours');
+INSERT INTO typetasks (name)
+VALUES ('Complétée');
