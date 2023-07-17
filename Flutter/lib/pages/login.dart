@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:goldie_studio/webservices/user/user_class.dart';
+import 'package:goldie_studio/webservices/user/user_webservices.dart';
 import '../main.dart';
-import '../webservices/user/user_webservices.dart';
 
 class LoginWidget extends StatefulWidget {
   const LoginWidget({Key? key}) : super(key: key);
@@ -14,28 +13,27 @@ class _LoginWidgetState extends State<LoginWidget> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  void _loginUser() async {
-    final user = User.loginUser(
-      email: _emailController.text,
-      password: _passwordController.text,
-    );
+  Future<void> _loginUser() async {
+    final email = _emailController.text;
+    final password = _passwordController.text;
 
     try {
-      final loggedInUser = await UserWebServices.loginUser(user);
+      await UserWebServices.loginUser(email, password);
       // Connexion réussie, naviguer vers la page principale
-      // Navigator.pushReplacement(
-      //   context,
-      //   MaterialPageRoute(
-      //     builder: (context) => MyNavigationWidget(user: loggedInUser),
-      //   ),
-      // );
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const MyNavigationWidget(),
+        ),
+      );
     } catch (error) {
       // Gérer les erreurs de connexion
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
           title: const Text('Erreur de connexion'),
-          content: const Text('Échec de la connexion. Veuillez vérifier vos informations.'),
+          content: const Text(
+              'Échec de la connexion. Veuillez vérifier vos informations.'),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
@@ -74,7 +72,7 @@ class _LoginWidgetState extends State<LoginWidget> {
             const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: _loginUser,
-              child: Text('Connexion'),
+              child: const Text('Connexion'),
             ),
           ],
         ),

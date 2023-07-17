@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:goldie_studio/pages/home.dart';
+import 'package:goldie_studio/pages/login.dart';
 import 'package:goldie_studio/pages/req_list.dart';
 import 'package:goldie_studio/pages/users_list.dart';
 import 'package:goldie_studio/widgets/navigation_rail.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       theme: darkTheme,
-      home: const MyNavigationWidget(),
+      home: const LoginWidget(),
       debugShowCheckedModeBanner: false,
       initialRoute: MyHomePage.routeName,
       routes: {

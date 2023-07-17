@@ -89,27 +89,38 @@ class UserWebServices {
   }
 
   //login user
-  static Future<User> loginUser(User user) async {
+  static Future<User> loginUser(String email, String password) async {
     try {
+      final body = {
+        "email": email,
+        "password": password,
+      };
+
       final response = await http.post(
         Uri.parse('http://localhost:3000/login'),
         headers: {'Content-Type': 'application/json'},
-        body: json.encode(user.toJson()),
+        body: json.encode(body),
       );
+
       switch (response.statusCode) {
         case 200:
-          final Map<String, dynamic> userJson =
-              json.decode(response.body) as Map<String, dynamic>;
-          return User.fromJson(userJson);
+          final Map<String, dynamic>? userJson = json.decode(response.body) as Map<String, dynamic>?;
+          if (userJson != null) {
+            final user = User.fromJson(userJson['user']);
+            return user;
+          } else {
+            throw Exception('Failed to decode user data');
+          }
         default:
           debugPrint(response.statusCode.toString());
-          debugPrint(response.body);
-          debugPrint(json.encode(user.toJson()));
+          debugPrint(json.encode(body));
           throw Exception('Failed to login user');
       }
     } catch (error) {
       debugPrint('Error login user : $error');
+      debugPrint(email + password);
       rethrow;
     }
   }
+
 }

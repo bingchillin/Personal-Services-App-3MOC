@@ -1,6 +1,6 @@
 class User {
   final int? id;
-  final String? email;
+  final String email;
   final String? lastname;
   final String? firstname;
   final String? birthdate;
@@ -9,7 +9,7 @@ class User {
   final int? profession;
   final int? role;
   final String? dateSignIn;
-  final String? password;
+  final String password;
 
   User({
     this.id,
