@@ -74,12 +74,12 @@ class UserWebServices {
         body: json.encode(user.toJson()),
       );
       switch (response.statusCode) {
-        case 201:
+        case 200:
           return;
         default:
           debugPrint(response.statusCode.toString());
-          debugPrint(response.body);
-          debugPrint(json.encode(user.toJson()));
+          //debugPrint(response.body);
+          //debugPrint(json.encode(user.toJson()));
           throw Exception('Failed to create user');
       }
     } catch (error) {
