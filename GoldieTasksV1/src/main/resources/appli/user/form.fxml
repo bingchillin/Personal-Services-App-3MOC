@@ -19,7 +19,7 @@
         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Type" />
         <TextField fx:id="fldType" />
         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Contenu" />
-        <TextField fx:id="fldContent" />
+        <TextField fx:id="fldContent" prefHeight="62.0" prefWidth="210.0" />
         <Label fx:id="lblErreur" alignment="CENTER" maxWidth="1.7976931348623157E308" textFill="RED" />
         <Button mnemonicParsing="false" onAction="#SaveAction" text="Sauvegarder" />
         <Button mnemonicParsing="false" onAction="#backAction" text="Retour" />

@@ -2,7 +2,7 @@ import Joi from 'joi';
 
 export interface Task {
     id: number;
-    user_id: string;
+    user_id: number;
     title: string;
     type: number;
     content: string;

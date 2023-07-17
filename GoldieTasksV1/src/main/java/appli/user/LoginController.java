@@ -25,11 +25,11 @@ public class LoginController {
         System.out.println(fldEmail.getText());
         System.out.println(fldMotDePasse.getText());
         UserRepository userRepository = new UserRepository();
-        User u = userRepository.connexion(fldEmail.getText(),fldMotDePasse.getText());
-        if(u != null){
-            StartApplication.changeScene("/appli/user/accueil",new Accueil(u));
+        User u = userRepository.connexion(fldEmail.getText(), fldMotDePasse.getText());
+        if (u != null) {
+            StartApplication.changeScene("/appli/user/accueil", new Accueil(u));
             System.out.println("User connecté");
-        }else{
+        } else {
             System.out.println("erreur");
             lblErreur.setText("erreur");
         }

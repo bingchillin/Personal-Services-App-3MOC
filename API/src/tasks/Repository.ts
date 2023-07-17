@@ -81,7 +81,8 @@ export const TaskRepository = {
       }
 
       const [rows] = await connection.query('INSERT INTO tasks SET ?', task);
-      const createdTask: Task = { ...task};
+      const id = await connection.query('SELECT LAST_INSERT_ID()');
+      const createdTask: Task = { ...task, id: (id as unknown) as number };
 
       return createdTask;
     } catch (error) {
