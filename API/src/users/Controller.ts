@@ -62,11 +62,20 @@ usersController.get("/valide/:bool", async (req, res) => {
 
 usersController.delete("/:id", async (req, res) => {
     try{
-        await UserRepository.deleteUser(req.params.id);
-        res.status(200).send({
-            status: 200,
-            message: "Deleted"
-        })
+        const user = await UserRepository.getUserById(req.params.id);
+
+        if (user) {
+            await UserRepository.deleteUser(req.params.id);
+            res.status(200).send({
+                status: 200,
+                message: "Deleted"
+            })
+        }else{
+            res.status(404).send({
+                status: 404,
+                message: "Not found!"
+            })
+        }
     }catch(error){
         res.status(404).send({
             status: 404,
