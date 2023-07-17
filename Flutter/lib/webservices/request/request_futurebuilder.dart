@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:goldie_studio/webservices/request/request_class.dart';
 import 'package:goldie_studio/webservices/request/request_webservices.dart';
+import '../../pages/req_details.dart';
 import '../../widgets/title.dart';
 
 class RequestsWidget extends StatelessWidget {
@@ -170,14 +171,14 @@ class _RequestWebServicesFutureBuilderState
                               children: [
                                 IconButton(
                                   onPressed: () {
-                                    // Navigator.push(
-                                    //   context,
-                                    //   MaterialPageRoute(
-                                    //     builder: (context) =>
-                                    //         RequestDetailsWidget(
-                                    //             request: request),
-                                    //   ),
-                                    // );
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            RequestDetailsWidget(
+                                                request: request),
+                                      ),
+                                    );
                                   },
                                   icon: const Icon(Icons.edit),
                                   color: Colors.blue,

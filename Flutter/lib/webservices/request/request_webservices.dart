@@ -12,7 +12,6 @@ class RequestWebServices {
         case 200:
           final List<dynamic> requetesJson =
               json.decode(response.body) as List<dynamic>;
-          debugPrint(response.body);
 
           return requetesJson.map((requestJson) {
             return Request.fromJson(requestJson as Map<String, dynamic>);
