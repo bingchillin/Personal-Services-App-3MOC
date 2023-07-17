@@ -115,13 +115,21 @@ export const UserRepository = {
     try {
       const connection: PoolConnection = await db.getConnection();
 
+      delete user.id; 
+      user.note = 0;
+      user.validated = false;
+      user.dateSignIn = new Date();
+
+      debug(user);
+
       const { error } = validateUser(user);
       if (error) {
         throw new Error('Données utilisateur invalides');
       }
 
+      
       user.password = await bcrypt.hash(user.password, 10);
-      user.dateSignIn = new Date();
+      
 
       const [rows] = await connection.query('INSERT INTO users SET ?', user);
       const createdUser: User = { ...user};
@@ -134,11 +142,14 @@ export const UserRepository = {
 
   updateUser: async (user: User,id:String): Promise<User> => {
     try {
+      debug(user);
+      debug(id);
+
       const connection: PoolConnection = await db.getConnection();
 
       await connection.query('UPDATE users SET ? WHERE id = ?', [user, id]);
 
-      return user;
+      return user; 
     } catch (error) {
       throw error;
     }

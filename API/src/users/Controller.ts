@@ -87,12 +87,14 @@ usersController.delete("/:id", async (req, res) => {
 usersController.post("/", async (req, res) => {
 
     try{
+        debug(req.body);
         const user = await UserRepository.createUser(req.body);
         res.status(200).send(user);
     }catch(error){
         res.status(400).send({
             status: 400,
-            message: "Bad user data"
+            message: "Bad user data",
+            error: error
         })
     }
     

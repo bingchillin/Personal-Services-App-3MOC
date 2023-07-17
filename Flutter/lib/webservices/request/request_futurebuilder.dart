@@ -145,8 +145,6 @@ class _RequestWebServicesFutureBuilderState
                             Spacer(),
                             Expanded(child: TitleWidget(title: 'Timer')),
                             Spacer(),
-                            Expanded(child: TitleWidget(title: 'Acceptée')),
-                            Spacer(),
                             Expanded(child: TitleWidget(title: 'Complétée')),
                             Spacer(),
                           ],
@@ -164,8 +162,6 @@ class _RequestWebServicesFutureBuilderState
                             Expanded(child: Text('${request.title}')),
                             const Spacer(),
                             Expanded(child: Text('${request.timer}')),
-                            const Spacer(),
-                            Expanded(child: Text('${request.medicalNeed}')),
                             const Spacer(),
                             Expanded(child: Text('${request.done}')),
                             ButtonBar(

@@ -1,7 +1,7 @@
 import Joi from 'joi';
 
 export interface User {
-    id: number;
+    id?: number;
     email: string;
     password: string;
     lastname: string;
@@ -9,6 +9,8 @@ export interface User {
     birthdate: Date;
     dateSignIn: Date;
     profession: number;
+    validated: boolean;
+    note: number;
     role: number;
 }
 
@@ -19,7 +21,9 @@ export const UserValidationSchema = Joi.object({
     firstname: Joi.string().required(),
     birthdate: Joi.date().required(),
     dateSignIn: Joi.date().optional(),
+    note: Joi.number().optional(),
     profession: Joi.number().required(),
+    validated: Joi.boolean().required(),
     role: Joi.number().required()
 });
 

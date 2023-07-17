@@ -88,15 +88,17 @@ requetesController.delete("/:id", async (req, res) => {
 requetesController.post("/", async (req, res) => {
 
     try{
+        
         const requete = await RequeteRepository.createRequete(req.body);
         res.status(200).send(requete);
     }catch(error){
         res.status(400).send({
             status: 400,
-            message: "Bad requete data"
+            message: "Bad requete data",
+            error: error
         })
     }
-    
+     
 })
 
 requetesController.put("/:id", async (req, res) => {

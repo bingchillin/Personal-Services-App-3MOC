@@ -55,7 +55,7 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
         child: Column(
           children: [
             for (var i = 0; i < _fieldList.length; i++)
-              _fieldList[i].keys.first == 'Date inscription'
+              _fieldList[i].keys.first == 'Date inscription' || _fieldList[i].keys.first == "Password"
                   ? TextFormField(
                 controller: _textControllers[i],
                 decoration: InputDecoration(

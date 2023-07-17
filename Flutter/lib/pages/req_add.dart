@@ -23,7 +23,6 @@ class _RequestAddWidgetState extends State<RequestAddWidget> {
       {'Type': ''},
       {'Titre': ''},
       {'Place': ''},
-      {'Besoin Medical': ''},
     ];
 
     _textControllers = _fieldList
@@ -63,7 +62,6 @@ class _RequestAddWidgetState extends State<RequestAddWidget> {
                   type: int.tryParse(_textControllers[2].text),
                   title: _textControllers[3].text,
                   slots: int.tryParse(_textControllers[4].text),
-                  medicalNeed: int.tryParse(_textControllers[5].text),
                 );
 
                 await RequestWebServices.createRequest(newRequest);

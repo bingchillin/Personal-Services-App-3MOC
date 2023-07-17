@@ -75,12 +75,14 @@ class RequestWebServices {
         headers: {'Content-Type': 'application/json'},
         body: json.encode(request.toJson()),
       );
+
+      debugPrint(json.encode(request.toJson()));
       switch (response.statusCode) {
         case 200:
           return;
         default:
-          debugPrint(response.statusCode.toString());
-          debugPrint(response.body);
+          //debugPrint(response.statusCode.toString());
+          //debugPrint(response.body);
           throw Exception('Failed to create request');
       }
     } catch (error) {
