@@ -6,20 +6,21 @@ import 'dart:convert';
 class RequestWebServices {
   static Future<List<Request>> getAllRequests() async {
     try {
-      final response = await http.get(Uri.parse('http://localhost:3000/requests'));
+      final response = await http.get(Uri.parse('http://localhost:3000/requetes'));
       switch (response.statusCode) {
         case 200:
-          final List<dynamic> requestsJson =
+          final List<dynamic> requetesJson =
               json.decode(response.body) as List<dynamic>;
 
-          return requestsJson.map((requestJson) {
+          return requetesJson.map((requestJson) {
             return Request.fromJson(requestJson as Map<String, dynamic>);
           }).toList();
         default:
-          throw Exception('Failed to load requests');
+          debugPrint(response.statusCode.toString());
+          throw Exception('Failed to load requetes');
       }
     } catch (error) {
-      debugPrint('Error getting all requests : $error');
+      debugPrint('Error getting all requetes : $error');
       rethrow;
     }
   }
@@ -28,7 +29,7 @@ class RequestWebServices {
   static Future<void> deleteRequest(int id) async {
     try {
       final response =
-          await http.delete(Uri.parse('http://localhost:3000/requests/$id'));
+          await http.delete(Uri.parse('http://localhost:3000/requetes/$id'));
       switch (response.statusCode) {
         case 200:
           return;
@@ -48,7 +49,7 @@ class RequestWebServices {
   static Future<void> updateRequest(Request request) async {
     try {
       final response = await http.put(
-        Uri.parse('http://localhost:3000/requests/${request.id}'),
+        Uri.parse('http://localhost:3000/requetes/${request.id}'),
         headers: {'Content-Type': 'application/json'},
         body: json.encode(request.toJson()),
       );

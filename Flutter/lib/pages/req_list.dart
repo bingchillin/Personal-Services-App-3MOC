@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goldie_studio/webservices/request/request_futurebuilder.dart';
 
 class RequestsWidget extends StatelessWidget {
   const RequestsWidget({super.key});
@@ -11,7 +12,7 @@ class RequestsWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
-          child: Text('Requests'),
+          child: RequestWebServicesFutureBuilder(),
         ),
       ],
     );
