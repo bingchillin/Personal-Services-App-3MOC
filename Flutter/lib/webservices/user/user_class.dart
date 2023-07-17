@@ -14,14 +14,14 @@ class User {
   User({
     this.id,
     required this.email,
-    required this.lastname,
-    required this.firstname,
-    required this.birthdate,
+    this.lastname,
+    this.firstname,
+    this.birthdate,
     this.validated,
     this.note,
-    required this.profession,
+    this.profession,
     this.dateSignIn,
-    required this.role,
+    this.role,
     required this.password,
   });
 
@@ -56,6 +56,16 @@ class User {
       'role': role,
       'password':password
     };
+  }
+
+  factory User.loginUser({
+    required String email,
+    required String password,
+  }) {
+    return User(
+      email: email,
+      password: password,
+    );
   }
 
   @override
