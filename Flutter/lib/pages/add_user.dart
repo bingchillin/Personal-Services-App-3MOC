@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:goldie_studio/webservices/user_class.dart';
-import 'package:goldie_studio/webservices/user_webservices.dart';
+import 'package:goldie_studio/webservices/user/user_class.dart';
+import 'package:goldie_studio/webservices/user/user_webservices.dart';
 
 class AddUserWidget extends StatefulWidget {
   const AddUserWidget({Key? key}) : super(key: key);

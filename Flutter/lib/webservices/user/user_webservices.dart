@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:goldie_studio/webservices/user_class.dart';
+import 'package:goldie_studio/webservices/user/user_class.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 

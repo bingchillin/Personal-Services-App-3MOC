@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:goldie_studio/pages/details_user.dart';
-import 'package:goldie_studio/webservices/user_class.dart';
-import 'package:goldie_studio/webservices/user_webservices.dart';
+import 'package:goldie_studio/webservices/user/user_class.dart';
+import 'package:goldie_studio/webservices/user/user_webservices.dart';
 import 'package:goldie_studio/widgets/title.dart';
 
-import '../pages/add_user.dart';
+import '../../pages/add_user.dart';
 
 class UsersWidget extends StatelessWidget {
   const UsersWidget({Key? key}) : super(key: key);
