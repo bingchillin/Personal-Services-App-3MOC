@@ -88,4 +88,29 @@ class UserWebServices {
     }
   }
 
+  //login user
+  static Future<User> loginUser(User user) async {
+    try {
+      final response = await http.post(
+        Uri.parse('http://localhost:3000/login'),
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode(user.toJson()),
+      );
+      switch (response.statusCode) {
+        case 200:
+          final Map<String, dynamic> userJson =
+              json.decode(response.body) as Map<String, dynamic>;
+          return User.fromJson(userJson);
+        default:
+          debugPrint(response.statusCode.toString());
+          debugPrint(response.body);
+          debugPrint(json.encode(user.toJson()));
+          throw Exception('Failed to login user');
+      }
+    } catch (error) {
+      debugPrint('Error login user : $error');
+      rethrow;
+    }
+  }
+
 }
