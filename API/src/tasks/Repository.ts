@@ -90,11 +90,11 @@ export const TaskRepository = {
     }
   },
 
-  updateTask: async (task: Task): Promise<Task> => {
+  updateTask: async (task: Task,id: String): Promise<Task> => {
     try {
       const connection: PoolConnection = await db.getConnection();
 
-      await connection.query('UPDATE tasks SET ? WHERE id = ?', [task, task.id]);
+      await connection.query('UPDATE tasks SET ? WHERE id = ?', [task, id]);
 
       return task;
     } catch (error) {

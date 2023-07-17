@@ -96,7 +96,7 @@ tasksController.put("/:id", async (req, res) => {
         return
     }
 
-    const updatedTask = await TaskRepository.updateTask(req.body);
+    const updatedTask = await TaskRepository.updateTask(req.body, req.params.id);
 
     res.status(200).send(updatedTask)
 })
