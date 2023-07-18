@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:goldie_studio/webservices/user_futurebuilder.dart';
+import 'package:goldie_studio/webservices/user/user_futurebuilder.dart';
 
 class UsersWidget extends StatelessWidget {
   const UsersWidget({super.key});
@@ -11,7 +11,6 @@ class UsersWidget extends StatelessWidget {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        //UserWidget(),
         Expanded(
           child: UserWebServicesFutureBuilder(),
         ),

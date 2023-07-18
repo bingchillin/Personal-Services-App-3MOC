@@ -93,11 +93,17 @@ export const RequeteRepository = {
     try {
       const connection: PoolConnection = await db.getConnection();
 
+      delete requete.id;
+      requete.done = false;
+
       const { error } = validateRequete(requete);
 
       if (error) {
         throw new Error('Données requetes invalides ' + error);
+
       }
+
+      
 
       const [rows] = await connection.query('INSERT INTO requetes SET ?', requete);
       const createdRequete: Requete = { ...requete};

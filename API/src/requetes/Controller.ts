@@ -62,11 +62,21 @@ requetesController.get("/valide/:bool", async (req, res) => {
 
 requetesController.delete("/:id", async (req, res) => {
     try{
-        await RequeteRepository.deleteRequete(req.params.id);
-        res.status(200).send({
-            status: 200,
-            message: "Deleted"
-        })
+        const requete = await RequeteRepository.getRequetesById(req.params.id);
+        
+        if(requete){
+            await RequeteRepository.deleteRequete(req.params.id);
+            res.status(200).send({
+                status: 200,
+                message: "Deleted"
+            })
+        }else{
+            res.status(404).send({
+                status: 404,
+                message: "Not found"
+            })
+        }
+
     }catch(error){
         res.status(404).send({
             status: 404,
@@ -79,15 +89,17 @@ requetesController.delete("/:id", async (req, res) => {
 requetesController.post("/", async (req, res) => {
 
     try{
+        
         const requete = await RequeteRepository.createRequete(req.body);
         res.status(200).send(requete);
     }catch(error){
         res.status(400).send({
             status: 400,
-            message: "Bad requete data"
+            message: "Bad requete data",
+            error: error
         })
     }
-    
+     
 })
 
 requetesController.put("/:id", async (req, res) => {

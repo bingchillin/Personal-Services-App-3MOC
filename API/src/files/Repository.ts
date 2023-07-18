@@ -48,6 +48,7 @@ export const FileRepository = {
         }
       },
 
+
       getFileById: async (id: String): Promise<File> => {
         try {
           const connection: PoolConnection = await db.getConnection();

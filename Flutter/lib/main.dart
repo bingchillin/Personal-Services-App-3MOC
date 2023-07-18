@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:goldie_studio/pages/details_user.dart';
 import 'package:goldie_studio/pages/home.dart';
+import 'package:goldie_studio/pages/login.dart';
+import 'package:goldie_studio/pages/req_list.dart';
 import 'package:goldie_studio/pages/users_list.dart';
-import 'package:goldie_studio/widgets/side_bar.dart';
-import 'package:goldie_studio/widgets/top_bar.dart';
+import 'package:goldie_studio/widgets/navigation_rail.dart';
+import 'package:goldie_studio/widgets/app_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,11 +36,12 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       theme: darkTheme,
-      home: const MyNavigationWidget(),
+      home: const LoginWidget(),
       debugShowCheckedModeBanner: false,
       initialRoute: MyHomePage.routeName,
       routes: {
         UsersWidget.routeName: (context) => const UsersWidget(),
+        RequestsWidget.routeName: (context) => const RequestsWidget(),
       },
     );
   }
@@ -65,7 +67,7 @@ class _MyNavigationWidgetState extends State<MyNavigationWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const TopBarWidget(),
+      appBar: const AppBarWidget(),
       body: Row(
         children: [
           NavigationRailWidget(
@@ -78,6 +80,7 @@ class _MyNavigationWidgetState extends State<MyNavigationWidget> {
               children: const [
                 MyHomePage(),
                 UsersWidget(),
+                RequestsWidget(),
               ],
             ),
           ),

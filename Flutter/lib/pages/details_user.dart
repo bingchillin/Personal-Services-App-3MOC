@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:goldie_studio/webservices/user_class.dart';
-
-import '../webservices/user_webservices.dart';
+import 'package:goldie_studio/webservices/user/user_class.dart';
+import '../webservices/user/user_webservices.dart';
 
 class UserDetailsWidget extends StatefulWidget {
   final User user;
@@ -29,7 +28,7 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
       {'Profession': widget.user.profession?.toString() ?? ''},
       {'Rôle': widget.user.role?.toString() ?? ''},
       {'Password': widget.user.password?.toString() ?? ''},
-
+      {'Date inscription': convertDate(widget.user.dateSignIn) ?? ''},
     ];
 
     _textControllers = _fieldList
@@ -56,9 +55,19 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
         child: Column(
           children: [
             for (var i = 0; i < _fieldList.length; i++)
-              TextField(
+              _fieldList[i].keys.first == 'Date inscription' || _fieldList[i].keys.first == "Password"
+                  ? TextFormField(
                 controller: _textControllers[i],
-                decoration: InputDecoration(labelText: _fieldList[i].keys.first),
+                decoration: InputDecoration(
+                  labelText: _fieldList[i].keys.first,
+                ),
+                enabled: false,
+              )
+                  : TextField(
+                controller: _textControllers[i],
+                decoration: InputDecoration(
+                  labelText: _fieldList[i].keys.first,
+                ),
               ),
             const SizedBox(height: 16),
             ElevatedButton(
@@ -72,9 +81,9 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                   validated: int.tryParse(_textControllers[4].text),
                   note: double.tryParse(_textControllers[5].text),
                   profession: int.tryParse(_textControllers[6].text),
-                  dateSignIn: _textControllers[7].text,
-                  role: int.tryParse(_textControllers[8].text),
-                  password: _textControllers[9].text,
+                  role: int.tryParse(_textControllers[7].text),
+                  password: _textControllers[8].text,
+                  dateSignIn: convertDateBack(_textControllers[9].text),
                 );
 
                 await UserWebServices.updateUser(updatedUser);

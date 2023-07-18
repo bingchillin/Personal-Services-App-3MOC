@@ -62,8 +62,21 @@ requetesSubController.get("/valide/:bool", async (req, res) => {
 
 requetesSubController.delete("/:id", async (req, res) => {
     try{
-        await RequeteSubRepository.deleteRequete(req.params.id);
-        res.status(200).send()
+
+        const requete = await RequeteRepository.getRequetesById(req.params.id);
+
+        if (requete) {
+            await RequeteRepository.deleteRequete(req.params.id);
+            res.status(200).send({
+                status: 200,
+                message: "Deleted"
+            })
+        } else {
+            res.status(404).send({
+                status: 404,
+                message: "Not found!"
+            })
+        }
     }catch(error){
         res.status(404).send({
             status: 404,

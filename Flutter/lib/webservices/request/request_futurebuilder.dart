@@ -1,76 +1,74 @@
 import 'package:flutter/material.dart';
-import 'package:goldie_studio/pages/details_user.dart';
-import 'package:goldie_studio/webservices/user_class.dart';
-import 'package:goldie_studio/webservices/user_webservices.dart';
-import 'package:goldie_studio/widgets/title.dart';
+import 'package:goldie_studio/webservices/request/request_class.dart';
+import 'package:goldie_studio/webservices/request/request_webservices.dart';
+import '../../pages/req_add.dart';
+import '../../pages/req_details.dart';
+import '../../widgets/title.dart';
 
-import '../pages/add_user.dart';
-
-class UsersWidget extends StatelessWidget {
-  const UsersWidget({Key? key}) : super(key: key);
-
-  static const String routeName = '/users';
+class RequestsWidget extends StatelessWidget {
+  const RequestsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const UserWebServicesFutureBuilder();
+    return const RequestWebServicesFutureBuilder();
   }
 }
 
-class UserWebServicesFutureBuilder extends StatefulWidget {
-  const UserWebServicesFutureBuilder({Key? key}) : super(key: key);
+class RequestWebServicesFutureBuilder extends StatefulWidget {
+  const RequestWebServicesFutureBuilder({Key? key}) : super(key: key);
 
   @override
-  State<UserWebServicesFutureBuilder> createState() =>
-      _UserWebServicesFutureBuilderState();
+  State<RequestWebServicesFutureBuilder> createState() =>
+      _RequestWebServicesFutureBuilderState();
 }
 
-class _UserWebServicesFutureBuilderState
-    extends State<UserWebServicesFutureBuilder> {
-  Future<List<User>>? _usersFuture;
-  List<User> _users = [];
-  List<User> _filteredUsers = [];
+class _RequestWebServicesFutureBuilderState
+    extends State<RequestWebServicesFutureBuilder> {
+  Future<List<Request>>? _requestsFuture;
+  List<Request> _requests = [];
+  List<Request> _filteredRequests = [];
   final TextEditingController _searchController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    _usersFuture = UserWebServices.getAllUsers().then((users) {
-      _users = users;
-      _filteredUsers = users;
-      return users;
+    _requestsFuture = RequestWebServices.getAllRequests().then((requests) {
+      debugPrint('requests: $requests');
+      _requests = requests;
+      _filteredRequests = requests;
+      return requests;
     });
   }
 
-  void _deleteUser(int? id) {
+  void _deleteRequest(int? id) {
     if (id != null) {
       setState(() {
-        _usersFuture = UserWebServices.deleteUser(id).then((_) {
-          return UserWebServices.getAllUsers().then((users) {
-            _users = users;
-            _filteredUsers = users;
-            return users;
+        _requestsFuture = RequestWebServices.deleteRequest(id).then((_) {
+          return RequestWebServices.getAllRequests().then((requests) {
+            _requests = requests;
+            _filteredRequests = requests;
+            return requests;
           });
         });
       });
     }
   }
 
-  void updateUsers() {
+  void updateRequests() {
     setState(() {
-      _usersFuture = UserWebServices.getAllUsers().then((users) {
-        _users = users;
-        _filteredUsers = users;
-        return users;
+      _requestsFuture = RequestWebServices.getAllRequests().then((requests) {
+        _requests = requests;
+        _filteredRequests = requests;
+        return requests;
       });
     });
   }
 
-  void _updateFilteredUsers(String searchText) {
+  void _updateFilteredRequests(String searchText) {
     setState(() {
-      _filteredUsers = _users
-          .where((user) =>
-              user.email?.toLowerCase().contains(searchText.toLowerCase()) ??
+      _filteredRequests = _requests
+          .where((request) =>
+              request.title?.toLowerCase().contains(searchText.toLowerCase()) ??
               false)
           .toList();
     });
@@ -84,27 +82,27 @@ class _UserWebServicesFutureBuilderState
         children: [
           TextField(
             controller: _searchController,
-            onChanged: _updateFilteredUsers,
+            onChanged: _updateFilteredRequests,
             decoration: const InputDecoration(
-              hintText: 'Rechercher par email',
+              hintText: 'Rechercher par titre',
             ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                onPressed: updateUsers,
+                onPressed: updateRequests,
                 icon: const Icon(Icons.refresh),
               ),
               IconButton(
-                onPressed:() {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          AddUserWidget(),
-                    ),
-                  );
+                onPressed: () {
+                   Navigator.push(
+                     context,
+                     MaterialPageRoute(
+                       builder: (context) =>
+                           const RequestAddWidget(),
+                     ),
+                   );
                 },
                 icon: const Icon(Icons.add),
               ),
@@ -112,8 +110,8 @@ class _UserWebServicesFutureBuilderState
           ),
           const SizedBox(height: 16),
           Expanded(
-            child: FutureBuilder<List<User>>(
-              future: _usersFuture,
+            child: FutureBuilder<List<Request>>(
+              future: _requestsFuture,
               builder: (context, snapshot) {
                 if (snapshot.hasError) {
                   return Center(
@@ -127,13 +125,14 @@ class _UserWebServicesFutureBuilderState
                   );
                 }
 
-                final users = snapshot.data;
-                if (users == null || users.isEmpty) {
-                  return const Center(child: Text('No users'));
+                final requests = snapshot.data;
+                if (requests == null || requests.isEmpty) {
+                  return const Center(child: Text('No requests'));
                 }
 
                 return ListView.builder(
-                  itemCount: _filteredUsers.length + 1, // +1 for the header row
+                  itemCount: _filteredRequests.length + 1,
+                  // +1 for the header row
                   itemBuilder: (context, index) {
                     if (index == 0) {
                       // Header row
@@ -142,33 +141,29 @@ class _UserWebServicesFutureBuilderState
                           children: [
                             Expanded(child: TitleWidget(title: 'ID')),
                             Spacer(),
-                            Expanded(child: TitleWidget(title: 'Prénom')),
+                            Expanded(child: TitleWidget(title: 'Titre')),
                             Spacer(),
-                            Expanded(child: TitleWidget(title: 'Profession')),
+                            Expanded(child: TitleWidget(title: 'Timer')),
                             Spacer(),
-                            Expanded(child: TitleWidget(title: 'Rôle')),
-                            Spacer(),
-                            Expanded(child: TitleWidget(title: 'Validé')),
+                            Expanded(child: TitleWidget(title: 'Complétée')),
                             Spacer(),
                           ],
                         ),
                       );
                     }
 
-                    final user = _filteredUsers[index - 1];
+                    final request = _filteredRequests[index - 1];
                     return Card(
                       child: ListTile(
                         title: Row(
                           children: [
-                            Expanded(child: Text('${user.id}')),
+                            Expanded(child: Text('${request.id}')),
                             const Spacer(),
-                            Expanded(child: Text('${user.firstname}')),
+                            Expanded(child: Text('${request.title}')),
                             const Spacer(),
-                            Expanded(child: Text('${user.profession}')),
+                            Expanded(child: Text('${request.timer}')),
                             const Spacer(),
-                            Expanded(child: Text('${user.role}')),
-                            const Spacer(),
-                            Expanded(child: Text('${user.validated}')),
+                            Expanded(child: Text('${request.done}')),
                             ButtonBar(
                               children: [
                                 IconButton(
@@ -177,7 +172,8 @@ class _UserWebServicesFutureBuilderState
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            UserDetailsWidget(user: user),
+                                            RequestDetailsWidget(
+                                                request: request),
                                       ),
                                     );
                                   },
@@ -186,7 +182,7 @@ class _UserWebServicesFutureBuilderState
                                 ),
                                 IconButton(
                                   onPressed: () {
-                                    _deleteUser(user.id);
+                                    _deleteRequest(request.id);
                                   },
                                   icon: const Icon(Icons.delete),
                                   color: Colors.red,

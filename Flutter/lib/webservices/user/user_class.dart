@@ -1,6 +1,6 @@
 class User {
   final int? id;
-  final String? email;
+  final String email;
   final String? lastname;
   final String? firstname;
   final String? birthdate;
@@ -9,19 +9,19 @@ class User {
   final int? profession;
   final int? role;
   final String? dateSignIn;
-  final String? password;
+  final String password;
 
   User({
     this.id,
     required this.email,
-    required this.lastname,
-    required this.firstname,
-    required this.birthdate,
-    required this.validated,
-    required this.note,
-    required this.profession,
-    required this.dateSignIn,
-    required this.role,
+    this.lastname,
+    this.firstname,
+    this.birthdate,
+    this.validated,
+    this.note,
+    this.profession,
+    this.dateSignIn,
+    this.role,
     required this.password,
   });
 
@@ -56,6 +56,16 @@ class User {
       'role': role,
       'password':password
     };
+  }
+
+  factory User.loginUser({
+    required String email,
+    required String password,
+  }) {
+    return User(
+      email: email,
+      password: password,
+    );
   }
 
   @override
