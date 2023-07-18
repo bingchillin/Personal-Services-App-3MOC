@@ -1,0 +1,90 @@
+/* 
+  Localizable.strings
+  GoldierHelper
+
+  Created by Thanudi Madawala on 18/07/2023.
+  
+*/
+
+/*
+  Localizable.strings
+  ConnectAPI
+
+  Created by Thanudi Madawala on 09/02/2023.
+  
+*/
+
+//TAB BAR
+"controllers.tabbar.allrequest" = "All requests";
+"controllers.tabbar.myrequest" = "My requests";
+"controllers.tabbar.account" = "Account";
+
+
+// HOME
+"controllers.home.login" = "Login";
+"controllers.home.register" = "Register";
+
+// SIGN IN
+"controllers.signin.login" = "Sign in";
+"controllers.signin.signinDescription" = "Sign in to access to this application";
+"controllers.signin.mail" = "Email";
+"controllers.signin.password" = "Password";
+"controllers.signin.signinButton" = "Sign in";
+"controllers.signin.noaccount" = "You don't have an account ? Sign up.";
+
+// SIGN UP
+"controllers.signup.welcome" = "Welcome !";
+"controllers.signup.welcomeDescription" = "Let us guide you.";
+
+"controllers.signup.name" = "Name";
+"controllers.signup.lastname" = "Last Name";
+"controllers.signup.mail" = "Type in your email";
+"controllers.signup.address" = "Postal address";
+"controllers.signup.city" = "City";
+"controllers.signup.zipcode" = "Zip code";
+"controllers.signup.password" = "Password";
+
+"controllers.signup.signUpButton" = "Sign up";
+"controllers.signup.alreadyaccount" = "You already have an account ? Sign in";
+
+
+// TOP BAR
+
+"topbar.today" = "Today";
+"topbar.logout" = "Logout";
+
+//HOMEPAGE
+
+"controllers.mainpages.homepage" = "Suggestion of the Day";
+//TRAINING
+
+"controllers.mainpages.training.program" = "My Programs";
+"controllers.mainpages.training.allprogram" = "JYM Programs";
+
+// NUTRITION
+
+"controllers.mainpages.nutrition.createbutton" = "Create";
+"controllers.mainpages.nutrition.recipelabel" = "My recipes";
+"controllers.mainpages.nutrition.allrecipelabel" = "Recipes from JYM's subscribers";
+
+//Recipe
+
+"controllers.mainpages.nutrition.createrecipe.name" = "Name of the recipe";
+"controllers.mainpages.nutrition.createrecipe.timer" = "Preparation time";
+"controllers.mainpages.nutrition.createrecipe.description" = "Description";
+
+"controllers.mainpages.nutrition.createrecipe.createbutton" = "Add ingredients";
+
+"controllers.mainpages.nutrition.createrecipe.createlabel" = "Create a recipe";
+
+// IngredientDetail
+
+"controllers.mainpages.nutrition.ingredientdetail.name" = "Ingredient's name";
+"controllers.mainpages.nutrition.ingredientdetail.quantity" = "Quantity";
+"controllers.mainpages.nutrition.ingredientdetail.weight" = "Weight";
+
+"controllers.mainpages.nutrition.ingredientdetail.createbutton" = "Create recipe";
+
+"controllers.mainpages.nutrition.ingredientdetail.createlabel" = "Add an ingredient";
+
+
