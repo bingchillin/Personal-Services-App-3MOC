@@ -117,6 +117,86 @@ interface OnUserClickListener {
     fun onProductClicked(user: User)
 }
 
-class LoginFragment : Fragment(
+interface OnRequeteClickListener {
+    fun onProductClicked(requete: Requete)
+}
 
-)
+class RequetesListFragment : Fragment() {
+
+    private val requeteAdapter = RequetesAdapter(object : OnRequeteClickListener {
+        override fun onProductClicked(requete: Requete) {
+            // Ouvrir l'écran
+            //findNavController().navigate(ProductsListFragmentDirections.actionProductsListFragmentToProductFragment(product.barcode))
+        }
+    })
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.users_list, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val list = view.findViewById<RecyclerView>(R.id.users_list)
+        list.layoutManager = LinearLayoutManager(requireContext())
+        list.adapter = requeteAdapter
+
+        // Appel de l'API pour récupérer les utilisateurs et les ajouter à la liste data
+        GlobalScope.launch(Dispatchers.Main) {
+            try {
+                val requetes = NetworkManagerRequete.getRequetes().await()
+                requeteAdapter.setData(requetes)
+            } catch (e: Exception) {
+                // Gérer les erreurs ici
+            }
+        }
+    }
+}
+
+class RequetesAdapter(private val callback: OnRequeteClickListener) : RecyclerView.Adapter<RequeteViewHolder>() {
+    private val data = mutableListOf<Requete>()
+
+    // Cette fonction permet de mettre à jour la liste de données avec de nouveaux utilisateurs
+    fun setData(requetes: List<Requete>) {
+        data.clear()
+        data.addAll(requetes)
+        notifyDataSetChanged()
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RequeteViewHolder {
+        return RequeteViewHolder(
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.requetes_list_cell, parent, false)
+        )
+    }
+
+    override fun onBindViewHolder(holder: RequeteViewHolder, position: Int) {
+        Log.d("ESGI", position.toString())
+        val requete = data[position]
+        holder.update(requete)
+        holder.itemView.setOnClickListener {
+            callback.onProductClicked(requete)
+        }
+    }
+
+    override fun getItemCount(): Int {
+        return data.size
+    }
+}
+
+class RequeteViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+
+    private val id: TextView = v.findViewById(R.id.requete_id)
+    private val client: TextView = v.findViewById(R.id.requete_client)
+    private val title: TextView = v.findViewById(R.id.requete_title)
+
+    fun update(requete: Requete) {
+        client.text = requete.client
+        title.text = requete.title
+        id.text = requete.id
+    }
+
+}
