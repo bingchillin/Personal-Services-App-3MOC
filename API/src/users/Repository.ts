@@ -119,8 +119,6 @@ export const UserRepository = {
       user.validated = false;
       user.dateSignIn = new Date(Date.now());
 
-      debug(user);
-
       const { error } = validateUser(user);
       if (error) {
         throw new Error('Données utilisateur invalides');
@@ -141,8 +139,6 @@ export const UserRepository = {
 
   updateUser: async (user: User,id:String): Promise<User> => {
     try {
-      debug(user);
-      debug(id);
 
       const connection: PoolConnection = await db.getConnection();
 

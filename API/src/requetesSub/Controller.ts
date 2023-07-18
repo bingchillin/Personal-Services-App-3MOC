@@ -42,7 +42,7 @@ requetesSubController.get("/user/:id", async (req, res) => {
         })
         return
     }
-
+ 
     res.status(200).send(requetes)
 })
 
@@ -63,10 +63,10 @@ requetesSubController.get("/valide/:bool", async (req, res) => {
 requetesSubController.delete("/:id", async (req, res) => {
     try{
 
-        const requete = await RequeteRepository.getRequetesById(req.params.id);
+        const requete = await RequeteSubRepository.getRequetesSubById(req.params.id);
 
         if (requete) {
-            await RequeteRepository.deleteRequete(req.params.id);
+            await RequeteSubRepository.deleteRequete(req.params.id);
             res.status(200).send({
                 status: 200,
                 message: "Deleted"

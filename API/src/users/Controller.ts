@@ -86,7 +86,6 @@ usersController.delete("/:id", async (req, res) => {
 usersController.post("/", async (req, res) => {
 
     try{
-        debug(req.body);
         const user = await UserRepository.createUser(req.body);
         res.status(200).send(user);
     }catch(error){
