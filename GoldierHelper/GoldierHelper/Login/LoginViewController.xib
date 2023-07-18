@@ -8,8 +8,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="GoldierHelper" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="GoldierHelper" customModuleProvider="target">
             <connections>
+                <outlet property="forgotBtn" destination="1bk-4i-IlH" id="91S-i5-zF4"/>
+                <outlet property="loginBtn" destination="1bk-4i-IlH" id="nc6-fh-Fwk"/>
+                <outlet property="mailTxtField" destination="Vqb-ZE-DOI" id="wGh-Ye-hlg"/>
+                <outlet property="passwordTxtField" destination="Zja-be-lec" id="zdO-Dt-bOo"/>
+                <outlet property="rememberSwitch" destination="jGz-mV-u95" id="S14-xU-aOh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saisissez vos informations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iS-RS-r4h">
-                    <rect key="frame" x="367" y="291" width="447" height="27.5"/>
+                    <rect key="frame" x="367" y="267" width="447" height="27.666666666666686"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="27.5" id="DZi-9N-ctB"/>
                         <constraint firstAttribute="width" constant="447" id="eLo-7t-hmF"/>
@@ -29,7 +34,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adresse email *" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vqb-ZE-DOI">
-                    <rect key="frame" x="278" y="360.5" width="625" height="60"/>
+                    <rect key="frame" x="278" y="336.66666666666669" width="625" height="60"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="625" id="FMf-Nt-EPy"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="625" id="VbO-Ai-Gqv"/>
@@ -41,7 +46,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot de passe *" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zja-be-lec">
-                    <rect key="frame" x="278" y="459" width="625" height="60"/>
+                    <rect key="frame" x="278" y="435" width="625" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="77b-Zj-S1U"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="625" id="jnv-JG-K3e"/>
@@ -53,7 +58,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaU-Ar-WlC">
-                    <rect key="frame" x="315" y="639" width="551" height="65"/>
+                    <rect key="frame" x="315" y="615" width="551" height="65"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="551" id="2gX-Lt-Crk"/>
                         <constraint firstAttribute="height" constant="65" id="Lvb-Ca-9Ce"/>
@@ -66,15 +71,18 @@
                         <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="baseBackgroundColor" red="1" green="0.75634034863945587" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="handleConnect:" destination="-1" eventType="touchUpInside" id="mWg-Vk-W3P"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="J'ai déjà un compte Goldie Helper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfh-Ck-Kq0">
-                    <rect key="frame" x="367" y="137" width="447" height="34"/>
+                    <rect key="frame" x="367" y="113" width="447" height="34"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jGz-mV-u95" userLabel="saveDataSwitch">
-                    <rect key="frame" x="278" y="538" width="49" height="31"/>
+                    <rect key="frame" x="278" y="514" width="49" height="31"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="47" id="QB5-0X-xvh"/>
                         <constraint firstAttribute="height" constant="31" id="RGW-ac-lLE"/>
@@ -82,7 +90,7 @@
                     <color key="onTintColor" red="0.94901960780000005" green="0.56862745100000001" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                 </switch>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Se souvenir de mes informations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgT-NQ-Rkc">
-                    <rect key="frame" x="347" y="543" width="530" height="21"/>
+                    <rect key="frame" x="347" y="519" width="530" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="530" id="JH6-fH-1sZ"/>
                         <constraint firstAttribute="height" constant="21" id="qz6-ep-dYx"/>
@@ -92,7 +100,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bk-4i-IlH">
-                    <rect key="frame" x="477" y="723" width="227" height="35"/>
+                    <rect key="frame" x="477" y="699" width="227" height="79"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Mot de passe oublié ?">
                         <fontDescription key="titleFontDescription" type="system" pointSize="17"/>

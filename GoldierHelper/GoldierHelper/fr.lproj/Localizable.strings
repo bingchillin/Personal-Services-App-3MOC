@@ -1,0 +1,90 @@
+/* 
+  Localizable.strings
+  GoldierHelper
+
+  Created by Thanudi Madawala on 18/07/2023.
+  
+*/
+
+/*
+  Localizable.strings
+  ConnectAPI
+
+  Created by Thanudi Madawala on 09/02/2023.
+  
+*/
+
+//TAB BAR
+"controllers.tabbar.allrequest" = "Les requetes";
+"controllers.tabbar.myrequest" = "Mes requetes";
+"controllers.tabbar.account" = "Compte";
+
+//HOME
+"controllers.home.signin" = "Se connecter";
+"controllers.home.signup" = "S'inscrire";
+
+//SIGN IN
+"controllers.signin.signin" = "Connexion";
+"controllers.signin.signinDescription" = "Connectez-vous pour accéder à l'application";
+"controllers.signin.mail" = "Adresse mail";
+"controllers.signin.password" = "Mot de passe";
+"controllers.signin.signinButton" = "Connexion";
+"controllers.signin.noaccount" = "Vous n'avez pas de compte ? Inscrivez-vous";
+
+//SIGN UP
+
+"controllers.signup.welcome" = "Bienvenue chez nous !";
+"controllers.signup.welcomeDescription" = "Laissez-nous vous guider.";
+
+"controllers.signup.name" = "Prénom";
+"controllers.signup.lastname" = "Nom";
+"controllers.signup.mail" = "Entrez votre adresse e-mail";
+"controllers.signup.address" = "Adresse";
+"controllers.signup.city" = "Ville";
+"controllers.signup.zipcode" = "Code postal";
+"controllers.signup.password" = "Mot de passe";
+
+"controllers.signup.signUpButton" = "S'inscrire";
+"controllers.signup.alreadyaccount" = "Vous avez déjà un compte ? Connectez-vous";
+
+// TOP BAR
+
+"topbar.today" = "Aujourd'hui";
+"topbar.logout" = "Deconnexion";
+
+//HOMEPAGE
+
+"controllers.mainpages.homepage" = "Suggestion of the Day";
+
+//TRAINING
+
+"controllers.mainpages.training.program" = "Mes programmes";
+"controllers.mainpages.training.allprogram" = "Les programmes JYM";
+
+
+// NUTRITION
+
+"controllers.mainpages.nutrition.createbutton" = "Créer";
+"controllers.mainpages.nutrition.recipelabel" = "Mes recettes";
+"controllers.mainpages.nutrition.allrecipelabel" = "Les recettes adhérents JYM";
+
+// Recette
+
+"controllers.mainpages.nutrition.createrecipe.name" = "Nom de la recette";
+"controllers.mainpages.nutrition.createrecipe.timer" = "Temps de préparation";
+"controllers.mainpages.nutrition.createrecipe.description" = "Description";
+
+"controllers.mainpages.nutrition.createrecipe.createbutton" = "Passez aux ingrédients";
+
+"controllers.mainpages.nutrition.createrecipe.createlabel" = "Création de recette";
+
+//IngredientDetail
+
+"controllers.mainpages.nutrition.ingredientdetail.name" = "Nom de l'ingredient";
+"controllers.mainpages.nutrition.ingredientdetail.quantity" = "Quantité";
+"controllers.mainpages.nutrition.ingredientdetail.weight" = "Poids";
+
+"controllers.mainpages.nutrition.ingredientdetail.createbutton" = "Créer la recette";
+
+"controllers.mainpages.nutrition.ingredientdetail.createlabel" = "Ajout des ingrédients";
+

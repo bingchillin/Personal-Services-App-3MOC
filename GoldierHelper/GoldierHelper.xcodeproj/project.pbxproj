@@ -21,6 +21,15 @@
 		2DFF41202A662586008E68D6 /* UserWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF411F2A662586008E68D6 /* UserWebService.swift */; };
 		2DFF41232A662620008E68D6 /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF41222A662620008E68D6 /* UserFactory.swift */; };
 		2DFF41262A662647008E68D6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF41252A662647008E68D6 /* User.swift */; };
+		2DFF412D2A663A90008E68D6 /* AllRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF412B2A663A90008E68D6 /* AllRequestViewController.swift */; };
+		2DFF412E2A663A90008E68D6 /* AllRequestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DFF412C2A663A90008E68D6 /* AllRequestViewController.xib */; };
+		2DFF41312A663AA0008E68D6 /* MyRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF412F2A663AA0008E68D6 /* MyRequestViewController.swift */; };
+		2DFF41322A663AA0008E68D6 /* MyRequestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DFF41302A663AA0008E68D6 /* MyRequestViewController.xib */; };
+		2DFF41352A663AAD008E68D6 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF41332A663AAD008E68D6 /* AccountViewController.swift */; };
+		2DFF41362A663AAD008E68D6 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DFF41342A663AAD008E68D6 /* AccountViewController.xib */; };
+		2DFF413A2A663CEB008E68D6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DFF413C2A663CEB008E68D6 /* Localizable.strings */; };
+		2DFF413F2A663D0B008E68D6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DFF41412A663D0B008E68D6 /* Localizable.strings */; };
+		2DFF41432A663E3B008E68D6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF41422A663E3B008E68D6 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +49,16 @@
 		2DFF411F2A662586008E68D6 /* UserWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWebService.swift; sourceTree = "<group>"; };
 		2DFF41222A662620008E68D6 /* UserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFactory.swift; sourceTree = "<group>"; };
 		2DFF41252A662647008E68D6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2DFF412B2A663A90008E68D6 /* AllRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRequestViewController.swift; sourceTree = "<group>"; };
+		2DFF412C2A663A90008E68D6 /* AllRequestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllRequestViewController.xib; sourceTree = "<group>"; };
+		2DFF412F2A663AA0008E68D6 /* MyRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequestViewController.swift; sourceTree = "<group>"; };
+		2DFF41302A663AA0008E68D6 /* MyRequestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyRequestViewController.xib; sourceTree = "<group>"; };
+		2DFF41332A663AAD008E68D6 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		2DFF41342A663AAD008E68D6 /* AccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
+		2DFF41372A663BE4008E68D6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		2DFF413B2A663CEB008E68D6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2DFF41402A663D0B008E68D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2DFF41422A663E3B008E68D6 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +91,9 @@
 		2DFF40DE2A661E5F008E68D6 /* GoldierHelper */ = {
 			isa = PBXGroup;
 			children = (
+				2DFF412A2A663A5C008E68D6 /* AllRequest */,
+				2DFF41292A663A40008E68D6 /* MyRequest */,
+				2DFF41272A663A17008E68D6 /* Account */,
 				2DFF41242A66262A008E68D6 /* Models */,
 				2DFF41212A662612008E68D6 /* Factories */,
 				2DFF411E2A66256F008E68D6 /* Webservices */,
@@ -82,6 +104,9 @@
 				2DFF40E82A661E60008E68D6 /* Assets.xcassets */,
 				2DFF40EA2A661E60008E68D6 /* LaunchScreen.storyboard */,
 				2DFF40ED2A661E60008E68D6 /* Info.plist */,
+				2DFF413C2A663CEB008E68D6 /* Localizable.strings */,
+				2DFF41412A663D0B008E68D6 /* Localizable.strings */,
+				2DFF41422A663E3B008E68D6 /* Utils.swift */,
 			);
 			path = GoldierHelper;
 			sourceTree = "<group>";
@@ -139,6 +164,33 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		2DFF41272A663A17008E68D6 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				2DFF41332A663AAD008E68D6 /* AccountViewController.swift */,
+				2DFF41342A663AAD008E68D6 /* AccountViewController.xib */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		2DFF41292A663A40008E68D6 /* MyRequest */ = {
+			isa = PBXGroup;
+			children = (
+				2DFF412F2A663AA0008E68D6 /* MyRequestViewController.swift */,
+				2DFF41302A663AA0008E68D6 /* MyRequestViewController.xib */,
+			);
+			path = MyRequest;
+			sourceTree = "<group>";
+		};
+		2DFF412A2A663A5C008E68D6 /* AllRequest */ = {
+			isa = PBXGroup;
+			children = (
+				2DFF412B2A663A90008E68D6 /* AllRequestViewController.swift */,
+				2DFF412C2A663A90008E68D6 /* AllRequestViewController.xib */,
+			);
+			path = AllRequest;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,6 +233,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 2DFF40D32A661E5F008E68D6;
 			productRefGroup = 2DFF40DD2A661E5F008E68D6 /* Products */;
@@ -199,9 +252,14 @@
 			files = (
 				2DFF41182A66217E008E68D6 /* RegisterMainViewController.xib in Resources */,
 				2DFF40EC2A661E60008E68D6 /* LaunchScreen.storyboard in Resources */,
+				2DFF413F2A663D0B008E68D6 /* Localizable.strings in Resources */,
+				2DFF41322A663AA0008E68D6 /* MyRequestViewController.xib in Resources */,
 				2DFF41142A6620FA008E68D6 /* LoginViewController.xib in Resources */,
+				2DFF412E2A663A90008E68D6 /* AllRequestViewController.xib in Resources */,
+				2DFF413A2A663CEB008E68D6 /* Localizable.strings in Resources */,
 				2DFF411D2A662482008E68D6 /* RegisterIdentityViewController.xib in Resources */,
 				2DFF40E92A661E60008E68D6 /* Assets.xcassets in Resources */,
+				2DFF41362A663AAD008E68D6 /* AccountViewController.xib in Resources */,
 				2DFF41022A661FEA008E68D6 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +271,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DFF41312A663AA0008E68D6 /* MyRequestViewController.swift in Sources */,
+				2DFF412D2A663A90008E68D6 /* AllRequestViewController.swift in Sources */,
 				2DFF410D2A662089008E68D6 /* RegisterMainViewController.swift in Sources */,
 				2DFF411C2A662482008E68D6 /* RegisterIdentityViewController.swift in Sources */,
 				2DFF41232A662620008E68D6 /* UserFactory.swift in Sources */,
@@ -221,6 +281,8 @@
 				2DFF40E02A661E5F008E68D6 /* AppDelegate.swift in Sources */,
 				2DFF40FB2A661F65008E68D6 /* HomeViewController.swift in Sources */,
 				2DFF41202A662586008E68D6 /* UserWebService.swift in Sources */,
+				2DFF41352A663AAD008E68D6 /* AccountViewController.swift in Sources */,
+				2DFF41432A663E3B008E68D6 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,8 +293,25 @@
 			isa = PBXVariantGroup;
 			children = (
 				2DFF40EB2A661E60008E68D6 /* Base */,
+				2DFF41372A663BE4008E68D6 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2DFF413C2A663CEB008E68D6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2DFF413B2A663CEB008E68D6 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		2DFF41412A663D0B008E68D6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2DFF41402A663D0B008E68D6 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -242,6 +321,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -302,6 +382,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
