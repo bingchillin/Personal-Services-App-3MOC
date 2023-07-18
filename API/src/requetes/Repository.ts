@@ -24,8 +24,8 @@ export const RequeteRepository = {
       const [rows] = await connection.query('SELECT * FROM requetes WHERE id = ?', [id]);
 
       if (Array.isArray(rows) && rows.length > 0) {
-        const user: Requete = rows[0] as Requete;
-        return user;
+        const requete: Requete = rows[0] as Requete;
+        return requete;
       } else {
         return null;
       }
