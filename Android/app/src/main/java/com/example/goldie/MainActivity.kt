@@ -1,7 +1,17 @@
 package com.example.goldie
 
 import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -16,61 +26,97 @@ import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var loginFragment: LoginFragment
-    private val client = OkHttpClient()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_fragment)
+    }
+}
 
-        // Initialiser le fragment de connexion
-        loginFragment = LoginFragment()
+class UsersListFragment : Fragment() {
 
-        // Afficher le fragment de connexion dans le conteneur de fragments
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, loginFragment)
-            .commit()
+    private val usersAdapter = ProductsAdapter(object : OnUserClickListener {
+        override fun onProductClicked(user: User) {
+            // Ouvrir l'écran
+            //findNavController().navigate(ProductsListFragmentDirections.actionProductsListFragmentToProductFragment(product.barcode))
+        }
+    })
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.users_list, container, false)
     }
 
-    fun login(email: String, password: String) {
-        val jsonBody = JSONObject()
-        jsonBody.put("email", email)
-        jsonBody.put("password", password)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val list = view.findViewById<RecyclerView>(R.id.users_list)
+        list.layoutManager = LinearLayoutManager(requireContext())
+        list.adapter = usersAdapter
 
-        val mediaType = "application/json; charset=utf-8".toMediaType()
-        val requestBody = RequestBody.create(mediaType, jsonBody.toString())
-        val request = Request.Builder()
-            .url("http://192.168.0.110:3000/login")
-            .post(requestBody)
-            .build()
-
-        GlobalScope.launch(Dispatchers.IO) {
+        // Appel de l'API pour récupérer les utilisateurs et les ajouter à la liste data
+        GlobalScope.launch(Dispatchers.Main) {
             try {
-                val response: Response = client.newCall(request).execute()
-                val responseData = response.body?.string()
-                withContext(Dispatchers.Main) {
-                    // Handle the response here on the main thread
-                    if (response.isSuccessful) {
-                        // Login successful, perform necessary actions
-                        // For example, you can parse the responseData if the server returns JSON
-                        val jsonResponse = JSONObject(responseData)
-                        //val token = jsonResponse.getString("token")
-                        // Do something with the token
-                    } else {
-                        // Login failed, display error message
-                        // For example, you can parse the responseData if the server returns JSON
-                        val jsonResponse = JSONObject(responseData)
-                        val errorMessage = jsonResponse.getString("message")
-                        // Show the error message to the user
-                    }
-                }
-            } catch (e: IOException) {
-                e.printStackTrace()
-                withContext(Dispatchers.Main) {
-                    // Handle network errors here on the main thread
-                    // Show an error message to the user
-                }
+                val users = NetworkManagerNew.getUsers().await()
+                usersAdapter.setData(users)
+            } catch (e: Exception) {
+                // Gérer les erreurs ici
             }
         }
     }
 }
+
+class ProductsAdapter(private val callback: OnUserClickListener) : RecyclerView.Adapter<UserViewHolder>() {
+    private val data = mutableListOf<User>()
+
+    // Cette fonction permet de mettre à jour la liste de données avec de nouveaux utilisateurs
+    fun setData(users: List<User>) {
+        data.clear()
+        data.addAll(users)
+        notifyDataSetChanged()
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
+        return UserViewHolder(
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.users_list_cell, parent, false)
+        )
+    }
+
+    override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
+        Log.d("ESGI", position.toString())
+        val user = data[position]
+        holder.update(user)
+        holder.itemView.setOnClickListener {
+            callback.onProductClicked(user)
+        }
+    }
+
+    override fun getItemCount(): Int {
+        return data.size
+    }
+}
+
+
+class UserViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+
+    private val lastname: TextView = v.findViewById(R.id.user_lastname)
+    private val firstname: TextView = v.findViewById(R.id.user_firstname)
+    private val id: TextView = v.findViewById(R.id.user_id)
+
+    fun update(user: User) {
+        lastname.text = user.lastname
+        firstname.text = user.firstname
+        id.text = user.id
+    }
+
+}
+
+interface OnUserClickListener {
+    fun onProductClicked(user: User)
+}
+
+class LoginFragment : Fragment(
+
+)

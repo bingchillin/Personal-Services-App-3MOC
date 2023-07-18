@@ -9,7 +9,7 @@ export const RequeteRepository = {
   getAll: async (): Promise<Requete[]> => {
     try {
       const connection: PoolConnection = await db.getConnection();
-      const [rows] = await connection.query('SELECT * FROM requetes');
+      const [rows] = await connection.query('SELECT * FROM requetes LEFT JOIN users ON requetes.client = users.id');
       const requetes = rows as any;
       return requetes;
     } catch (error) {
