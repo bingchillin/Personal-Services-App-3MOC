@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:goldie_studio/webservices/user/user_class.dart';
 import '../webservices/user/user_webservices.dart';
 
@@ -21,13 +22,13 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
     _fieldList = [
       {'Prénom': widget.user.firstname ?? ''},
       {'Nom': widget.user.lastname ?? ''},
-      {'Email': widget.user.email ?? ''},
+      {'Email': widget.user.email},
       {'Date de naissance': convertDate(widget.user.birthdate) ?? ''},
       {'Validé': widget.user.validated?.toString() ?? ''},
       {'Note': widget.user.note?.toString() ?? ''},
       {'Profession': widget.user.profession?.toString() ?? ''},
       {'Rôle': widget.user.role?.toString() ?? ''},
-      {'Password': widget.user.password?.toString() ?? ''},
+      {'Password': widget.user.password.toString()},
       {'Date inscription': convertDate(widget.user.dateSignIn) ?? ''},
     ];
 
@@ -65,6 +66,7 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
               )
                   : TextField(
                 controller: _textControllers[i],
+                inputFormatters: _getInputFormatters(_fieldList[i].keys.first), // Utiliser les inputFormatters pour restreindre les champs aux nombres
                 decoration: InputDecoration(
                   labelText: _fieldList[i].keys.first,
                 ),
@@ -102,6 +104,16 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
         ),
       ),
     );
+  }
+
+  List<TextInputFormatter> _getInputFormatters(String fieldName) {
+    if (fieldName == 'Validé' ||
+        fieldName == 'Note' ||
+        fieldName == 'Profession' ||
+        fieldName == 'Rôle') {
+      return [FilteringTextInputFormatter.digitsOnly];
+    }
+    return [];
   }
 
   String? convertDate(String? dateString) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:goldie_studio/webservices/request/request_class.dart';
 import '../webservices/request/request_webservices.dart';
 
@@ -53,6 +54,7 @@ class _RequestDetailsWidgetState extends State<RequestDetailsWidget> {
             for (var i = 0; i < _fieldList.length; i++)
               TextField(
                 controller: _textControllers[i],
+                inputFormatters: _getInputFormatters(_fieldList[i].keys.first), // Utiliser les inputFormatters pour restreindre les champs aux nombres
                 decoration: InputDecoration(
                   labelText: _fieldList[i].keys.first,
                 ),
@@ -86,5 +88,15 @@ class _RequestDetailsWidgetState extends State<RequestDetailsWidget> {
         ),
       ),
     );
+  }
+
+  List<TextInputFormatter> _getInputFormatters(String fieldName) {
+    if (fieldName == 'Client' ||
+        fieldName == 'Type' ||
+        fieldName == 'Slots' ||
+        fieldName == 'Complétée') {
+      return [FilteringTextInputFormatter.digitsOnly];
+    }
+    return [];
   }
 }
