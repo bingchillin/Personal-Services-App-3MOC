@@ -55,47 +55,52 @@ class UserWebService {
             task.resume()
         }
     
-    class func loginUser(parameters: String) {
-        
+    class func loginUser(parameters: String, completion: @escaping (User?, Error?) -> Void) {
         guard let userURL = URL(string: "http://localhost:3000/login/") else {
-                    print("Not found LoginUser URL")
-                    return
-                }
-        let postData = parameters.data(using: .utf8)
+            print("Not found LoginUser URL")
+            return
+        }
+        
+        guard let postData = parameters.data(using: .utf8) else {
+            print("Erreur lors de la conversion des paramètres en données")
+            return
+        }
+        
         var request = URLRequest(url: userURL)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
         request.httpMethod = "POST"
         request.httpBody = postData
-
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-          guard let data = data else {
-            print(String(describing: error))
-            return
-          }
+            if let error = error {
+                completion(nil, error)
+                return
+            }
             
-          //print(String(data: data, encoding: .utf8)!)
+            guard let data = data else {
+                completion(nil, NSError(domain: "com.esgi.user.no-data", code: 1))
+                return
+            }
             
-            if let responseString = String(data: data, encoding: .utf8) {
-                
-                guard let jsonData = responseString.data(using: .utf8) else {
-                    print("Erreur lors de la conversion de la chaîne en données JSON")
-                    return
-                }
-                
-                do {
-                    if let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {
-                        if let id = jsonObject["id"] as? String {
-                            print(id)
-                            UserDefaults.standard.set(id, forKey: "uId")
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    if let message = json["message"] as? String, message == "Login successful", let userData = json["user"] as? [String: Any] {
+                        if let user = UserFactory.user(from: userData) {
+                            completion(user, nil)
+                        } else {
+                            completion(nil, NSError(domain: "com.esgi.user.invalid-data", code: 1))
                         }
+                    } else {
+                        completion(nil, NSError(domain: "com.esgi.user.login-failed", code: 1))
                     }
-                } catch {
-                    print("Erreur lors de l'analyse de la réponse JSON : \(error.localizedDescription)")
+                } else {
+                    completion(nil, NSError(domain: "com.esgi.user.invalid-json", code: 1))
                 }
+            } catch {
+                completion(nil, error)
             }
         }
-
+        
         task.resume()
     }
 

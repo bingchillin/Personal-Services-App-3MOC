@@ -30,15 +30,28 @@ class LoginViewController: UIViewController {
 
     @IBAction func handleConnect(_ sender: Any) {
         
-        if (mailTxtField.hasText && passwordTxtField.hasText){
+        if mailTxtField.hasText && passwordTxtField.hasText {
             let parameters = "{\n    \"email\" : \"\(mailTxtField.text!)\",\n    \"password\" : \"\(passwordTxtField.text!)\"\n}"
-                UserWebService.loginUser(parameters: parameters)
-
-        }
-        
-        else{
+            UserWebService.loginUser(parameters: parameters) { (user: User?, error: Error?) in
+                if let error = error {
+                    print("Erreur lors de la connexion : \(error)")
+                } else if let user = user {
+                    // Utilisateur connecté avec succès, effectuez l'action souhaitée ici
+                    print("Utilisateur connecté : \(user)")
+                    if user.id != nil {
+                        UserDefaults.standard.set(user.id, forKey: "uId")
+                        DispatchQueue.main.async {
+                            self.tabNextViews()
+                        }
+                    } else {
+                        print("Erreur : L'utilisateur n'a pas d'identifiant")
+                    }
+                }
+            }
+        } else {
             print("MARCHE PAS")
         }
+
     }
     
     

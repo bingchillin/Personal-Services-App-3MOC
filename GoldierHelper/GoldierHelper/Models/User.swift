@@ -8,7 +8,7 @@
 import Foundation
 
 class User: CustomStringConvertible {
-    let id: Int
+    let id: Int?
     let firstname: String
     let lastname: String
     let password: String
@@ -18,7 +18,7 @@ class User: CustomStringConvertible {
     let dateSignIn: String
     let role: Int
     var description: String {
-        return "<user id='\(id)' firstname='\(firstname)' lastname='\(lastname)' password='\(password)' email='\(email)' birthdate='\(birthdate)' profession='\(profession)' dateSignIn='\(dateSignIn)' role='\(role)'/>"
+        return "<user id='\(String(describing: id))' firstname='\(firstname)' lastname='\(lastname)' password='\(password)' email='\(email)' birthdate='\(birthdate)' profession='\(profession)' dateSignIn='\(dateSignIn)' role='\(role)'/>"
     }
     
     init(id: Int, firstname: String, lastname: String, password: String, email: String, birthdate: String, profession: Int, dateSignIn: String, role: Int) {

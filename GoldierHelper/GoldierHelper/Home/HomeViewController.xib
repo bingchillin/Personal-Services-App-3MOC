@@ -27,23 +27,16 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="viO-de-pXJ">
                             <rect key="frame" x="83" y="540" width="389" height="135"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Première visite sur Goldie Helper ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7S-fP-dx9">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Première visite sur Goldie Helper ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7S-fP-dx9">
                                     <rect key="frame" x="4" y="21" width="381" height="41"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="41" id="5vh-U7-0UQ"/>
-                                        <constraint firstAttribute="width" constant="381" id="mVn-Y9-Qn7"/>
-                                    </constraints>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujs-4u-tat">
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujs-4u-tat">
                                     <rect key="frame" x="28" y="70" width="334" height="45"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="45" id="bFT-ne-ldm"/>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="334" id="mWX-Pq-GEs"/>
-                                        <constraint firstAttribute="width" constant="334" id="pUp-7f-gff"/>
-                                    </constraints>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="filled" title="S'INSCRIRE">
                                         <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
@@ -55,16 +48,6 @@
                                 </button>
                             </subviews>
                             <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="bottom" secondItem="ujs-4u-tat" secondAttribute="bottom" constant="20" symbolic="YES" id="EBn-GZ-fGN"/>
-                                <constraint firstItem="j7S-fP-dx9" firstAttribute="top" secondItem="viO-de-pXJ" secondAttribute="top" constant="21" id="SNf-D0-A5e"/>
-                                <constraint firstItem="j7S-fP-dx9" firstAttribute="leading" secondItem="viO-de-pXJ" secondAttribute="leading" constant="4" id="W9P-ll-wi0"/>
-                                <constraint firstAttribute="trailing" secondItem="ujs-4u-tat" secondAttribute="trailing" constant="27" id="a9s-86-80I"/>
-                                <constraint firstAttribute="height" constant="135" id="c5Q-5R-2SB"/>
-                                <constraint firstItem="ujs-4u-tat" firstAttribute="leading" secondItem="viO-de-pXJ" secondAttribute="leading" constant="28" id="ceD-IY-E8n"/>
-                                <constraint firstItem="ujs-4u-tat" firstAttribute="top" secondItem="j7S-fP-dx9" secondAttribute="bottom" constant="8" symbolic="YES" id="jdF-XG-f2T"/>
-                                <constraint firstAttribute="trailing" secondItem="j7S-fP-dx9" secondAttribute="trailing" constant="4" id="kbG-md-lg9"/>
-                            </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fb4-YB-TGb">
                             <rect key="frame" x="708" y="540" width="389" height="135"/>
@@ -123,12 +106,6 @@
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="undraw_love_it_5nex 1" translatesAutoresizingMaskIntoConstraints="NO" id="aHb-hH-72t">
                             <rect key="frame" x="507" y="77" width="167" height="224"/>
-                            <constraints>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="224" id="9Gl-9r-7wZ"/>
-                                <constraint firstAttribute="height" constant="224" id="NCa-f0-Y0s"/>
-                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="167" id="a8a-3Z-BzB"/>
-                                <constraint firstAttribute="width" constant="167" id="xiX-Ic-udC"/>
-                            </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
