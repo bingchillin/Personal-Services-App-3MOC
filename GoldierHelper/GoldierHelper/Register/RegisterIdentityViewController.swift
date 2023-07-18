@@ -9,11 +9,17 @@ import UIKit
 
 class RegisterIdentityViewController: UIViewController {
     
-    class func newInstance() -> RegisterIdentityViewController {
-        let registerIdentityViewController = RegisterIdentityViewController()
+    var email: String = ""
+        var password: String = ""
         
-        return registerIdentityViewController
-    }
+        class func newInstance(email: String, password: String) -> RegisterIdentityViewController {
+            let registerIdentityViewController = RegisterIdentityViewController()
+            registerIdentityViewController.email = email
+            registerIdentityViewController.password = password
+            
+            return registerIdentityViewController
+        }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()

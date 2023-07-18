@@ -9,6 +9,10 @@ import UIKit
 
 class RegisterMainViewController: UIViewController {
     
+    @IBOutlet weak var passwordTxtField: UITextField!
+    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var mailTxtField: UITextField!
+    
     class func newInstance() -> RegisterMainViewController {
         let registerMainViewController = RegisterMainViewController()
         
@@ -23,14 +27,17 @@ class RegisterMainViewController: UIViewController {
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+     @IBAction func handleNext(_ sender: Any) {
+         guard let email = mailTxtField.text,
+                      let password = passwordTxtField.text else {
+                    return
+                }
+                
+                let registerIdentityViewController = RegisterIdentityViewController.newInstance(email: email, password: password)
+                navigationController?.pushViewController(registerIdentityViewController, animated: true)
+            
+     }
+     
 
 }
