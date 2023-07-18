@@ -48,16 +48,30 @@ export const FileRepository = {
         }
       },
 
-      getFileById: async (id: number): Promise<File> => {
+
+      getFileById: async (id: String): Promise<File> => {
         try {
           const connection: PoolConnection = await db.getConnection();
-          const rows = await connection.query('SELECT * FROM files WHERE id = ?', [id]);
-      
-          const file = rows as any;
-          return file;
+          const [rows] = await connection.query('SELECT * FROM files WHERE id = ?', [id]);
+          if (Array.isArray(rows) && rows.length > 0) {
+            const file: File = rows[0] as File;
+            return file;
+          } else {
+            throw new Error('Fichier non trouvé');
+          }
+        } catch (error) {
+          throw error;
+        }
+      },
+
+      deleteFile: async (id: String): Promise<void> => {
+        try {
+          const connection: PoolConnection = await db.getConnection();
+          await connection.query('DELETE FROM files WHERE id = ?', [id]);
         } catch (error) {
           throw error;
         }
       }
+
     
 }

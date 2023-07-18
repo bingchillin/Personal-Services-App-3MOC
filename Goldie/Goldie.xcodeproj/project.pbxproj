@@ -1,0 +1,473 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2D6B88122A030B47006BA55F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B88112A030B47006BA55F /* AppDelegate.swift */; };
+		2D6B881B2A030B48006BA55F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B881A2A030B48006BA55F /* Assets.xcassets */; };
+		2D6B881E2A030B48006BA55F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B881C2A030B48006BA55F /* LaunchScreen.storyboard */; };
+		2D6B88272A03118F006BA55F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B88252A03118F006BA55F /* HomeViewController.swift */; };
+		2D6B88282A03118F006BA55F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B88262A03118F006BA55F /* HomeViewController.xib */; };
+		2D6B88432A032BA4006BA55F /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B88392A032BA4006BA55F /* Rubik-Black.ttf */; };
+		2D6B88442A032BA4006BA55F /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B883A2A032BA4006BA55F /* Rubik-BlackItalic.ttf */; };
+		2D6B88452A032BA4006BA55F /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B883B2A032BA4006BA55F /* Rubik-Bold.ttf */; };
+		2D6B88462A032BA4006BA55F /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B883C2A032BA4006BA55F /* Rubik-Italic.ttf */; };
+		2D6B88472A032BA4006BA55F /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B883D2A032BA4006BA55F /* Rubik-Light.ttf */; };
+		2D6B88482A032BA4006BA55F /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B883E2A032BA4006BA55F /* Rubik-BoldItalic.ttf */; };
+		2D6B88492A032BA4006BA55F /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B883F2A032BA4006BA55F /* Rubik-Medium.ttf */; };
+		2D6B884A2A032BA4006BA55F /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B88402A032BA4006BA55F /* Rubik-Regular.ttf */; };
+		2D6B884B2A032BA4006BA55F /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B88412A032BA4006BA55F /* Rubik-LightItalic.ttf */; };
+		2D6B884C2A032BA4006BA55F /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B88422A032BA4006BA55F /* Rubik-MediumItalic.ttf */; };
+		2D6B884D2A032C10006BA55F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B881F2A030B48006BA55F /* Info.plist */; };
+		2D6B88532A03318F006BA55F /* SignUpMailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B88512A03318F006BA55F /* SignUpMailViewController.swift */; };
+		2D6B88542A03318F006BA55F /* SignUpMailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B88522A03318F006BA55F /* SignUpMailViewController.xib */; };
+		2D6B88572A03349C006BA55F /* SignUpIdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B88552A03349C006BA55F /* SignUpIdentityViewController.swift */; };
+		2D6B88582A03349C006BA55F /* SignUpIdentityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B88562A03349C006BA55F /* SignUpIdentityViewController.xib */; };
+		2D6B885B2A03422A006BA55F /* SignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B88592A03422A006BA55F /* SignUpPasswordViewController.swift */; };
+		2D6B885C2A03422A006BA55F /* SignUpPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B885A2A03422A006BA55F /* SignUpPasswordViewController.xib */; };
+		2D6B885F2A0344E4006BA55F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B885D2A0344E4006BA55F /* SignInViewController.swift */; };
+		2D6B88602A0344E4006BA55F /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B885E2A0344E4006BA55F /* SignInViewController.xib */; };
+		2D6B88642A034A5A006BA55F /* GoldieLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B88632A034A5A006BA55F /* GoldieLaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2D6B880E2A030B47006BA55F /* Goldie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goldie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D6B88112A030B47006BA55F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2D6B881A2A030B48006BA55F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2D6B881D2A030B48006BA55F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2D6B881F2A030B48006BA55F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D6B88252A03118F006BA55F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2D6B88262A03118F006BA55F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		2D6B88392A032BA4006BA55F /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
+		2D6B883A2A032BA4006BA55F /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
+		2D6B883B2A032BA4006BA55F /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		2D6B883C2A032BA4006BA55F /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Italic.ttf"; sourceTree = "<group>"; };
+		2D6B883D2A032BA4006BA55F /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
+		2D6B883E2A032BA4006BA55F /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
+		2D6B883F2A032BA4006BA55F /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		2D6B88402A032BA4006BA55F /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		2D6B88412A032BA4006BA55F /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
+		2D6B88422A032BA4006BA55F /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
+		2D6B88512A03318F006BA55F /* SignUpMailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMailViewController.swift; sourceTree = "<group>"; };
+		2D6B88522A03318F006BA55F /* SignUpMailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpMailViewController.xib; sourceTree = "<group>"; };
+		2D6B88552A03349C006BA55F /* SignUpIdentityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIdentityViewController.swift; sourceTree = "<group>"; };
+		2D6B88562A03349C006BA55F /* SignUpIdentityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpIdentityViewController.xib; sourceTree = "<group>"; };
+		2D6B88592A03422A006BA55F /* SignUpPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordViewController.swift; sourceTree = "<group>"; };
+		2D6B885A2A03422A006BA55F /* SignUpPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpPasswordViewController.xib; sourceTree = "<group>"; };
+		2D6B885D2A0344E4006BA55F /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		2D6B885E2A0344E4006BA55F /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
+		2D6B88632A034A5A006BA55F /* GoldieLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoldieLaunchScreen.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2D6B880B2A030B47006BA55F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D6B88052A030B47006BA55F = {
+			isa = PBXGroup;
+			children = (
+				2D6B88102A030B47006BA55F /* Goldie */,
+				2D6B880F2A030B47006BA55F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2D6B880F2A030B47006BA55F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2D6B880E2A030B47006BA55F /* Goldie.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2D6B88102A030B47006BA55F /* Goldie */ = {
+			isa = PBXGroup;
+			children = (
+				2D6B88502A03312C006BA55F /* SignIn */,
+				2D6B884F2A03311B006BA55F /* SignUp */,
+				2D6B884E2A0330F7006BA55F /* Home */,
+				2D6B88292A032818006BA55F /* Fonts */,
+				2D6B88112A030B47006BA55F /* AppDelegate.swift */,
+				2D6B881A2A030B48006BA55F /* Assets.xcassets */,
+				2D6B881C2A030B48006BA55F /* LaunchScreen.storyboard */,
+				2D6B881F2A030B48006BA55F /* Info.plist */,
+			);
+			path = Goldie;
+			sourceTree = "<group>";
+		};
+		2D6B88292A032818006BA55F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2D6B88382A032B93006BA55F /* Rubik */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2D6B88382A032B93006BA55F /* Rubik */ = {
+			isa = PBXGroup;
+			children = (
+				2D6B88392A032BA4006BA55F /* Rubik-Black.ttf */,
+				2D6B883A2A032BA4006BA55F /* Rubik-BlackItalic.ttf */,
+				2D6B883B2A032BA4006BA55F /* Rubik-Bold.ttf */,
+				2D6B883E2A032BA4006BA55F /* Rubik-BoldItalic.ttf */,
+				2D6B883C2A032BA4006BA55F /* Rubik-Italic.ttf */,
+				2D6B883D2A032BA4006BA55F /* Rubik-Light.ttf */,
+				2D6B88412A032BA4006BA55F /* Rubik-LightItalic.ttf */,
+				2D6B883F2A032BA4006BA55F /* Rubik-Medium.ttf */,
+				2D6B88422A032BA4006BA55F /* Rubik-MediumItalic.ttf */,
+				2D6B88402A032BA4006BA55F /* Rubik-Regular.ttf */,
+			);
+			path = Rubik;
+			sourceTree = "<group>";
+		};
+		2D6B884E2A0330F7006BA55F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2D6B88252A03118F006BA55F /* HomeViewController.swift */,
+				2D6B88262A03118F006BA55F /* HomeViewController.xib */,
+				2D6B88632A034A5A006BA55F /* GoldieLaunchScreen.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2D6B884F2A03311B006BA55F /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				2D6B88512A03318F006BA55F /* SignUpMailViewController.swift */,
+				2D6B88522A03318F006BA55F /* SignUpMailViewController.xib */,
+				2D6B88552A03349C006BA55F /* SignUpIdentityViewController.swift */,
+				2D6B88562A03349C006BA55F /* SignUpIdentityViewController.xib */,
+				2D6B88592A03422A006BA55F /* SignUpPasswordViewController.swift */,
+				2D6B885A2A03422A006BA55F /* SignUpPasswordViewController.xib */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		2D6B88502A03312C006BA55F /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				2D6B885D2A0344E4006BA55F /* SignInViewController.swift */,
+				2D6B885E2A0344E4006BA55F /* SignInViewController.xib */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2D6B880D2A030B47006BA55F /* Goldie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D6B88222A030B48006BA55F /* Build configuration list for PBXNativeTarget "Goldie" */;
+			buildPhases = (
+				2D6B880A2A030B47006BA55F /* Sources */,
+				2D6B880B2A030B47006BA55F /* Frameworks */,
+				2D6B880C2A030B47006BA55F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Goldie;
+			productName = Goldie;
+			productReference = 2D6B880E2A030B47006BA55F /* Goldie.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2D6B88062A030B47006BA55F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					2D6B880D2A030B47006BA55F = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = 2D6B88092A030B47006BA55F /* Build configuration list for PBXProject "Goldie" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2D6B88052A030B47006BA55F;
+			productRefGroup = 2D6B880F2A030B47006BA55F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2D6B880D2A030B47006BA55F /* Goldie */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2D6B880C2A030B47006BA55F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D6B885C2A03422A006BA55F /* SignUpPasswordViewController.xib in Resources */,
+				2D6B88582A03349C006BA55F /* SignUpIdentityViewController.xib in Resources */,
+				2D6B88442A032BA4006BA55F /* Rubik-BlackItalic.ttf in Resources */,
+				2D6B88642A034A5A006BA55F /* GoldieLaunchScreen.storyboard in Resources */,
+				2D6B88452A032BA4006BA55F /* Rubik-Bold.ttf in Resources */,
+				2D6B881E2A030B48006BA55F /* LaunchScreen.storyboard in Resources */,
+				2D6B881B2A030B48006BA55F /* Assets.xcassets in Resources */,
+				2D6B88462A032BA4006BA55F /* Rubik-Italic.ttf in Resources */,
+				2D6B88472A032BA4006BA55F /* Rubik-Light.ttf in Resources */,
+				2D6B884D2A032C10006BA55F /* Info.plist in Resources */,
+				2D6B88542A03318F006BA55F /* SignUpMailViewController.xib in Resources */,
+				2D6B884A2A032BA4006BA55F /* Rubik-Regular.ttf in Resources */,
+				2D6B88432A032BA4006BA55F /* Rubik-Black.ttf in Resources */,
+				2D6B88482A032BA4006BA55F /* Rubik-BoldItalic.ttf in Resources */,
+				2D6B884C2A032BA4006BA55F /* Rubik-MediumItalic.ttf in Resources */,
+				2D6B884B2A032BA4006BA55F /* Rubik-LightItalic.ttf in Resources */,
+				2D6B88282A03118F006BA55F /* HomeViewController.xib in Resources */,
+				2D6B88602A0344E4006BA55F /* SignInViewController.xib in Resources */,
+				2D6B88492A032BA4006BA55F /* Rubik-Medium.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2D6B880A2A030B47006BA55F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D6B88572A03349C006BA55F /* SignUpIdentityViewController.swift in Sources */,
+				2D6B88122A030B47006BA55F /* AppDelegate.swift in Sources */,
+				2D6B885F2A0344E4006BA55F /* SignInViewController.swift in Sources */,
+				2D6B885B2A03422A006BA55F /* SignUpPasswordViewController.swift in Sources */,
+				2D6B88532A03318F006BA55F /* SignUpMailViewController.swift in Sources */,
+				2D6B88272A03118F006BA55F /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2D6B881C2A030B48006BA55F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2D6B881D2A030B48006BA55F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2D6B88202A030B48006BA55F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2D6B88212A030B48006BA55F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2D6B88232A030B48006BA55F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Goldie/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = GoldieLaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esgi.Goldie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		2D6B88242A030B48006BA55F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Goldie/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = GoldieLaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esgi.Goldie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D6B88092A030B47006BA55F /* Build configuration list for PBXProject "Goldie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D6B88202A030B48006BA55F /* Debug */,
+				2D6B88212A030B48006BA55F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D6B88222A030B48006BA55F /* Build configuration list for PBXNativeTarget "Goldie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D6B88232A030B48006BA55F /* Debug */,
+				2D6B88242A030B48006BA55F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2D6B88062A030B47006BA55F /* Project object */;
+}

@@ -76,6 +76,7 @@ requetesController.delete("/:id", async (req, res) => {
                 message: "Not found"
             })
         }
+
     }catch(error){
         res.status(404).send({
             status: 404,

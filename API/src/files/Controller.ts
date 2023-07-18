@@ -2,6 +2,7 @@ import {Router} from "express";
 import { FileRepository } from "./Repository";
 import { debug } from "console";
 import {upload } from "../services/multer";
+import fs from 'fs';
 
 const filesController = Router();
 
@@ -17,6 +18,32 @@ filesController.get("/", async (req, res) => {
     }
 
     res.status(200).send(files)
+})
+
+filesController.get("/download/:id", async (req, res) => {
+
+    const file = await FileRepository.getFileById(req.params.id)
+
+    if (!file) {
+        res.status(404).send({
+            status: 404,
+            message: "Not found"
+        })
+        return
+    }
+
+    const filePath = file.file;
+
+    res.download(filePath, (err) => {
+      if (err) {
+        // Gérer les erreurs de téléchargement
+        console.error('Erreur lors du téléchargement du fichier :', err);
+        res.status(500).send('Une erreur est survenue lors du téléchargement du fichier.');
+      }
+    });
+
+    //res.status(200).send(file)
+
 })
 
 filesController.post('/',upload.single('file'), async (req, res, next) => {
@@ -45,5 +72,33 @@ filesController.post('/',upload.single('file'), async (req, res, next) => {
       res.status(500).json({ error: 'Erreur lors de la création du fichier' });
     }
   });
+
+  filesController.delete('/:id', async (req, res) => {
+    try {
+      const fileId = req.params.id;
+      const file = await FileRepository.getFileById(fileId);
+      
+      if (!file) {
+        res.status(404).json({ error: 'Fichier non trouvé' });
+        return;
+      }
+  
+      const filePath = file.file;
+      await FileRepository.deleteFile(fileId);
+  
+      // Supprimer le fichier du serveur
+      fs.unlink(filePath, (err) => {
+        if (err) {
+          console.error('Erreur lors de la suppression du fichier du serveur :', err);
+        }
+      });
+  
+      res.status(200).json({ message: 'Fichier supprimé' });
+    } catch (error) {
+      console.error('Erreur lors de la suppression du fichier :', error);
+      res.status(500).json({ error: 'Erreur lors de la suppression du fichier' });
+    }
+  });
+
 
 export default filesController;

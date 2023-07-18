@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+<BorderPane fx:id="mainPanel" nodeOrientation="LEFT_TO_RIGHT" prefHeight="600.0" prefWidth="900.0" styleClass="body" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.goldietasks.Controller.HomeController">
+   <left>
+      <VBox id="LeftMenu" fx:id="leftMenuPanel" minWidth="-Infinity" prefHeight="558.0" prefWidth="277.0" spacing="10.0" style="-fx-border-color: grey;" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="20.0" left="35.0" right="5.0" top="20.0" />
+         </padding>
+         <children>
+            <HBox fx:id="btnAddTast" alignment="CENTER_LEFT" minHeight="33.0" onMouseClicked="#AddTaskShow" prefHeight="33.0" prefWidth="267.0" styleClass="MenuItem">
+               <children>
+                  <Label styleClass="LabelMenuItem" text=" Add Task" />
+               </children>
+            </HBox>
+            <HBox fx:id="btnAllTast" alignment="CENTER_LEFT" minHeight="33.0" onMouseClicked="#ShowAllTask" prefHeight="33.0" prefWidth="267.0" styleClass="MenuItem">
+               <children>
+                  <Label styleClass="LabelMenuItem" text="All Your Tasks" />
+               </children>
+            </HBox>
+            <HBox fx:id="btnLabel" alignment="CENTER_LEFT" minHeight="33.0" onMouseClicked="#ShowCatalog" prefHeight="33.0" prefWidth="267.0" styleClass="MenuItem">
+               <children>
+                  <Label styleClass="LabelMenuItem" text="Types" />
+               </children>
+            </HBox>
+            <Button alignment="TOP_LEFT" onAction="#LoginOut" prefHeight="37.0" prefWidth="70.0" text="Logout" textFill="#ab0909">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="nomalinput" />
+                  <String fx:value="MenuItem" />
+               </styleClass>
+            </Button>
+            <ScrollPane fx:id="labelListPanel" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" prefWidth="237.0" vbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+               <content>
+                  <VBox fx:id="VBoxType" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="228.0" prefWidth="235.0" spacing="10.0" styleClass="MauLeftMenu">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </content>
+               <styleClass>
+                  <String fx:value="MyScrolPanel" />
+                  <String fx:value="MauLeftMenu" />
+               </styleClass>
+            </ScrollPane>
+         </children></VBox>
+   </left>
+   <top>
+      <AnchorPane id="NavBar" prefHeight="42.0" prefWidth="900.0" style="-fx-background-color: #7B68EE; -fx-border-color: grey;" BorderPane.alignment="CENTER">
+         <children>
+            <TextField id="searchBar" fx:id="txtSearch" layoutX="291.0" layoutY="9.0" prefHeight="25.0" prefWidth="581.0" promptText="Search" styleClass="radiusInput" AnchorPane.leftAnchor="291.0" AnchorPane.topAnchor="9.0">
+               <padding>
+                  <Insets left="26.0" />
+               </padding>
+            </TextField>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

@@ -1,8 +1,7 @@
-import { User,validateUser } from './Model';
-import { Pool, PoolConnection } from 'mysql2/promise';
+import {User, validateUser} from './Model';
+import {PoolConnection} from 'mysql2/promise';
 import bcrypt from 'bcrypt';
 import db from '../services/mysql';
-import { debug } from 'console';
 
 export const UserRepository = {
 
@@ -118,7 +117,7 @@ export const UserRepository = {
       delete user.id; 
       user.note = 0;
       user.validated = false;
-      user.dateSignIn = new Date();
+      user.dateSignIn = new Date(Date.now());
 
       debug(user);
 

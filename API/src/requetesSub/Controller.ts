@@ -1,11 +1,11 @@
 import {Router} from "express";
-import { RequeteRepository } from "./Repository";
+import { RequeteSubRepository } from "./Repository";
 import { debug } from "console";
 
-const requetesController = Router();
+const requetesSubController = Router();
 
-requetesController.get("/", async (req, res) => {
-    const requetes = await RequeteRepository.getAll();
+requetesSubController.get("/", async (req, res) => {
+    const requetes = await RequeteSubRepository.getAll();
 
     if (!requetes) {
         res.status(404).send({
@@ -18,8 +18,8 @@ requetesController.get("/", async (req, res) => {
     res.status(200).send(requetes)
 })
 
-requetesController.get("/:id", async (req, res) => {
-    const requete = await RequeteRepository.getRequetesById(req.params.id);
+requetesSubController.get("/:id", async (req, res) => {
+    const requete = await RequeteSubRepository.getRequetesSubById(req.params.id);
 
     if (!requete) {
         res.status(404).send({
@@ -32,8 +32,8 @@ requetesController.get("/:id", async (req, res) => {
     res.status(200).send(requete)
 })
 
-requetesController.get("/user/:id", async (req, res) => {
-    const requetes = await RequeteRepository.getRequeteByUser(req.params.id);
+requetesSubController.get("/user/:id", async (req, res) => {
+    const requetes = await RequeteSubRepository.getRequeteSubByUser(req.params.id);
 
     if (!requetes) {
         res.status(404).send({
@@ -46,8 +46,8 @@ requetesController.get("/user/:id", async (req, res) => {
     res.status(200).send(requetes)
 })
 
-requetesController.get("/valide/:bool", async (req, res) => {
-    const requetes = await RequeteRepository.getValidedRequete(req.params.bool);
+requetesSubController.get("/valide/:bool", async (req, res) => {
+    const requetes = await RequeteSubRepository.getValidedRequeteSub(req.params.bool);
 
     if (!requetes) {
         res.status(404).send({
@@ -60,7 +60,7 @@ requetesController.get("/valide/:bool", async (req, res) => {
     res.status(200).send(requetes)
 })
 
-requetesController.delete("/:id", async (req, res) => {
+requetesSubController.delete("/:id", async (req, res) => {
     try{
 
         const requete = await RequeteRepository.getRequetesById(req.params.id);
@@ -85,10 +85,10 @@ requetesController.delete("/:id", async (req, res) => {
     }
 })
 
-requetesController.post("/", async (req, res) => {
+requetesSubController.post("/", async (req, res) => {
 
     try{
-        const requete = await RequeteRepository.createRequete(req.body);
+        const requete = await RequeteSubRepository.createRequeteSub(req.body);
         res.status(200).send(requete);
     }catch(error){
         res.status(400).send({
@@ -99,8 +99,8 @@ requetesController.post("/", async (req, res) => {
     
 })
 
-requetesController.put("/:id", async (req, res) => {
-    const requete = await RequeteRepository.getRequetesById(req.params.id);
+requetesSubController.put("/:id", async (req, res) => {
+    const requete = await RequeteSubRepository.getRequetesSubById(req.params.id);
 
     if (!requete) {
         res.status(404).send({
@@ -110,9 +110,9 @@ requetesController.put("/:id", async (req, res) => {
         return
     }
 
-    const updatedRequete = await RequeteRepository.updateRequete(req.body);
+    const updatedRequete = await RequeteSubRepository.updateRequeteSub(req.body, req.params.id);
 
     res.status(200).send(updatedRequete)
 })
 
-export default requetesController
+export default requetesSubController

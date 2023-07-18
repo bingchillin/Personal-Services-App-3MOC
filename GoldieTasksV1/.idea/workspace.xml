@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="59c64eb1-336e-4235-94f3-3b58cd7170f2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper.xcodeproj/project.pbxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper.xcodeproj/project.xcworkspace/xcuserdata/thanudimadawala.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper.xcodeproj/xcuserdata/thanudimadawala.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/AppDelegate.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Assets.xcassets/AccentColor.colorset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Assets.xcassets/AppIcon 1.appiconset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Assets.xcassets/AppIcon 1.appiconset/Goldie HELPER.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Assets.xcassets/Bonhomme Goldie.imageset/Bonhomme Goldie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Assets.xcassets/Bonhomme Goldie.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Assets.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Assets.xcassets/Progression(1).imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Assets.xcassets/Progression(1).imageset/Progression(1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Assets.xcassets/Progression(2).imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Assets.xcassets/Progression(2).imageset/Progression(2).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Assets.xcassets/undraw_love_it_5nex 1.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Assets.xcassets/undraw_love_it_5nex 1.imageset/undraw_love_it_5nex 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Factories/UserFactory.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Home/HomeViewController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Home/HomeViewController.xib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Models/User.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/RDV/ConfirmViewController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/RDV/ConfirmViewController.xib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/RDV/RDVViewController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/RDV/RDVViewController.xib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Register/RegisterMailViewController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/SignIn/LoginViewController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/SignIn/LoginViewController.xib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/SignUp/RegisterMailViewController.xib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldieHelper/GoldieHelper/Webservices/UserWebService.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Goldie/Goldie.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../Goldie/Goldie.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Goldie/Goldie.xcodeproj/project.xcworkspace/xcuserdata/thanudimadawala.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../Goldie/Goldie.xcodeproj/project.xcworkspace/xcuserdata/thanudimadawala.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/appli/user/Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appli/user/Form.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/TaskRepository.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="iOS/Design" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.2.3/bin/php" />
+  <component name="ProjectId" id="2SfVmGobxlFu8XauqNuSD9jGfOW" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/thanudimadawala/Documents/ESGI/3MOC/Personal-Services-App-3MOC/GoldieTasksV1/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/example/goldietasksv1" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="59c64eb1-336e-4235-94f3-3b58cd7170f2" name="Changes" comment="" />
+      <created>1689537782046</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1689537782046</updated>
+      <workItem from="1689537783170" duration="456000" />
+      <workItem from="1689543615664" duration="18479000" />
+      <workItem from="1689634137105" duration="405000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

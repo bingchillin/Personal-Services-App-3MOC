@@ -1,6 +1,5 @@
 import {Router} from "express";
-import { UserRepository } from "./Repository";
-import { debug } from "console";
+import {UserRepository} from "./Repository";
 
 const usersController = Router();
 

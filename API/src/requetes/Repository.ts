@@ -75,11 +75,11 @@ export const RequeteRepository = {
     try {
       const connection: PoolConnection = await db.getConnection();
 
-      const [rows] = await connection.query('SELECT * FROM users WHERE validated = ?', bool);
+      const [rows] = await connection.query('SELECT * FROM requetes WHERE accepted = ?', bool);
 
       if (Array.isArray(rows) && rows.length > 0) {
-        const user = rows as any;
-        return user;
+        const requete = rows as any;
+        return requete;
       } else {
         return null;
       }
