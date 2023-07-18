@@ -8,6 +8,13 @@
 import UIKit
 
 class RegisterMainViewController: UIViewController {
+    
+    class func newInstance() -> RegisterMainViewController {
+        let registerMainViewController = RegisterMainViewController()
+        
+        return registerMainViewController
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()

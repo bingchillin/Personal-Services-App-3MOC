@@ -9,21 +9,20 @@ import Foundation
 
 class UserFactory {
     
+
     class func user(from dict: [String: Any]) -> User? {
         guard let id = dict["id"] as? Int,
               let fn = dict["firstname"] as? String,
-              let n = dict["name"] as? String,
-              let addr = dict["address"] as? String,
+              let ln = dict["lastname"] as? String,
+              let pw = dict["password"] as? String,
               let e = dict["email"] as? String,
-              let c = dict["city"] as? String,
-              let cp = dict["cp"] as? String,
-              let psw = dict["password"] as? String,
-              let w = dict["weight"] as? Double,
-              let h = dict["height"] as? Double,
-              let cl = dict["calorie"] as? Int else {
+              let bd = dict["birthdate"] as? String,
+              let pf = dict["profession"] as? Int,
+              let ds = dict["dateSignIn"] as? String,
+              let r = dict["role"] as? Int else {
             return nil
         }
-        return User(id: id, firstname: fn, name: n, address: addr, city: c, cp: cp, password: psw, weight: w, height: h, email: e, calorie: cl)
+        return User(id: id, firstname: fn, lastname: ln, password: pw, email: e, birthdate: bd, profession: pf, dateSignIn: ds, role: r)
     }
     
     class func users(from arr: [ [String: Any ] ]) -> [User] {

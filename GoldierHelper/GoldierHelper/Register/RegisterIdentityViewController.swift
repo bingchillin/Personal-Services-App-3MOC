@@ -8,6 +8,12 @@
 import UIKit
 
 class RegisterIdentityViewController: UIViewController {
+    
+    class func newInstance() -> RegisterIdentityViewController {
+        let registerIdentityViewController = RegisterIdentityViewController()
+        
+        return registerIdentityViewController
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
