@@ -31,6 +31,8 @@ class LoginFragment : Fragment() {
             } else {
                 Toast.makeText(requireContext(), "Please enter email and password", Toast.LENGTH_SHORT).show()
             }
+
+
         }
 
         return view
