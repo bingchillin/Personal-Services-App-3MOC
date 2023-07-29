@@ -90,13 +90,16 @@ class _LoginWidgetState extends State<LoginWidget> {
                       TextField(
                         controller: _emailController,
                         decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
                           labelText: 'Email',
                         ),
                       ),
+                      const SizedBox(height: 10),
                       TextField(
                         controller: _passwordController,
                         obscureText: true,
                         decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
                           labelText: 'Mot de passe',
                         ),
                       ),
