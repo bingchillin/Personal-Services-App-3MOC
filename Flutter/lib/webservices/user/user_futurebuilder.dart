@@ -70,8 +70,7 @@ class _UserWebServicesFutureBuilderState
     setState(() {
       _filteredUsers = _users
           .where((user) =>
-              user.email?.toLowerCase().contains(searchText.toLowerCase()) ??
-              false)
+              user.email.toLowerCase().contains(searchText.toLowerCase()))
           .toList();
     });
   }
@@ -102,7 +101,7 @@ class _UserWebServicesFutureBuilderState
                     context,
                     MaterialPageRoute(
                       builder: (context) =>
-                          AddUserWidget(),
+                          const AddUserWidget(),
                     ),
                   );
                 },
