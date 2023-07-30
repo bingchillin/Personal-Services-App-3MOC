@@ -24,18 +24,25 @@ class RequestWebServicesFutureBuilder extends StatefulWidget {
 
 class _RequestWebServicesFutureBuilderState
     extends State<RequestWebServicesFutureBuilder> {
-  Future<List<Request>>? _requestsFuture;
   List<Request> _requests = [];
   List<Request> _filteredRequests = [];
   final TextEditingController _searchController = TextEditingController();
+  int _currentPage = 1;
+  final int _requestsPerPage = 10;
 
   @override
   void initState() {
     super.initState();
-    _requestsFuture = RequestWebServices.getAllRequests().then((requests) {
-      debugPrint('requests: $requests');
-      _requests = requests;
-      _filteredRequests = requests;
+    _loadRequests();
+  }
+
+  void _loadRequests() {
+    RequestWebServices.getAllRequests().then((requests) {
+      setState(() {
+        _requests = requests;
+        _filteredRequests =
+            requests.take(_currentPage * _requestsPerPage).toList();
+      });
       return requests;
     });
   }
@@ -43,12 +50,8 @@ class _RequestWebServicesFutureBuilderState
   void _deleteRequest(int? id) {
     if (id != null) {
       setState(() {
-        _requestsFuture = RequestWebServices.deleteRequest(id).then((_) {
-          return RequestWebServices.getAllRequests().then((requests) {
-            _requests = requests;
-            _filteredRequests = requests;
-            return requests;
-          });
+        RequestWebServices.deleteRequest(id).then((_) {
+          _loadRequests();
         });
       });
     }
@@ -56,9 +59,11 @@ class _RequestWebServicesFutureBuilderState
 
   void updateRequests() {
     setState(() {
-      _requestsFuture = RequestWebServices.getAllRequests().then((requests) {
+      _currentPage = 1;
+      RequestWebServices.getAllRequests().then((requests) {
         _requests = requests;
-        _filteredRequests = requests;
+        _filteredRequests =
+            requests.take(_currentPage * _requestsPerPage).toList();
         return requests;
       });
     });
@@ -70,7 +75,16 @@ class _RequestWebServicesFutureBuilderState
           .where((request) =>
               request.title?.toLowerCase().contains(searchText.toLowerCase()) ??
               false)
+          .take(_currentPage * _requestsPerPage)
           .toList();
+    });
+  }
+
+  void _loadMoreRequests() {
+    setState(() {
+      _currentPage++;
+      _filteredRequests =
+          _requests.take(_currentPage * _requestsPerPage).toList();
     });
   }
 
@@ -96,13 +110,12 @@ class _RequestWebServicesFutureBuilderState
               ),
               IconButton(
                 onPressed: () {
-                   Navigator.push(
-                     context,
-                     MaterialPageRoute(
-                       builder: (context) =>
-                           const RequestAddWidget(),
-                     ),
-                   );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const RequestAddWidget(),
+                    ),
+                  );
                 },
                 icon: const Icon(Icons.add),
               ),
@@ -110,90 +123,77 @@ class _RequestWebServicesFutureBuilderState
           ),
           const SizedBox(height: 16),
           Expanded(
-            child: FutureBuilder<List<Request>>(
-              future: _requestsFuture,
-              builder: (context, snapshot) {
-                if (snapshot.hasError) {
-                  return Center(
-                    child: Text('Erreur ${snapshot.error}'),
+            child: ListView.builder(
+              itemCount: _filteredRequests.length + 1,
+              // +1 for the header row
+              itemBuilder: (context, index) {
+                if (index == 0) {
+                  // Header row
+                  return const ListTile(
+                    title: Row(
+                      children: [
+                        Expanded(child: TitleWidget(title: 'ID')),
+                        Spacer(),
+                        Expanded(child: TitleWidget(title: 'Titre')),
+                        Spacer(),
+                        Expanded(child: TitleWidget(title: 'Timer')),
+                        Spacer(),
+                        Expanded(child: TitleWidget(title: 'Complétée')),
+                        Spacer(),
+                      ],
+                    ),
                   );
+                } else if (index == _filteredRequests.length) {
+                  if (_filteredRequests.length < _requests.length) {
+                    return ElevatedButton(
+                      onPressed: _loadMoreRequests,
+                      child: const Text('Charger plus'),
+                    );
+                  } else {
+                    return const SizedBox
+                        .shrink(); // Hide the button if all requests are shown
+                  }
                 }
 
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                }
-
-                final requests = snapshot.data;
-                if (requests == null || requests.isEmpty) {
-                  return const Center(child: Text('No requests'));
-                }
-
-                return ListView.builder(
-                  itemCount: _filteredRequests.length + 1,
-                  // +1 for the header row
-                  itemBuilder: (context, index) {
-                    if (index == 0) {
-                      // Header row
-                      return const ListTile(
-                        title: Row(
+                final request = _filteredRequests[index - 1];
+                return Card(
+                  child: ListTile(
+                    title: Row(
+                      children: [
+                        Expanded(child: Text('${request.id}')),
+                        const Spacer(),
+                        Expanded(child: Text('${request.title}')),
+                        const Spacer(),
+                        Expanded(child: Text('${request.timer}')),
+                        const Spacer(),
+                        Expanded(child: Text('${request.done}')),
+                        ButtonBar(
                           children: [
-                            Expanded(child: TitleWidget(title: 'ID')),
-                            Spacer(),
-                            Expanded(child: TitleWidget(title: 'Titre')),
-                            Spacer(),
-                            Expanded(child: TitleWidget(title: 'Timer')),
-                            Spacer(),
-                            Expanded(child: TitleWidget(title: 'Complétée')),
-                            Spacer(),
-                          ],
-                        ),
-                      );
-                    }
-
-                    final request = _filteredRequests[index - 1];
-                    return Card(
-                      child: ListTile(
-                        title: Row(
-                          children: [
-                            Expanded(child: Text('${request.id}')),
-                            const Spacer(),
-                            Expanded(child: Text('${request.title}')),
-                            const Spacer(),
-                            Expanded(child: Text('${request.timer}')),
-                            const Spacer(),
-                            Expanded(child: Text('${request.done}')),
-                            ButtonBar(
-                              children: [
-                                IconButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            RequestDetailsWidget(
-                                                request: request),
-                                      ),
-                                    );
-                                  },
-                                  icon: const Icon(Icons.edit),
-                                  color: Colors.blue,
-                                ),
-                                IconButton(
-                                  onPressed: () {
-                                    _deleteRequest(request.id);
-                                  },
-                                  icon: const Icon(Icons.delete),
-                                  color: Colors.red,
-                                ),
-                              ],
+                            IconButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        RequestDetailsWidget(request: request),
+                                  ),
+                                );
+                              },
+                              icon: const Icon(Icons.edit),
+                              color: Colors.blue,
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                _deleteRequest(request.id);
+                              },
+                              icon: const Icon(Icons.delete),
+                              color: Colors.red,
                             ),
                           ],
                         ),
-                      ),
-                    );
-                  },
+                      ],
+                    ),
+                  ),
                 );
               },
             ),
