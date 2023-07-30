@@ -27,17 +27,24 @@ class UserWebServicesFutureBuilder extends StatefulWidget {
 
 class _UserWebServicesFutureBuilderState
     extends State<UserWebServicesFutureBuilder> {
-  Future<List<User>>? _usersFuture;
   List<User> _users = [];
   List<User> _filteredUsers = [];
   final TextEditingController _searchController = TextEditingController();
+  int _currentPage = 1;
+  final int _usersPerPage = 10;
 
   @override
   void initState() {
     super.initState();
-    _usersFuture = UserWebServices.getAllUsers().then((users) {
-      _users = users;
-      _filteredUsers = users;
+    _loadUsers();
+  }
+
+  void _loadUsers() {
+    UserWebServices.getAllUsers().then((users) {
+      setState(() {
+        _users = users;
+        _filteredUsers = _users.take(_currentPage * _usersPerPage).toList();
+      });
       return users;
     });
   }
@@ -45,25 +52,11 @@ class _UserWebServicesFutureBuilderState
   void _deleteUser(int? id) {
     if (id != null) {
       setState(() {
-        _usersFuture = UserWebServices.deleteUser(id).then((_) {
-          return UserWebServices.getAllUsers().then((users) {
-            _users = users;
-            _filteredUsers = users;
-            return users;
-          });
+        UserWebServices.deleteUser(id).then((_) {
+          _loadUsers();
         });
       });
     }
-  }
-
-  void updateUsers() {
-    setState(() {
-      _usersFuture = UserWebServices.getAllUsers().then((users) {
-        _users = users;
-        _filteredUsers = users;
-        return users;
-      });
-    });
   }
 
   void _updateFilteredUsers(String searchText) {
@@ -71,7 +64,15 @@ class _UserWebServicesFutureBuilderState
       _filteredUsers = _users
           .where((user) =>
               user.email.toLowerCase().contains(searchText.toLowerCase()))
+          .take(_currentPage * _usersPerPage)
           .toList();
+    });
+  }
+
+  void _loadMoreUsers() {
+    setState(() {
+      _currentPage++;
+      _filteredUsers = _users.take(_currentPage * _usersPerPage).toList();
     });
   }
 
@@ -92,16 +93,15 @@ class _UserWebServicesFutureBuilderState
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                onPressed: updateUsers,
+                onPressed: _loadUsers,
                 icon: const Icon(Icons.refresh),
               ),
               IconButton(
-                onPressed:() {
+                onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          const AddUserWidget(),
+                      builder: (context) => const AddUserWidget(),
                     ),
                   );
                 },
@@ -111,92 +111,74 @@ class _UserWebServicesFutureBuilderState
           ),
           const SizedBox(height: 16),
           Expanded(
-            child: FutureBuilder<List<User>>(
-              future: _usersFuture,
-              builder: (context, snapshot) {
-                if (snapshot.hasError) {
-                  return Center(
-                    child: Text('Erreur ${snapshot.error}'),
+            child: ListView.builder(
+              itemCount: _filteredUsers.length + 2,
+              itemBuilder: (context, index) {
+                if (index == 0) {
+                  return const ListTile(
+                    title: Row(
+                      children: [
+                        Expanded(child: TitleWidget(title: 'ID')),
+                        Spacer(),
+                        Expanded(child: TitleWidget(title: 'Prénom')),
+                        Spacer(),
+                        Expanded(child: TitleWidget(title: 'Profession')),
+                        Spacer(),
+                        Expanded(child: TitleWidget(title: 'Rôle')),
+                        Spacer(),
+                        Expanded(child: TitleWidget(title: 'Validé')),
+                        Spacer(),
+                      ],
+                    ),
+                  );
+                } else if (index == _filteredUsers.length + 1) {
+                  return ElevatedButton(
+                    onPressed: _loadMoreUsers,
+                    child: const Text('Charger plus'),
                   );
                 }
 
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                }
-
-                final users = snapshot.data;
-                if (users == null || users.isEmpty) {
-                  return const Center(child: Text('No users'));
-                }
-
-                return ListView.builder(
-                  itemCount: _filteredUsers.length + 1, // +1 for the header row
-                  itemBuilder: (context, index) {
-                    if (index == 0) {
-                      // Header row
-                      return const ListTile(
-                        title: Row(
+                final user = _filteredUsers[index - 1];
+                return Card(
+                  child: ListTile(
+                    title: Row(
+                      children: [
+                        Expanded(child: Text('${user.id}')),
+                        const Spacer(),
+                        Expanded(child: Text('${user.firstname}')),
+                        const Spacer(),
+                        Expanded(child: Text('${user.profession}')),
+                        const Spacer(),
+                        Expanded(child: Text('${user.role}')),
+                        const Spacer(),
+                        Expanded(child: Text('${user.validated}')),
+                        ButtonBar(
                           children: [
-                            Expanded(child: TitleWidget(title: 'ID')),
-                            Spacer(),
-                            Expanded(child: TitleWidget(title: 'Prénom')),
-                            Spacer(),
-                            Expanded(child: TitleWidget(title: 'Profession')),
-                            Spacer(),
-                            Expanded(child: TitleWidget(title: 'Rôle')),
-                            Spacer(),
-                            Expanded(child: TitleWidget(title: 'Validé')),
-                            Spacer(),
-                          ],
-                        ),
-                      );
-                    }
-
-                    final user = _filteredUsers[index - 1];
-                    return Card(
-                      child: ListTile(
-                        title: Row(
-                          children: [
-                            Expanded(child: Text('${user.id}')),
-                            const Spacer(),
-                            Expanded(child: Text('${user.firstname}')),
-                            const Spacer(),
-                            Expanded(child: Text('${user.profession}')),
-                            const Spacer(),
-                            Expanded(child: Text('${user.role}')),
-                            const Spacer(),
-                            Expanded(child: Text('${user.validated}')),
-                            ButtonBar(
-                              children: [
-                                IconButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            UserDetailsWidget(user: user),
-                                      ),
-                                    );
-                                  },
-                                  icon: const Icon(Icons.edit),
-                                  color: Colors.blue,
-                                ),
-                                IconButton(
-                                  onPressed: () {
-                                    _deleteUser(user.id);
-                                  },
-                                  icon: const Icon(Icons.delete),
-                                  color: Colors.red,
-                                ),
-                              ],
+                            IconButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        UserDetailsWidget(user: user),
+                                  ),
+                                );
+                              },
+                              icon: const Icon(Icons.edit),
+                              color: Colors.blue,
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                _deleteUser(user.id);
+                              },
+                              icon: const Icon(Icons.delete),
+                              color: Colors.red,
                             ),
                           ],
                         ),
-                      ),
-                    );
-                  },
+                      ],
+                    ),
+                  ),
                 );
               },
             ),
