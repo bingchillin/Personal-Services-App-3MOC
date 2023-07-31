@@ -13,20 +13,20 @@ class UsersWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const UserWebServicesFutureBuilder();
+    return const UserFutureBuilder();
   }
 }
 
-class UserWebServicesFutureBuilder extends StatefulWidget {
-  const UserWebServicesFutureBuilder({Key? key}) : super(key: key);
+class UserFutureBuilder extends StatefulWidget {
+  const UserFutureBuilder({Key? key}) : super(key: key);
 
   @override
-  State<UserWebServicesFutureBuilder> createState() =>
-      _UserWebServicesFutureBuilderState();
+  State<UserFutureBuilder> createState() =>
+      _UserFutureBuilderState();
 }
 
-class _UserWebServicesFutureBuilderState
-    extends State<UserWebServicesFutureBuilder> {
+class _UserFutureBuilderState
+    extends State<UserFutureBuilder> {
   List<User> _users = [];
   List<User> _filteredUsers = [];
   final TextEditingController _searchController = TextEditingController();

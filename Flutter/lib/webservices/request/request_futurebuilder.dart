@@ -10,20 +10,20 @@ class RequestsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const RequestWebServicesFutureBuilder();
+    return const RequestFutureBuilder();
   }
 }
 
-class RequestWebServicesFutureBuilder extends StatefulWidget {
-  const RequestWebServicesFutureBuilder({Key? key}) : super(key: key);
+class RequestFutureBuilder extends StatefulWidget {
+  const RequestFutureBuilder({Key? key}) : super(key: key);
 
   @override
-  State<RequestWebServicesFutureBuilder> createState() =>
-      _RequestWebServicesFutureBuilderState();
+  State<RequestFutureBuilder> createState() =>
+      _RequestFutureBuilderState();
 }
 
-class _RequestWebServicesFutureBuilderState
-    extends State<RequestWebServicesFutureBuilder> {
+class _RequestFutureBuilderState
+    extends State<RequestFutureBuilder> {
   List<Request> _requests = [];
   List<Request> _filteredRequests = [];
   final TextEditingController _searchController = TextEditingController();

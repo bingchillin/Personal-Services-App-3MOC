@@ -12,7 +12,7 @@ class RequestsWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
-          child: RequestWebServicesFutureBuilder(),
+          child: RequestFutureBuilder(),
         ),
       ],
     );

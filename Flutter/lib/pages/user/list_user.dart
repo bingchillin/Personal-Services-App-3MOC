@@ -12,7 +12,7 @@ class UsersWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
-          child: UserWebServicesFutureBuilder(),
+          child: UserFutureBuilder(),
         ),
       ],
     );

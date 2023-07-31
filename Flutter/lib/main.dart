@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:goldie_studio/pages/home.dart';
 import 'package:goldie_studio/pages/login.dart';
+import 'package:goldie_studio/pages/mission/list_mission.dart';
 import 'package:goldie_studio/pages/request/list_req.dart';
 import 'package:goldie_studio/pages/user/list_user.dart';
 import 'package:goldie_studio/widgets/navigation_rail.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
       routes: {
         UsersWidget.routeName: (context) => const UsersWidget(),
         RequestsWidget.routeName: (context) => const RequestsWidget(),
+        MissionsWidget.routeName: (context) => const MissionsWidget(),
       },
     );
   }
@@ -81,6 +83,7 @@ class _MyNavigationWidgetState extends State<MyNavigationWidget> {
                 MyHomePage(),
                 UsersWidget(),
                 RequestsWidget(),
+                MissionsWidget(),
               ],
             ),
           ),

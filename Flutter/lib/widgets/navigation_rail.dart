@@ -16,7 +16,6 @@ class NavigationRailWidget extends StatelessWidget {
       selectedIndex: selectedIndex,
       onDestinationSelected: onDestinationSelected,
       labelType: NavigationRailLabelType.all,
-
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       selectedIconTheme: Theme.of(context).iconTheme,
       unselectedIconTheme: Theme.of(context).iconTheme,
@@ -24,10 +23,8 @@ class NavigationRailWidget extends StatelessWidget {
           Theme.of(context).textTheme.titleSmall?.copyWith(
                 color: Theme.of(context).colorScheme.onPrimary,
               ),
-
       elevation: 5,
       useIndicator: true,
-
       destinations: const [
         NavigationRailDestination(
           icon: Icon(Icons.home_outlined),
@@ -40,10 +37,15 @@ class NavigationRailWidget extends StatelessWidget {
           label: Text('Utilisateurs'),
         ),
         NavigationRailDestination(
-          icon: Icon(Icons.request_page_outlined),
-          selectedIcon: Icon(Icons.request_page_outlined),
+          icon: Icon(Icons.help_center_outlined),
+          selectedIcon: Icon(Icons.help_center_outlined),
           label: Text('Requêtes'),
         ),
+        NavigationRailDestination(
+          icon: Icon(Icons.request_page_outlined),
+          selectedIcon: Icon(Icons.request_page_outlined),
+          label: Text('Missions'),
+        )
       ],
     );
   }
