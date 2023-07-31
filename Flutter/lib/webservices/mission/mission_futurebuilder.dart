@@ -84,7 +84,7 @@ class _MissionFutureBuilderState extends State<MissionFutureBuilder> {
           const SizedBox(height: 16),
           Expanded(
             child: ListView.builder(
-              itemCount: _filteredMissions.length,
+              itemCount: _filteredMissions.length + 1,
               itemBuilder: (context, index) {
                 if (index == 0) {
                   return const ListTile(
@@ -97,6 +97,7 @@ class _MissionFutureBuilderState extends State<MissionFutureBuilder> {
                         Expanded(child: TitleWidget(title: 'Description')),
                         Spacer(),
                         Expanded(child: TitleWidget(title: 'Date')),
+                        Spacer(),
                       ],
                     ),
                   );
@@ -113,6 +114,20 @@ class _MissionFutureBuilderState extends State<MissionFutureBuilder> {
                         Expanded(child: Text(mission.description)),
                         const Spacer(),
                         Expanded(child: Text(mission.date)),
+                        ButtonBar(
+                          children: [
+                            IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.edit),
+                              color: Colors.blue,
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.delete),
+                              color: Colors.red,
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
