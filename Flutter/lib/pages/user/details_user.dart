@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:goldie_studio/webservices/user/user_class.dart';
-import '../webservices/user/user_webservices.dart';
+import '../../webservices/user/user_webservices.dart';
 
 class UserDetailsWidget extends StatefulWidget {
   final User user;

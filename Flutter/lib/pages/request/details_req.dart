@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:goldie_studio/webservices/request/request_class.dart';
-import '../webservices/request/request_webservices.dart';
+import '../../webservices/request/request_webservices.dart';
 
 class RequestDetailsWidget extends StatefulWidget {
   final Request request;

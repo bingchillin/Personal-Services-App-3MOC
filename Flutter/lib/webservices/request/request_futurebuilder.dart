@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:goldie_studio/webservices/request/request_class.dart';
 import 'package:goldie_studio/webservices/request/request_webservices.dart';
-import '../../pages/req_add.dart';
-import '../../pages/req_details.dart';
+import '../../pages/request/add_req.dart';
+import '../../pages/request/details_req.dart';
 import '../../widgets/title.dart';
 
 class RequestsWidget extends StatelessWidget {
