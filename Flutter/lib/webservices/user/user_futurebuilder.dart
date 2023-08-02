@@ -21,12 +21,10 @@ class UserFutureBuilder extends StatefulWidget {
   const UserFutureBuilder({Key? key}) : super(key: key);
 
   @override
-  State<UserFutureBuilder> createState() =>
-      _UserFutureBuilderState();
+  State<UserFutureBuilder> createState() => _UserFutureBuilderState();
 }
 
-class _UserFutureBuilderState
-    extends State<UserFutureBuilder> {
+class _UserFutureBuilderState extends State<UserFutureBuilder> {
   List<User> _users = [];
   List<User> _filteredUsers = [];
   final TextEditingController _searchController = TextEditingController();
@@ -149,9 +147,22 @@ class _UserFutureBuilderState
                         const Spacer(),
                         Expanded(child: Text('${user.profession}')),
                         const Spacer(),
-                        Expanded(child: Text('${user.role}')),
+                        Expanded(
+                            child: Text(user.role == 0
+                                ? 'Utilisateur'
+                                : user.role == 1
+                                    ? 'Admin'
+                                    : '')),
                         const Spacer(),
-                        Expanded(child: Text('${user.validated}')),
+                        Expanded(
+                          child: Icon(
+                            user.validated == 0
+                                ? Icons.close_rounded
+                                : user.validated == 1
+                                    ? Icons.check_rounded
+                                    : null,
+                            color: Colors.white),
+                        ),
                         ButtonBar(
                           children: [
                             IconButton(

@@ -166,7 +166,15 @@ class _RequestFutureBuilderState
                         const Spacer(),
                         Expanded(child: Text('${request.timer}')),
                         const Spacer(),
-                        Expanded(child: Text('${request.done}')),
+                        Expanded(
+                          child: Icon(
+                              request.done == 0
+                                  ? Icons.close_rounded
+                                  : request.done == 1
+                                  ? Icons.check_rounded
+                                  : null,
+                              color: Colors.white),
+                        ),
                         ButtonBar(
                           children: [
                             IconButton(
