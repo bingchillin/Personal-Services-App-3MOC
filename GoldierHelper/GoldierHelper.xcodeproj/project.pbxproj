@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DB9AC982A92AD1000438B0F /* AllHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB9AC962A92AD1000438B0F /* AllHomeViewController.swift */; };
+		2DB9AC992A92AD1000438B0F /* AllHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB9AC972A92AD1000438B0F /* AllHomeViewController.xib */; };
 		2DFF40E02A661E5F008E68D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF40DF2A661E5F008E68D6 /* AppDelegate.swift */; };
 		2DFF40E92A661E60008E68D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DFF40E82A661E60008E68D6 /* Assets.xcassets */; };
 		2DFF40EC2A661E60008E68D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DFF40EA2A661E60008E68D6 /* LaunchScreen.storyboard */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DB9AC962A92AD1000438B0F /* AllHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHomeViewController.swift; sourceTree = "<group>"; };
+		2DB9AC972A92AD1000438B0F /* AllHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllHomeViewController.xib; sourceTree = "<group>"; };
 		2DFF40DC2A661E5F008E68D6 /* GoldierHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldierHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DFF40DF2A661E5F008E68D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DFF40E82A661E60008E68D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DB9AC952A92AA6000438B0F /* AllHome */ = {
+			isa = PBXGroup;
+			children = (
+				2DB9AC962A92AD1000438B0F /* AllHomeViewController.swift */,
+				2DB9AC972A92AD1000438B0F /* AllHomeViewController.xib */,
+			);
+			path = AllHome;
+			sourceTree = "<group>";
+		};
 		2DFF40D32A661E5F008E68D6 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +104,7 @@
 		2DFF40DE2A661E5F008E68D6 /* GoldierHelper */ = {
 			isa = PBXGroup;
 			children = (
+				2DB9AC952A92AA6000438B0F /* AllHome */,
 				2DFF412A2A663A5C008E68D6 /* AllRequest */,
 				2DFF41292A663A40008E68D6 /* MyRequest */,
 				2DFF41272A663A17008E68D6 /* Account */,
@@ -257,6 +271,7 @@
 				2DFF41142A6620FA008E68D6 /* LoginViewController.xib in Resources */,
 				2DFF412E2A663A90008E68D6 /* AllRequestViewController.xib in Resources */,
 				2DFF413A2A663CEB008E68D6 /* Localizable.strings in Resources */,
+				2DB9AC992A92AD1000438B0F /* AllHomeViewController.xib in Resources */,
 				2DFF411D2A662482008E68D6 /* RegisterIdentityViewController.xib in Resources */,
 				2DFF40E92A661E60008E68D6 /* Assets.xcassets in Resources */,
 				2DFF41362A663AAD008E68D6 /* AccountViewController.xib in Resources */,
@@ -278,6 +293,7 @@
 				2DFF41232A662620008E68D6 /* UserFactory.swift in Sources */,
 				2DFF41072A66206D008E68D6 /* LoginViewController.swift in Sources */,
 				2DFF41262A662647008E68D6 /* User.swift in Sources */,
+				2DB9AC982A92AD1000438B0F /* AllHomeViewController.swift in Sources */,
 				2DFF40E02A661E5F008E68D6 /* AppDelegate.swift in Sources */,
 				2DFF40FB2A661F65008E68D6 /* HomeViewController.swift in Sources */,
 				2DFF41202A662586008E68D6 /* UserWebService.swift in Sources */,

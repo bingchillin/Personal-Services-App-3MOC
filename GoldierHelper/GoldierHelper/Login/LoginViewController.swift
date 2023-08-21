@@ -94,6 +94,9 @@ class LoginViewController: UIViewController {
         tabBarController.tabBar.backgroundColor = .white
         tabBarController.tabBar.tintColor = hexStringToUIColor(hex: "#a5ce63")
         
+        let allHomeViewController = AllHomeViewController()
+        allHomeViewController.tabBarItem.title = NSLocalizedString("controllers.tabbar.home", comment: "")
+        //allRequestViewController.tabBarItem.image = resizeImage(image: UIImage(named: "allRequests")!, targetSize: CGSizeMake(27.0, 27.0))
         
         let allRequestViewController = AllRequestViewController()
         allRequestViewController.tabBarItem.title = NSLocalizedString("controllers.tabbar.allrequest", comment: "")
@@ -108,6 +111,7 @@ class LoginViewController: UIViewController {
         //favoritesViewController.tabBarItem.image = resizeImage(image: UIImage(named: "favorites-star")!, targetSize: CGSizeMake(27.0, 27.0))
         
         tabBarController.viewControllers = [
+            allHomeViewController,
             allRequestViewController,
             myRequestViewController,
             accountViewController
