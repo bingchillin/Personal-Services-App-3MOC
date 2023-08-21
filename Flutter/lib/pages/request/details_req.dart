@@ -6,7 +6,8 @@ import '../../webservices/request/request_webservices.dart';
 class RequestDetailsWidget extends StatefulWidget {
   final Request request;
 
-  const RequestDetailsWidget({Key? key, required this.request}) : super(key: key);
+  const RequestDetailsWidget({Key? key, required this.request})
+      : super(key: key);
 
   @override
   _RequestDetailsWidgetState createState() => _RequestDetailsWidgetState();
@@ -54,7 +55,8 @@ class _RequestDetailsWidgetState extends State<RequestDetailsWidget> {
             for (var i = 0; i < _fieldList.length; i++)
               TextField(
                 controller: _textControllers[i],
-                inputFormatters: _getInputFormatters(_fieldList[i].keys.first), // Utiliser les inputFormatters pour restreindre les champs aux nombres
+                inputFormatters: _getInputFormatters(_fieldList[i].keys.first),
+                // Utiliser les inputFormatters pour restreindre les champs aux nombres
                 decoration: InputDecoration(
                   labelText: _fieldList[i].keys.first,
                 ),
@@ -76,7 +78,10 @@ class _RequestDetailsWidgetState extends State<RequestDetailsWidget> {
 
                 // Afficher une snackbar ou une boîte de dialogue pour confirmer la mise à jour
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Demande mise à jour')),
+                  const SnackBar(
+                    content: Text('Demande mise à jour'),
+                    backgroundColor: Colors.blue,
+                  ),
                 );
 
                 // Naviguer en arrière après la mise à jour

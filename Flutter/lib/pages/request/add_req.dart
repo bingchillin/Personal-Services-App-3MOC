@@ -51,7 +51,8 @@ class _RequestAddWidgetState extends State<RequestAddWidget> {
             for (var i = 0; i < _fieldList.length; i++)
               TextField(
                 controller: _textControllers[i],
-                decoration: InputDecoration(labelText: _fieldList[i].keys.first),
+                decoration:
+                    InputDecoration(labelText: _fieldList[i].keys.first),
               ),
             const SizedBox(height: 16),
             ElevatedButton(
@@ -68,7 +69,10 @@ class _RequestAddWidgetState extends State<RequestAddWidget> {
 
                 // Afficher une snackbar ou une boîte de dialogue pour confirmer la création
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Utilisateur créé')),
+                  const SnackBar(
+                    content: Text('Utilisateur créé'),
+                    backgroundColor: Colors.green,
+                  ),
                 );
 
                 // Naviguer en arrière après la création
