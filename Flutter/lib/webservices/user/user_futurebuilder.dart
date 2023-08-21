@@ -47,16 +47,6 @@ class _UserFutureBuilderState extends State<UserFutureBuilder> {
     });
   }
 
-  void _deleteUser(int? id) {
-    if (id != null) {
-      setState(() {
-        UserWebServices.deleteUser(id).then((_) {
-          _loadUsers();
-        });
-      });
-    }
-  }
-
   void _updateFilteredUsers(String searchText) {
     setState(() {
       _filteredUsers = _users
@@ -184,8 +174,17 @@ class _UserFutureBuilderState extends State<UserFutureBuilder> {
                               color: Colors.blue,
                             ),
                             IconButton(
-                              onPressed: () {
-                                _deleteUser(user.id);
+                              onPressed: () async {
+                                bool deleted = await UserWebServices.deleteUser(user.id);
+                                if (deleted) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text('Utilisateur supprimé'),
+                                      backgroundColor: Colors.red,
+                                    ),
+                                  );
+                                }
+                                _loadUsers();
                               },
                               icon: const Icon(Icons.delete),
                               color: Colors.red,
