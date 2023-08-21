@@ -18,6 +18,8 @@
 "controllers.tabbar.allrequest" = "All requests";
 "controllers.tabbar.myrequest" = "My requests";
 "controllers.tabbar.account" = "Account";
+"controllers.tabbar.home" = "Accueil";
+
 
 
 // HOME
@@ -54,37 +56,3 @@
 "topbar.logout" = "Logout";
 
 //HOMEPAGE
-
-"controllers.mainpages.homepage" = "Suggestion of the Day";
-//TRAINING
-
-"controllers.mainpages.training.program" = "My Programs";
-"controllers.mainpages.training.allprogram" = "JYM Programs";
-
-// NUTRITION
-
-"controllers.mainpages.nutrition.createbutton" = "Create";
-"controllers.mainpages.nutrition.recipelabel" = "My recipes";
-"controllers.mainpages.nutrition.allrecipelabel" = "Recipes from JYM's subscribers";
-
-//Recipe
-
-"controllers.mainpages.nutrition.createrecipe.name" = "Name of the recipe";
-"controllers.mainpages.nutrition.createrecipe.timer" = "Preparation time";
-"controllers.mainpages.nutrition.createrecipe.description" = "Description";
-
-"controllers.mainpages.nutrition.createrecipe.createbutton" = "Add ingredients";
-
-"controllers.mainpages.nutrition.createrecipe.createlabel" = "Create a recipe";
-
-// IngredientDetail
-
-"controllers.mainpages.nutrition.ingredientdetail.name" = "Ingredient's name";
-"controllers.mainpages.nutrition.ingredientdetail.quantity" = "Quantity";
-"controllers.mainpages.nutrition.ingredientdetail.weight" = "Weight";
-
-"controllers.mainpages.nutrition.ingredientdetail.createbutton" = "Create recipe";
-
-"controllers.mainpages.nutrition.ingredientdetail.createlabel" = "Add an ingredient";
-
-

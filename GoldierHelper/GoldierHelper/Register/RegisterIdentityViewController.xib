@@ -18,94 +18,105 @@
             <rect key="frame" x="0.0" y="0.0" width="1180" height="820"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prenom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKu-TH-5PH">
-                    <rect key="frame" x="187" y="214" width="63" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prenom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKu-TH-5PH">
+                    <rect key="frame" x="187" y="214" width="264" height="21"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date de naissance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHD-U6-woi">
-                    <rect key="frame" x="367" y="323" width="447" height="21"/>
+                    <rect key="frame" x="516" y="308" width="149" height="21"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Renseignez votre identité" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iM7-7X-Je9">
+                    <rect key="frame" x="293" y="137" width="594" height="34"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Saisissez votre prenom*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Do-dX-P0U">
+                    <rect key="frame" x="187" y="244" width="264" height="36"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Saisissez votre nom *" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dGL-cx-p8k">
+                    <rect key="frame" x="765" y="244" width="264" height="36"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profession" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwb-GG-X2x">
+                    <rect key="frame" x="548" y="442" width="85" height="21"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIz-d1-jMU">
+                    <rect key="frame" x="765" y="215" width="238.5" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="238.5" id="nlq-11-jY9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="UhV-if-Ayy">
+                    <rect key="frame" x="367" y="337" width="447" height="34.5"/>
+                </datePicker>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Progression(2)" translatesAutoresizingMaskIntoConstraints="NO" id="hao-xT-6v8">
+                    <rect key="frame" x="0.0" y="692" width="1180" height="5"/>
+                </imageView>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGI-aa-NR3">
+                    <rect key="frame" x="430" y="468" width="320" height="216"/>
+                </pickerView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHM-cR-3wY">
-                    <rect key="frame" x="318" y="721" width="545" height="40.5"/>
+                    <rect key="frame" x="317.5" y="720" width="545" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="545" id="Ljt-8L-P8k"/>
+                        <constraint firstAttribute="height" constant="50" id="u8s-yL-LAP"/>
+                    </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="ETAPE SUIVANTE">
                         <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                         <color key="baseBackgroundColor" red="0.94901960780000005" green="0.56862745100000001" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                     </buttonConfiguration>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Renseignez votre identité" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iM7-7X-Je9">
-                    <rect key="frame" x="293" y="109" width="594" height="34"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
-                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Saisissez votre prenom*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Do-dX-P0U">
-                    <rect key="frame" x="187" y="243" width="264" height="36"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Saisissez votre nom *" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dGL-cx-p8k">
-                    <rect key="frame" x="695" y="244" width="238.5" height="36"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profession" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwb-GG-X2x">
-                    <rect key="frame" x="367" y="420" width="447" height="21"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIz-d1-jMU">
-                    <rect key="frame" x="706" y="215" width="39" height="21"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="UhV-if-Ayy">
-                    <rect key="frame" x="492" y="352" width="196" height="34.5"/>
-                </datePicker>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Progression(2)" translatesAutoresizingMaskIntoConstraints="NO" id="hao-xT-6v8">
-                    <rect key="frame" x="470" y="679" width="240" height="5"/>
-                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="wwb-GG-X2x" firstAttribute="top" secondItem="UhV-if-Ayy" secondAttribute="bottom" constant="33.5" id="4dI-5y-8tY"/>
-                <constraint firstItem="JKu-TH-5PH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="187" id="52E-h1-46r"/>
-                <constraint firstItem="UhV-if-Ayy" firstAttribute="top" secondItem="MHD-U6-woi" secondAttribute="bottom" constant="8" symbolic="YES" id="61C-8C-si9"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UhV-if-Ayy" secondAttribute="trailing" constant="492" id="9OT-Sq-Xsg"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hao-xT-6v8" secondAttribute="trailing" constant="470" id="9QV-yV-Y6P"/>
-                <constraint firstItem="0Do-dX-P0U" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="187" id="9rQ-iM-saT"/>
-                <constraint firstItem="wwb-GG-X2x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="367" id="Etu-Du-mof"/>
-                <constraint firstItem="MHD-U6-woi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="367" id="GeT-N7-0bh"/>
-                <constraint firstItem="dGL-cx-p8k" firstAttribute="leading" secondItem="0Do-dX-P0U" secondAttribute="trailing" constant="244" id="LOY-RR-IbS"/>
-                <constraint firstItem="hao-xT-6v8" firstAttribute="top" secondItem="wwb-GG-X2x" secondAttribute="bottom" constant="238" id="MBI-75-4rB"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OIz-d1-jMU" secondAttribute="trailing" constant="435" id="MNb-FO-IFO"/>
-                <constraint firstItem="iM7-7X-Je9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="293" id="Sn3-k2-Guk"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wwb-GG-X2x" secondAttribute="trailing" constant="366" id="UQM-eQ-f58"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iM7-7X-Je9" secondAttribute="trailing" constant="293" id="Y8b-Es-a3K"/>
-                <constraint firstItem="dGL-cx-p8k" firstAttribute="top" secondItem="OIz-d1-jMU" secondAttribute="bottom" constant="8" symbolic="YES" id="YQY-0c-w77"/>
-                <constraint firstItem="OIz-d1-jMU" firstAttribute="leading" secondItem="JKu-TH-5PH" secondAttribute="trailing" constant="456" id="Yzn-9p-GWp"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MHD-U6-woi" secondAttribute="trailing" constant="366" id="ZJP-bl-Jws"/>
-                <constraint firstItem="UhV-if-Ayy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="492" id="eUl-6Y-les"/>
-                <constraint firstItem="OIz-d1-jMU" firstAttribute="top" secondItem="iM7-7X-Je9" secondAttribute="bottom" constant="72" id="enI-wV-Bw8"/>
-                <constraint firstItem="hao-xT-6v8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="470" id="kHa-S5-tpS"/>
-                <constraint firstItem="kHM-cR-3wY" firstAttribute="top" secondItem="hao-xT-6v8" secondAttribute="bottom" constant="37" id="lOB-04-fic"/>
-                <constraint firstItem="MHD-U6-woi" firstAttribute="top" secondItem="dGL-cx-p8k" secondAttribute="bottom" constant="43" id="miH-Di-4I9"/>
-                <constraint firstItem="kHM-cR-3wY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="318" id="nBn-wx-fP9"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dGL-cx-p8k" secondAttribute="trailing" constant="246.5" id="nNS-07-0NK"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kHM-cR-3wY" secondAttribute="trailing" constant="317" id="rlg-4p-rev"/>
-                <constraint firstItem="iM7-7X-Je9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="85" id="s8P-Ew-eLw"/>
-                <constraint firstItem="0Do-dX-P0U" firstAttribute="top" secondItem="JKu-TH-5PH" secondAttribute="bottom" constant="8" symbolic="YES" id="u7o-cY-Kah"/>
-                <constraint firstItem="JKu-TH-5PH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="190" id="wlC-s1-e2y"/>
+                <constraint firstItem="MHD-U6-woi" firstAttribute="top" secondItem="0Do-dX-P0U" secondAttribute="bottom" constant="28" id="4f4-F2-lXT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MHD-U6-woi" secondAttribute="trailing" constant="515" id="7SO-Tw-6eN"/>
+                <constraint firstItem="OIz-d1-jMU" firstAttribute="top" secondItem="iM7-7X-Je9" secondAttribute="bottom" constant="44" id="8Dr-wS-c2R"/>
+                <constraint firstItem="dGL-cx-p8k" firstAttribute="top" secondItem="OIz-d1-jMU" secondAttribute="bottom" constant="8" symbolic="YES" id="CQf-6I-QCD"/>
+                <constraint firstItem="JKu-TH-5PH" firstAttribute="top" secondItem="iM7-7X-Je9" secondAttribute="bottom" constant="43" id="Ibc-UZ-d7Y"/>
+                <constraint firstItem="OGI-aa-NR3" firstAttribute="top" secondItem="wwb-GG-X2x" secondAttribute="bottom" constant="5" id="KWN-Eh-emf"/>
+                <constraint firstItem="MHD-U6-woi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="516" id="MtD-FG-qXY"/>
+                <constraint firstItem="JKu-TH-5PH" firstAttribute="trailing" secondItem="0Do-dX-P0U" secondAttribute="trailing" id="MyY-8S-Hsf"/>
+                <constraint firstItem="wwb-GG-X2x" firstAttribute="top" secondItem="UhV-if-Ayy" secondAttribute="bottom" constant="70.5" id="QIA-iD-NRD"/>
+                <constraint firstItem="0Do-dX-P0U" firstAttribute="top" secondItem="JKu-TH-5PH" secondAttribute="bottom" constant="9" id="QnD-ec-iZb"/>
+                <constraint firstItem="OGI-aa-NR3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="430" id="TIn-bh-lhK"/>
+                <constraint firstItem="kHM-cR-3wY" firstAttribute="centerX" secondItem="hao-xT-6v8" secondAttribute="centerX" id="U69-I5-S4d"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OIz-d1-jMU" secondAttribute="trailing" constant="176.5" id="UgS-9p-WKf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UhV-if-Ayy" secondAttribute="trailing" constant="366" id="V6c-KM-fv9"/>
+                <constraint firstItem="UhV-if-Ayy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="367" id="VAN-0m-JUq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iM7-7X-Je9" secondAttribute="trailing" constant="293" id="WN3-uI-syL"/>
+                <constraint firstItem="hao-xT-6v8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YJK-9R-KQA"/>
+                <constraint firstItem="OIz-d1-jMU" firstAttribute="leading" secondItem="dGL-cx-p8k" secondAttribute="leading" id="e7s-PK-DKq"/>
+                <constraint firstItem="iM7-7X-Je9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="113" id="egf-Ki-aEf"/>
+                <constraint firstItem="JKu-TH-5PH" firstAttribute="leading" secondItem="0Do-dX-P0U" secondAttribute="leading" id="gZe-Jf-VUY"/>
+                <constraint firstItem="hao-xT-6v8" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ip7-3g-N9A"/>
+                <constraint firstItem="iM7-7X-Je9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="293" id="qE7-Cn-7VN"/>
+                <constraint firstItem="JKu-TH-5PH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="187" id="r1R-V6-6pi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wwb-GG-X2x" secondAttribute="trailing" constant="547" id="rIF-9R-DVH"/>
+                <constraint firstItem="kHM-cR-3wY" firstAttribute="top" secondItem="hao-xT-6v8" secondAttribute="bottom" constant="23" id="sNz-k4-1J8"/>
+                <constraint firstItem="wwb-GG-X2x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="548" id="vQB-Ma-U5v"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OGI-aa-NR3" secondAttribute="trailing" constant="430" id="xlV-hU-qbl"/>
+                <constraint firstItem="UhV-if-Ayy" firstAttribute="top" secondItem="MHD-U6-woi" secondAttribute="bottom" constant="8" symbolic="YES" id="yC9-eN-wSf"/>
+                <constraint firstItem="hao-xT-6v8" firstAttribute="top" secondItem="OGI-aa-NR3" secondAttribute="bottom" constant="8" symbolic="YES" id="yDV-hd-mLa"/>
             </constraints>
             <point key="canvasLocation" x="83.898305084745772" y="20.487804878048781"/>
         </view>
