@@ -20,7 +20,7 @@ class _AddUserWidgetState extends State<AddUserWidget> {
       {'Prénom': ''},
       {'Nom': ''},
       {'Email': ''},
-      {'Date de naissance': ''},
+      {'Date de naissance (YYYY/MM/JJ)': ''},
       {'Profession': ''},
       {'Rôle': ''},
       {'Mot de passe': ''},
@@ -50,10 +50,44 @@ class _AddUserWidgetState extends State<AddUserWidget> {
         child: Column(
           children: [
             for (var i = 0; i < _fieldList.length; i++)
-              TextField(
-                controller: _textControllers[i],
-                decoration: InputDecoration(labelText: _fieldList[i].keys.first),
-              ),
+              _fieldList[i].keys.first == 'Rôle'
+                  ? Row(
+                      children: [
+                        Expanded(
+                          child: TextField(
+                            controller: _textControllers[i],
+                            decoration: InputDecoration(
+                                labelText: _fieldList[i].keys.first),
+                          ),
+                        ),
+                        const Tooltip(
+                          message: '0 pour utilisateur \n1 pour admin',
+                          child: Icon(Icons.help_outline),
+                        ),
+                      ],
+                    )
+                  : _fieldList[i].keys.first == 'Profession'
+                      ? Row(
+                          children: [
+                            Expanded(
+                              child: TextField(
+                                controller: _textControllers[i],
+                                decoration: InputDecoration(
+                                    labelText: _fieldList[i].keys.first),
+                              ),
+                            ),
+                            const Tooltip(
+                              message:
+                                  '0 pour bénévole \n1 pour assistant médical \n2 pour autre',
+                              child: Icon(Icons.help_outline),
+                            ),
+                          ],
+                        )
+                      : TextField(
+                          controller: _textControllers[i],
+                          decoration: InputDecoration(
+                              labelText: _fieldList[i].keys.first),
+                        ),
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () async {
@@ -71,7 +105,10 @@ class _AddUserWidgetState extends State<AddUserWidget> {
 
                 // Afficher une snackbar ou une boîte de dialogue pour confirmer la création
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Utilisateur créé')),
+                  const SnackBar(
+                    content: Text('Utilisateur créé'),
+                    backgroundColor: Colors.green,
+                  ),
                 );
 
                 // Naviguer en arrière après la création
