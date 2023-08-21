@@ -56,21 +56,24 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
         child: Column(
           children: [
             for (var i = 0; i < _fieldList.length; i++)
-              _fieldList[i].keys.first == 'Date inscription' || _fieldList[i].keys.first == "Password"
+              _fieldList[i].keys.first == 'Date inscription' ||
+                      _fieldList[i].keys.first == "Password"
                   ? TextFormField(
-                controller: _textControllers[i],
-                decoration: InputDecoration(
-                  labelText: _fieldList[i].keys.first,
-                ),
-                enabled: false,
-              )
+                      controller: _textControllers[i],
+                      decoration: InputDecoration(
+                        labelText: _fieldList[i].keys.first,
+                      ),
+                      enabled: false,
+                    )
                   : TextField(
-                controller: _textControllers[i],
-                inputFormatters: _getInputFormatters(_fieldList[i].keys.first), // Utiliser les inputFormatters pour restreindre les champs aux nombres
-                decoration: InputDecoration(
-                  labelText: _fieldList[i].keys.first,
-                ),
-              ),
+                      controller: _textControllers[i],
+                      inputFormatters:
+                          _getInputFormatters(_fieldList[i].keys.first),
+                      // Utiliser les inputFormatters pour restreindre les champs aux nombres
+                      decoration: InputDecoration(
+                        labelText: _fieldList[i].keys.first,
+                      ),
+                    ),
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () async {
@@ -92,7 +95,10 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
 
                 // Afficher une snackbar ou une boîte de dialogue pour confirmer la mise à jour
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Utilisateur mis à jour')),
+                  const SnackBar(
+                    content: Text('Utilisateur mis à jour'),
+                    backgroundColor: Colors.green,
+                  ),
                 );
 
                 // Naviguer en arrière après la mise à jour
