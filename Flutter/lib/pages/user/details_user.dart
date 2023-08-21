@@ -97,7 +97,7 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
                     content: Text('Utilisateur mis à jour'),
-                    backgroundColor: Colors.green,
+                    backgroundColor: Colors.blue,
                   ),
                 );
 
