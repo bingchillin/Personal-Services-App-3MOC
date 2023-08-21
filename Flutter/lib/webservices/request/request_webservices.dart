@@ -26,15 +26,15 @@ class RequestWebServices {
   }
 
   // delete request
-  static Future<void> deleteRequest(int id) async {
+  static Future<bool> deleteRequest(int id) async {
     try {
       final response =
           await http.delete(Uri.parse('http://localhost:3000/requetes/$id'));
       switch (response.statusCode) {
         case 200:
-          return;
+          return true;
         case 204:
-          return;
+          return true;
         default:
           debugPrint(response.statusCode.toString());
           throw Exception('Failed to delete request');

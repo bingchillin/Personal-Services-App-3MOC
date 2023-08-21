@@ -175,7 +175,7 @@ class _UserFutureBuilderState extends State<UserFutureBuilder> {
                             ),
                             IconButton(
                               onPressed: () async {
-                                bool deleted = await UserWebServices.deleteUser(user.id);
+                                bool deleted = await UserWebServices.deleteUser(user.id!);
                                 if (deleted) {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(

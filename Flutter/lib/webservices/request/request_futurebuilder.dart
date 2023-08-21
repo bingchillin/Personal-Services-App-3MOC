@@ -47,16 +47,6 @@ class _RequestFutureBuilderState
     });
   }
 
-  void _deleteRequest(int? id) {
-    if (id != null) {
-      setState(() {
-        RequestWebServices.deleteRequest(id).then((_) {
-          _loadRequests();
-        });
-      });
-    }
-  }
-
   void updateRequests() {
     setState(() {
       _currentPage = 1;
@@ -191,8 +181,18 @@ class _RequestFutureBuilderState
                               color: Colors.blue,
                             ),
                             IconButton(
-                              onPressed: () {
-                                _deleteRequest(request.id);
+                              onPressed: () async {
+                                bool deleted = await RequestWebServices
+                                    .deleteRequest(request.id!);
+                                if (deleted) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text('Requête supprimée'),
+                                      backgroundColor: Colors.red,
+                                    ),
+                                  );
+                                }
+                                _loadRequests();
                               },
                               icon: const Icon(Icons.delete),
                               color: Colors.red,
