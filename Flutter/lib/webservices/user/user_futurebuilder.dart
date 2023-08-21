@@ -145,7 +145,12 @@ class _UserFutureBuilderState extends State<UserFutureBuilder> {
                         const Spacer(),
                         Expanded(child: Text('${user.firstname}')),
                         const Spacer(),
-                        Expanded(child: Text('${user.profession}')),
+                        Expanded(
+                            child: Text(user.profession == 0
+                                ? 'Bénévole'
+                                : user.profession == 1
+                                ? 'Assistant médical'
+                                : 'Default')),
                         const Spacer(),
                         Expanded(
                             child: Text(user.role == 0
