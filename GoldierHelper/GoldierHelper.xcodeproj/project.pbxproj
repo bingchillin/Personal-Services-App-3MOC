@@ -32,6 +32,8 @@
 		2DFF413A2A663CEB008E68D6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DFF413C2A663CEB008E68D6 /* Localizable.strings */; };
 		2DFF413F2A663D0B008E68D6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DFF41412A663D0B008E68D6 /* Localizable.strings */; };
 		2DFF41432A663E3B008E68D6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF41422A663E3B008E68D6 /* Utils.swift */; };
+		D7EEF04B2A9BA86800C1A1B3 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EEF0492A9BA86800C1A1B3 /* DetailsViewController.swift */; };
+		D7EEF04C2A9BA86800C1A1B3 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7EEF04A2A9BA86800C1A1B3 /* DetailsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		2DFF413B2A663CEB008E68D6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2DFF41402A663D0B008E68D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2DFF41422A663E3B008E68D6 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		D7EEF0492A9BA86800C1A1B3 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		D7EEF04A2A9BA86800C1A1B3 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,7 @@
 		2DFF41292A663A40008E68D6 /* MyRequest */ = {
 			isa = PBXGroup;
 			children = (
+				D7EEF0482A9BA84300C1A1B3 /* Details */,
 				2DFF412F2A663AA0008E68D6 /* MyRequestViewController.swift */,
 				2DFF41302A663AA0008E68D6 /* MyRequestViewController.xib */,
 			);
@@ -203,6 +208,15 @@
 				2DFF412C2A663A90008E68D6 /* AllRequestViewController.xib */,
 			);
 			path = AllRequest;
+			sourceTree = "<group>";
+		};
+		D7EEF0482A9BA84300C1A1B3 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				D7EEF0492A9BA86800C1A1B3 /* DetailsViewController.swift */,
+				D7EEF04A2A9BA86800C1A1B3 /* DetailsViewController.xib */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +289,7 @@
 				2DFF411D2A662482008E68D6 /* RegisterIdentityViewController.xib in Resources */,
 				2DFF40E92A661E60008E68D6 /* Assets.xcassets in Resources */,
 				2DFF41362A663AAD008E68D6 /* AccountViewController.xib in Resources */,
+				D7EEF04C2A9BA86800C1A1B3 /* DetailsViewController.xib in Resources */,
 				2DFF41022A661FEA008E68D6 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +312,7 @@
 				2DFF40E02A661E5F008E68D6 /* AppDelegate.swift in Sources */,
 				2DFF40FB2A661F65008E68D6 /* HomeViewController.swift in Sources */,
 				2DFF41202A662586008E68D6 /* UserWebService.swift in Sources */,
+				D7EEF04B2A9BA86800C1A1B3 /* DetailsViewController.swift in Sources */,
 				2DFF41352A663AAD008E68D6 /* AccountViewController.swift in Sources */,
 				2DFF41432A663E3B008E68D6 /* Utils.swift in Sources */,
 			);
