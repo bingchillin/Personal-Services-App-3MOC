@@ -29,6 +29,28 @@ class UserWebService {
         task.resume()
     }
     
+    //Récup 1 user
+    class func getUserById(userId: Int, completion: @escaping (User?, Error?) -> Void) {
+        guard let userURL = URL(string: "http://localhost:3000/users/\(userId)") else {
+            return
+        }
+        let task = URLSession.shared.dataTask(with: userURL) { data, res, err in
+            guard err == nil, let d = data else {
+                completion(nil, err)
+                return
+            }
+            guard let json = try? JSONSerialization.jsonObject(with: d) as? [String: Any] else {
+                completion(nil, NSError(domain: "com.esgi.user.invalid-json", code: 1))
+                return
+            }
+            if let user = UserFactory.user(from: json) {
+                completion(user, nil)
+            } else {
+                completion(nil, NSError(domain: "com.esgi.user.invalid-user-data", code: 2))
+            }
+        }
+        task.resume()
+    }
     
     // Inscription
     class func registerUser(parameters: String) {
