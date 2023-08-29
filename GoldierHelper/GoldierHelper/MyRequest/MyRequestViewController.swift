@@ -9,6 +9,7 @@ import UIKit
 
 class MyRequestViewController: UIViewController {
 
+    @IBOutlet weak var myRequestLabel: UILabel!
     
     class func newInstance() -> MyRequestViewController {
         let myrequestViewController = MyRequestViewController()
@@ -16,6 +17,7 @@ class MyRequestViewController: UIViewController {
         return myrequestViewController
     }
 
+    @IBOutlet weak var myRequestTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
