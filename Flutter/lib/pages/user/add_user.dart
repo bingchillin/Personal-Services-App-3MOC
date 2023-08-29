@@ -22,9 +22,11 @@ class _AddUserWidgetState extends State<AddUserWidget> {
       {'Prénom': ''},
       {'Nom': ''},
       {'Sexe': ''},
-      {'Email': ''},
       {'Date de naissance (AAAA/MM/JJ)': ''},
+      {'Email': ''},
       {'Mot de passe': ''},
+      {'Profession': ''},
+      {'Rôle': ''}
     ];
 
     _textControllers = _fieldList
@@ -53,34 +55,47 @@ class _AddUserWidgetState extends State<AddUserWidget> {
             for (var i = 0; i < _fieldList.length; i++)
               _fieldList[i].keys.first == 'Sexe'
                   ? Row(
-                children: [
-                  Checkbox(
-                    value: _isMale,
-                    onChanged: (newValue) {
-                      setState(() {
-                        _isMale = newValue ?? false;
-                        if (_isMale) _isFemale = false;
-                      });
-                    },
-                  ),
-                  Text('Homme'),
-                  Checkbox(
-                    value: _isFemale,
-                    onChanged: (newValue) {
-                      setState(() {
-                        _isFemale = newValue ?? false;
-                        if (_isFemale) _isMale = false;
-                      });
-                    },
-                  ),
-                  Text('Femme'),
-                ],
-              )
+                      children: [
+                        Checkbox(
+                          value: _isMale,
+                          onChanged: (newValue) {
+                            setState(() {
+                              _isMale = newValue ?? false;
+                              if (_isMale) _isFemale = false;
+                            });
+                          },
+                        ),
+                        const Text('Homme'),
+                        Checkbox(
+                          value: _isFemale,
+                          onChanged: (newValue) {
+                            setState(() {
+                              _isFemale = newValue ?? false;
+                              if (_isFemale) _isMale = false;
+                            });
+                          },
+                        ),
+                        const Text('Femme'),
+                      ],
+                    )
                   : TextField(
-                controller: _textControllers[i],
-                decoration: InputDecoration(
-                    labelText: _fieldList[i].keys.first),
-              ),
+                      controller: _textControllers[i],
+                      decoration: InputDecoration(
+                        labelText: _fieldList[i].keys.first,
+                        suffixIcon: _fieldList[i].keys.first == 'Profession'
+                            ? const Tooltip(
+                                message:
+                                    '0 pour bénévole\n1 pour assistant médical\n2 pour autre',
+                                child: Icon(Icons.help_outline),
+                              )
+                            : _fieldList[i].keys.first == 'Rôle'
+                                ? const Tooltip(
+                                    message: '0 pour utilisateur\n1 pour admin',
+                                    child: Icon(Icons.help_outline),
+                                  )
+                                : null,
+                      ),
+                    ),
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () async {
@@ -88,9 +103,11 @@ class _AddUserWidgetState extends State<AddUserWidget> {
                   firstname: _textControllers[0].text,
                   lastname: _textControllers[1].text,
                   sexe: _isMale ? 'male' : (_isFemale ? 'female' : ''),
-                  email: _textControllers[3].text,
-                  birthdate: _textControllers[4].text,
+                  birthdate: _textControllers[3].text,
+                  email: _textControllers[4].text,
                   password: _textControllers[5].text,
+                  profession: int.tryParse(_textControllers[6].text),
+                  role: int.tryParse(_textControllers[7].text),
                 );
 
                 await UserWebServices.createUser(newUser);

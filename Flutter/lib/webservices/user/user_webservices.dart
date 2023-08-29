@@ -78,7 +78,7 @@ class UserWebServices {
           return;
         default:
           debugPrint(response.statusCode.toString());
-          //debugPrint(response.body);
+          debugPrint(response.body);
           debugPrint(json.encode(user.toJson()));
           throw Exception('Failed to create user');
       }
