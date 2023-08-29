@@ -21,7 +21,6 @@ class AccountViewController: UIViewController {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "John Doe"
         label.font = UIFont.systemFont(ofSize: 28, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -29,7 +28,6 @@ class AccountViewController: UIViewController {
     
     let emailLabel: UILabel = {
         let label = UILabel()
-        label.text = "Email@email.com"
         label.font = UIFont.systemFont(ofSize: 28, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -64,7 +62,6 @@ class AccountViewController: UIViewController {
     
     let professionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Bénévole"
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -173,7 +170,7 @@ class AccountViewController: UIViewController {
             logoutImageView.heightAnchor.constraint(equalToConstant: 100),
         ])
         
-        UserWebService.getUserById(userId: 1) { user, error in
+        UserWebService.getUserById(userId: 7) { user, error in
             if let user = user {
                 self.currentUser = user
                 DispatchQueue.main.async {
@@ -183,6 +180,9 @@ class AccountViewController: UIViewController {
                 }
             } else if let error = error {
                 print("Error fetching user:", error)
+                self.nameLabel.text = "Default error"
+                self.professionLabel.text = ""
+                self.emailLabel.text = ""
             }
         }
     }
