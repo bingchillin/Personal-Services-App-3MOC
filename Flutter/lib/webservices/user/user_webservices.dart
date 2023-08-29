@@ -79,7 +79,7 @@ class UserWebServices {
         default:
           debugPrint(response.statusCode.toString());
           //debugPrint(response.body);
-          //debugPrint(json.encode(user.toJson()));
+          debugPrint(json.encode(user.toJson()));
           throw Exception('Failed to create user');
       }
     } catch (error) {

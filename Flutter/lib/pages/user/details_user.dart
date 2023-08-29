@@ -15,6 +15,8 @@ class UserDetailsWidget extends StatefulWidget {
 class _UserDetailsWidgetState extends State<UserDetailsWidget> {
   late List<Map<String, String>> _fieldList;
   late List<TextEditingController> _textControllers;
+  bool _isMale = false; // État de la case à cocher "Male"
+  bool _isFemale = false; // État de la case à cocher "Female"
 
   @override
   void initState() {
@@ -22,8 +24,12 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
     _fieldList = [
       {'Prénom': widget.user.firstname ?? ''},
       {'Nom': widget.user.lastname ?? ''},
+      {'Sexe': widget.user.sexe ?? ''},
       {'Email': widget.user.email},
-      {'Date de naissance': convertDate(widget.user.birthdate) ?? ''},
+      {
+        'Date de naissance (AAAA/MM/JJ)':
+            convertDate(widget.user.birthdate) ?? ''
+      },
       {'Validé': widget.user.validated?.toString() ?? ''},
       {'Note': widget.user.note?.toString() ?? ''},
       {'Profession': widget.user.profession?.toString() ?? ''},
@@ -35,6 +41,10 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
     _textControllers = _fieldList
         .map((field) => TextEditingController(text: field.values.first))
         .toList();
+
+    // Définir les états des cases à cocher en fonction du sexe de l'utilisateur
+    _isMale = widget.user.sexe == 'male';
+    _isFemale = widget.user.sexe == 'female';
   }
 
   @override
@@ -65,15 +75,66 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                       ),
                       enabled: false,
                     )
-                  : TextField(
-                      controller: _textControllers[i],
-                      inputFormatters:
-                          _getInputFormatters(_fieldList[i].keys.first),
-                      // Utiliser les inputFormatters pour restreindre les champs aux nombres
-                      decoration: InputDecoration(
-                        labelText: _fieldList[i].keys.first,
-                      ),
-                    ),
+                  : _fieldList[i].keys.first == 'Rôle' ||
+                          _fieldList[i].keys.first == 'Profession' ||
+                          _fieldList[i].keys.first == 'Sexe'
+                      ? Row(
+                          children: [
+                            Expanded(
+                              child: _fieldList[i].keys.first == 'Sexe'
+                                  ? Row(
+                                      children: [
+                                        Checkbox(
+                                          value: _isMale,
+                                          onChanged: (newValue) {
+                                            setState(() {
+                                              _isMale = newValue ?? false;
+                                              _isFemale = !_isMale;
+                                            });
+                                          },
+                                        ),
+                                        Text('Male'),
+                                        Checkbox(
+                                          value: _isFemale,
+                                          onChanged: (newValue) {
+                                            setState(() {
+                                              _isFemale = newValue ?? false;
+                                              _isMale = !_isFemale;
+                                            });
+                                          },
+                                        ),
+                                        Text('Female'),
+                                      ],
+                                    )
+                                  : TextField(
+                                      controller: _textControllers[i],
+                                      decoration: InputDecoration(
+                                        labelText: _fieldList[i].keys.first,
+                                      ),
+                                    ),
+                            ),
+                            if (_fieldList[i].keys.first == 'Profession')
+                              const Tooltip(
+                                message:
+                                    '0 pour bénévole \n1 pour assistant médical \n2 pour autre',
+                                child: Icon(Icons.help_outline),
+                              ),
+                            if (_fieldList[i].keys.first == 'Rôle')
+                              const Tooltip(
+                                message: '0 pour utilisateur \n1 pour admin',
+                                child: Icon(Icons.help_outline),
+                              ),
+                          ],
+                        )
+                      : TextField(
+                          controller: _textControllers[i],
+                          inputFormatters:
+                              _getInputFormatters(_fieldList[i].keys.first),
+                          // Utiliser les inputFormatters pour restreindre les champs aux nombres
+                          decoration: InputDecoration(
+                            labelText: _fieldList[i].keys.first,
+                          ),
+                        ),
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () async {
@@ -81,14 +142,15 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                   id: widget.user.id,
                   firstname: _textControllers[0].text,
                   lastname: _textControllers[1].text,
-                  email: _textControllers[2].text,
-                  birthdate: convertDateBack(_textControllers[3].text),
-                  validated: int.tryParse(_textControllers[4].text),
-                  note: double.tryParse(_textControllers[5].text),
-                  profession: int.tryParse(_textControllers[6].text),
-                  role: int.tryParse(_textControllers[7].text),
-                  password: _textControllers[8].text,
-                  dateSignIn: convertDateBack(_textControllers[9].text),
+                  sexe: _isMale ? 'male' : 'female',
+                  email: _textControllers[3].text,
+                  birthdate: convertDateBack(_textControllers[4].text),
+                  validated: int.tryParse(_textControllers[5].text),
+                  note: double.tryParse(_textControllers[6].text),
+                  profession: int.tryParse(_textControllers[7].text),
+                  role: int.tryParse(_textControllers[8].text),
+                  password: _textControllers[9].text,
+                  dateSignIn: convertDateBack(_textControllers[10].text),
                 );
 
                 await UserWebServices.updateUser(updatedUser);

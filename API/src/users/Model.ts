@@ -6,6 +6,7 @@ export interface User {
     password: string;
     lastname: string;
     firstname: string;
+    sexe: string;
     birthdate: Date;
     dateSignIn: Date;
     profession: number;
@@ -19,6 +20,7 @@ export const UserValidationSchema = Joi.object({
     password: Joi.string().required(),
     lastname: Joi.string().required(),
     firstname: Joi.string().required(),
+    sexe: Joi.string().required(),
     birthdate: Joi.date().required(),
     dateSignIn: Joi.date().optional(),
     note: Joi.number().optional(),

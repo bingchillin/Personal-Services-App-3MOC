@@ -5,6 +5,7 @@ CREATE TABLE users
     password   VARCHAR(255) NOT NULL,
     lastname   VARCHAR(255) NOT NULL,
     firstname  VARCHAR(255) NOT NULL,
+    sexe       VARCHAR(50) NOT NULL,
     birthdate  DATE         NOT NULL,
     validated  BOOLEAN      NOT NULL DEFAULT FALSE,
     note       FLOAT        NOT NULL DEFAULT 0,

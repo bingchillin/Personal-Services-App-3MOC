@@ -12,6 +12,8 @@ class AddUserWidget extends StatefulWidget {
 class _AddUserWidgetState extends State<AddUserWidget> {
   late List<Map<String, String>> _fieldList;
   late List<TextEditingController> _textControllers;
+  bool _isMale = false;
+  bool _isFemale = false;
 
   @override
   void initState() {
@@ -19,10 +21,9 @@ class _AddUserWidgetState extends State<AddUserWidget> {
     _fieldList = [
       {'Prénom': ''},
       {'Nom': ''},
+      {'Sexe': ''},
       {'Email': ''},
-      {'Date de naissance (YYYY/MM/JJ)': ''},
-      {'Profession': ''},
-      {'Rôle': ''},
+      {'Date de naissance (AAAA/MM/JJ)': ''},
       {'Mot de passe': ''},
     ];
 
@@ -50,60 +51,50 @@ class _AddUserWidgetState extends State<AddUserWidget> {
         child: Column(
           children: [
             for (var i = 0; i < _fieldList.length; i++)
-              _fieldList[i].keys.first == 'Rôle'
+              _fieldList[i].keys.first == 'Sexe'
                   ? Row(
-                      children: [
-                        Expanded(
-                          child: TextField(
-                            controller: _textControllers[i],
-                            decoration: InputDecoration(
-                                labelText: _fieldList[i].keys.first),
-                          ),
-                        ),
-                        const Tooltip(
-                          message: '0 pour utilisateur \n1 pour admin',
-                          child: Icon(Icons.help_outline),
-                        ),
-                      ],
-                    )
-                  : _fieldList[i].keys.first == 'Profession'
-                      ? Row(
-                          children: [
-                            Expanded(
-                              child: TextField(
-                                controller: _textControllers[i],
-                                decoration: InputDecoration(
-                                    labelText: _fieldList[i].keys.first),
-                              ),
-                            ),
-                            const Tooltip(
-                              message:
-                                  '0 pour bénévole \n1 pour assistant médical \n2 pour autre',
-                              child: Icon(Icons.help_outline),
-                            ),
-                          ],
-                        )
-                      : TextField(
-                          controller: _textControllers[i],
-                          decoration: InputDecoration(
-                              labelText: _fieldList[i].keys.first),
-                        ),
+                children: [
+                  Checkbox(
+                    value: _isMale,
+                    onChanged: (newValue) {
+                      setState(() {
+                        _isMale = newValue ?? false;
+                        if (_isMale) _isFemale = false;
+                      });
+                    },
+                  ),
+                  Text('Homme'),
+                  Checkbox(
+                    value: _isFemale,
+                    onChanged: (newValue) {
+                      setState(() {
+                        _isFemale = newValue ?? false;
+                        if (_isFemale) _isMale = false;
+                      });
+                    },
+                  ),
+                  Text('Femme'),
+                ],
+              )
+                  : TextField(
+                controller: _textControllers[i],
+                decoration: InputDecoration(
+                    labelText: _fieldList[i].keys.first),
+              ),
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () async {
                 final newUser = User(
                   firstname: _textControllers[0].text,
                   lastname: _textControllers[1].text,
-                  email: _textControllers[2].text,
-                  birthdate: _textControllers[3].text,
-                  profession: int.tryParse(_textControllers[4].text),
-                  role: int.tryParse(_textControllers[5].text),
-                  password: _textControllers[6].text,
+                  sexe: _isMale ? 'male' : (_isFemale ? 'female' : ''),
+                  email: _textControllers[3].text,
+                  birthdate: _textControllers[4].text,
+                  password: _textControllers[5].text,
                 );
 
                 await UserWebServices.createUser(newUser);
 
-                // Afficher une snackbar ou une boîte de dialogue pour confirmer la création
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
                     content: Text('Utilisateur créé'),
@@ -111,7 +102,6 @@ class _AddUserWidgetState extends State<AddUserWidget> {
                   ),
                 );
 
-                // Naviguer en arrière après la création
                 Navigator.pop(context);
               },
               child: const Text('Créer'),
