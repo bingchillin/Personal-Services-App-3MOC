@@ -85,3 +85,16 @@ class MainView: UIView {
         //layer.shadowColor = UIColor.blue.cgColor
     }
 }
+
+@IBDesignable
+class TFView: UITextField {
+
+    @IBInspectable var cornerRadius: CGFloat = 20
+
+    override func layoutSubviews() {
+        layer.cornerRadius = cornerRadius
+
+        layer.shadowOpacity = 0.3
+        layer.shadowOffset = CGSize(width: 5, height: 5)
+    }
+}
