@@ -7,7 +7,7 @@
     <list default="true" id="38826e6d-a765-4c67-b0c3-2daf4c2dbee0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper.xcodeproj/project.xcworkspace/xcuserdata/thanudimadawala.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper.xcodeproj/project.xcworkspace/xcuserdata/thanudimadawala.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/AppDelegate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/Webservices/RequeteSubWebService.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/Webservices/RequeteSubWebService.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

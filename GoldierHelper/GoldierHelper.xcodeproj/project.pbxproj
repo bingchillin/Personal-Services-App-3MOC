@@ -19,6 +19,8 @@
 		2D0D8A082A9B90E000C75940 /* RequeteSubWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0D8A072A9B90E000C75940 /* RequeteSubWebService.swift */; };
 		2D0D8A0B2A9D6FA100C75940 /* NutritionTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0D8A092A9D6FA100C75940 /* NutritionTaskTableViewCell.swift */; };
 		2D0D8A0C2A9D6FA100C75940 /* NutritionTaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D0D8A0A2A9D6FA100C75940 /* NutritionTaskTableViewCell.xib */; };
+		2DA00E0F2A9EB96000F0F861 /* DoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA00E0D2A9EB96000F0F861 /* DoneTableViewCell.swift */; };
+		2DA00E102A9EB96000F0F861 /* DoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DA00E0E2A9EB96000F0F861 /* DoneTableViewCell.xib */; };
 		2DB9AC982A92AD1000438B0F /* AllHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB9AC962A92AD1000438B0F /* AllHomeViewController.swift */; };
 		2DB9AC992A92AD1000438B0F /* AllHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB9AC972A92AD1000438B0F /* AllHomeViewController.xib */; };
 		2DFF40E02A661E5F008E68D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF40DF2A661E5F008E68D6 /* AppDelegate.swift */; };
@@ -63,6 +65,8 @@
 		2D0D8A072A9B90E000C75940 /* RequeteSubWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequeteSubWebService.swift; sourceTree = "<group>"; };
 		2D0D8A092A9D6FA100C75940 /* NutritionTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionTaskTableViewCell.swift; sourceTree = "<group>"; };
 		2D0D8A0A2A9D6FA100C75940 /* NutritionTaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NutritionTaskTableViewCell.xib; sourceTree = "<group>"; };
+		2DA00E0D2A9EB96000F0F861 /* DoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneTableViewCell.swift; sourceTree = "<group>"; };
+		2DA00E0E2A9EB96000F0F861 /* DoneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoneTableViewCell.xib; sourceTree = "<group>"; };
 		2DB9AC962A92AD1000438B0F /* AllHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHomeViewController.swift; sourceTree = "<group>"; };
 		2DB9AC972A92AD1000438B0F /* AllHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllHomeViewController.xib; sourceTree = "<group>"; };
 		2DFF40DC2A661E5F008E68D6 /* GoldierHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldierHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,6 +239,8 @@
 				2DFF41302A663AA0008E68D6 /* MyRequestViewController.xib */,
 				2D0D89F52A9B579E00C75940 /* MyRequestTableViewCell.swift */,
 				2D0D89F62A9B579E00C75940 /* MyRequestTableViewCell.xib */,
+				2DA00E0D2A9EB96000F0F861 /* DoneTableViewCell.swift */,
+				2DA00E0E2A9EB96000F0F861 /* DoneTableViewCell.xib */,
 			);
 			path = MyRequest;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 				2D0D89F82A9B579E00C75940 /* MyRequestTableViewCell.xib in Resources */,
 				D7EEF04C2A9BA86800C1A1B3 /* DetailsViewController.xib in Resources */,
 				2DFF41022A661FEA008E68D6 /* HomeViewController.xib in Resources */,
+				2DA00E102A9EB96000F0F861 /* DoneTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +372,7 @@
 				2D0D8A042A9B5DE200C75940 /* RequeteSubFactory.swift in Sources */,
 				2DFF40FB2A661F65008E68D6 /* HomeViewController.swift in Sources */,
 				2D0D89FB2A9B5AC700C75940 /* AllRequestTableViewCell.swift in Sources */,
+				2DA00E0F2A9EB96000F0F861 /* DoneTableViewCell.swift in Sources */,
 				2DFF41202A662586008E68D6 /* UserWebService.swift in Sources */,
 				2D0D89F72A9B579E00C75940 /* MyRequestTableViewCell.swift in Sources */,
 				D7EEF04B2A9BA86800C1A1B3 /* DetailsViewController.swift in Sources */,

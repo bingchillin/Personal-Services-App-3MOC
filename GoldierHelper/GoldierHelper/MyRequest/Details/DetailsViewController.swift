@@ -119,6 +119,36 @@ class DetailsViewController: UIViewController {
     }
     
     @objc func registerTaskButtonTapped() {
-        // Action when register button is tapped
+        if let userId = UserDefaults.standard.string(forKey: "uId"),
+           let requeteId = self.requete.id {
+        
+            let subRequestParameters = "{\n    \"requete\" : \(requeteId), \n    \"user\" : \"\(userId)\",\n    \"accepted\" : false\n}"
+            
+            print(subRequestParameters)
+            
+            RequeteSubWebService.createSubRequest(parameters: subRequestParameters) { success in
+                DispatchQueue.main.async {
+                    if success {
+                        print("Sub-request creation success")
+                        let next = MyRequestViewController.newInstance()
+                        self.navigationController?.pushViewController(next, animated: true)
+
+                    } else {
+                        print("Sub-request creation failed")
+                        
+                        // If the creation of sub-request fails, show an error message
+                        let alertController = UIAlertController(title: "Erreur", message: "Vous ne pouvez pas vous inscrire à cette mission. Veuillez réessayer.", preferredStyle: .alert)
+                        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(alertController, animated: true, completion: nil)
+                    }
+                }
+            }
+        } else {
+            print("User ID or Requete ID not found")
+        }
     }
+
+
+
+
 }
