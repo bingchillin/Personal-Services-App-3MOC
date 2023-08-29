@@ -2,9 +2,21 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
+    var requete: Requete!
+    var isAll: Bool!
+    
+    static func newInstance(requete: Requete, isAll: Bool) -> DetailsViewController {
+        let controller = DetailsViewController()
+        controller.requete = requete
+        controller.isAll = isAll
+        return controller
+    }
+    
+    
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Ma mission"
+        label.text = "titre"
+        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 28, weight: .semibold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -34,37 +46,37 @@ class DetailsViewController: UIViewController {
         return label
     }()
     
-    let addressLabel: UILabel = {
-        let label = UILabel()
-        label.text = "242 Rue du Faubourg Saint-Antoine"
-        label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 20)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let abandonButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Abandonner la mission", for: .normal)
-        button.backgroundColor = .red
-        button.addTarget(MyRequestViewController.self, action: #selector(abandonButtonTapped), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    var rdv = 1
+
+        
+        let abandonButton: UIButton = {
+            let button = UIButton()
+            button.setTitle("Abandonner la mission", for: .normal)
+            button.backgroundColor = .red
+            button.addTarget(MyRequestViewController.self, action: #selector(abandonButtonTapped), for: .touchUpInside)
+            button.translatesAutoresizingMaskIntoConstraints = false
+            return button
+        }()
+
+        let takeButton: UIButton = {
+            let button = UIButton()
+            button.setTitle("S'inscrire à la mission", for: .normal)
+            button.backgroundColor = .green
+            button.addTarget(MyRequestViewController.self, action: #selector(registerTaskButtonTapped), for: .touchUpInside)
+            button.translatesAutoresizingMaskIntoConstraints = false
+            return button
+        }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        self.titleLabel.text = "\(self.requete.title)"
         
-        if rdv == 1 {  // Si rdv est égal à 1, afficher le contenu
+
             view.addSubview(titleLabel)
             view.addSubview(userInfoView)
             userInfoView.addSubview(nameLabel)
             userInfoView.addSubview(subjectLabel)
-            userInfoView.addSubview(addressLabel)
             view.addSubview(abandonButton)
             
             NSLayoutConstraint.activate([
@@ -81,32 +93,37 @@ class DetailsViewController: UIViewController {
                 
                 subjectLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
                 subjectLabel.leadingAnchor.constraint(equalTo: userInfoView.leadingAnchor, constant: 30),
-                
-                addressLabel.leadingAnchor.constraint(equalTo: userInfoView.leadingAnchor, constant: 30),
-                addressLabel.bottomAnchor.constraint(equalTo: userInfoView.bottomAnchor, constant: -30),
-                
-                abandonButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                abandonButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
-                abandonButton.widthAnchor.constraint(equalToConstant: 200),
-                abandonButton.heightAnchor.constraint(equalToConstant: 40)
             ])
-        } else {  // Sinon, afficher le texte "Vous n'avez pas de mission en cours"
-            let emptyLabel = UILabel()
-            emptyLabel.text = "Vous n'avez pas de mission en cours"
-            emptyLabel.font = UIFont.systemFont(ofSize: 24)
-            emptyLabel.textAlignment = .center
-            emptyLabel.translatesAutoresizingMaskIntoConstraints = false
-            
-            view.addSubview(emptyLabel)
-            
+                
+                if isAll == false {
+                    
+                    NSLayoutConstraint.activate([
+                        abandonButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                        abandonButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+                        abandonButton.widthAnchor.constraint(equalToConstant: 200),
+                        abandonButton.heightAnchor.constraint(equalToConstant: 40)
+                    ])
+                    
+                }
+        /*
+        else {
             NSLayoutConstraint.activate([
-                emptyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                emptyLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+                takeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                takeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+                takeButton.widthAnchor.constraint(equalToConstant: 200),
+                takeButton.heightAnchor.constraint(equalToConstant: 40)
+                
             ])
         }
+         */
+        
+        
     }
     
     @objc func abandonButtonTapped() {
         // Action when logout button is tapped
+    }
+    @objc func registerTaskButtonTapped() {
+        // Action when register button is tapped
     }
 }

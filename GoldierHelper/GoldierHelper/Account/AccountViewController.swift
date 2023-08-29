@@ -170,7 +170,7 @@ class AccountViewController: UIViewController {
             logoutImageView.heightAnchor.constraint(equalToConstant: 100),
         ])
         
-        UserWebService.getUserById(userId: 7) { user, error in
+        UserWebService.getUserById(userId: UserDefaults.standard.integer(forKey: "uId")) { user, error in
             if let user = user {
                 self.currentUser = user
                 DispatchQueue.main.async {

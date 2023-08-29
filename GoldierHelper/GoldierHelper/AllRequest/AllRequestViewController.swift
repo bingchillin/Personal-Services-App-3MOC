@@ -33,19 +33,21 @@ class AllRequestViewController: UIViewController, UITableViewDataSource, UITable
         self.householdTaskTableView.delegate = self
         
         /*
+    
         self.householdTaskTableView.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         self.householdTaskTableView.showsVerticalScrollIndicator = false
          */
         let householdCellNib = UINib(nibName: "AllRequestTableViewCell", bundle: nil)
         self.householdTaskTableView.register(householdCellNib, forCellReuseIdentifier: "HouseholdCellId")
-        
+    
         
         self.nutritionTableView.dataSource = self
         self.nutritionTableView.delegate = self
         /*
+        
         self.nutritionTableView.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         self.nutritionTableView.showsVerticalScrollIndicator = false
-        self.nutritionTableView.isDirectionalLockEnabled = true // This will lock the scroll direction to horizontal
+        self.nutritionTableView.isDirectionalLockEnabled = true
          */
         let nutritionCellNib = UINib(nibName: "NutritionTaskTableViewCell", bundle: nil)
         self.nutritionTableView.register(nutritionCellNib, forCellReuseIdentifier: "NutritionCellId")
@@ -57,7 +59,7 @@ class AllRequestViewController: UIViewController, UITableViewDataSource, UITable
         
         super.viewWillAppear(animated)
         
-        RequeteWebService.getHouseholdRequetes { householdRequests, _ in
+        RequeteWebService.getAllRequete { householdRequests, _ in
             self.householdRequests = householdRequests
             
             DispatchQueue.main.async {
@@ -65,7 +67,7 @@ class AllRequestViewController: UIViewController, UITableViewDataSource, UITable
             }
         }
         
-        RequeteWebService.getNutritionRequetes { nutritionRequests, _ in
+        RequeteWebService.getAllRequete { nutritionRequests, _ in
             self.nutritionRequests = nutritionRequests
             
             DispatchQueue.main.async {
@@ -101,28 +103,15 @@ class AllRequestViewController: UIViewController, UITableViewDataSource, UITable
     }
  
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let householdTask = self.householdRequests![indexPath.row]
+        let nutritionTask = self.nutritionRequests![indexPath.row]
         if tableView == householdTaskTableView {
-            /*
-                    let householdRequest = self.householdRequests![indexPath.row]
-                    let next = DetailViewController.newInstance(householdRequest: householdRequest)
-                    
-                    if let navigationController = self.navigationController {
-                        navigationController.pushViewController(next, animated: true)
-                    } else if let splitViewController = self.splitViewController {
-                        splitViewController.viewControllers[1] = next
-                    }
-             */
-                } else if tableView == nutritionTableView {
-                    /*
-                    let nutritionRequest = self.nutritionRequests![indexPath.row]
-                    let next = DetailViewController.newInstance(nutritionRequest: nutritionRequest)
-                    
-                    if let navigationController = self.navigationController {
-                        navigationController.pushViewController(next, animated: true)
-                    } else if let splitViewController = self.splitViewController {
-                        splitViewController.viewControllers[1] = next
-                    }
-                     */
+            let next = DetailsViewController.newInstance(requete: householdTask, isAll: true)
+            self.navigationController?.pushViewController(next, animated: true)
+                }
+        else if tableView == nutritionTableView {
+            let next = DetailsViewController.newInstance(requete: nutritionTask, isAll: true)
+            self.navigationController?.pushViewController(next, animated: true)
                 }
     }
 
