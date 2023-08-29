@@ -31,17 +31,22 @@ class AllRequestViewController: UIViewController, UITableViewDataSource, UITable
         
         self.householdTaskTableView.dataSource = self
         self.householdTaskTableView.delegate = self
+        
+        /*
         self.householdTaskTableView.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         self.householdTaskTableView.showsVerticalScrollIndicator = false
+         */
         let householdCellNib = UINib(nibName: "AllRequestTableViewCell", bundle: nil)
         self.householdTaskTableView.register(householdCellNib, forCellReuseIdentifier: "HouseholdCellId")
         
         
         self.nutritionTableView.dataSource = self
         self.nutritionTableView.delegate = self
+        /*
         self.nutritionTableView.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         self.nutritionTableView.showsVerticalScrollIndicator = false
         self.nutritionTableView.isDirectionalLockEnabled = true // This will lock the scroll direction to horizontal
+         */
         let nutritionCellNib = UINib(nibName: "NutritionTaskTableViewCell", bundle: nil)
         self.nutritionTableView.register(nutritionCellNib, forCellReuseIdentifier: "NutritionCellId")
           
