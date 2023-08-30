@@ -27,12 +27,12 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPg-qJ-dti">
-                        <rect key="frame" x="13" y="78" width="287" height="10"/>
+                        <rect key="frame" x="13" y="70" width="287" height="18"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="287" id="1ZU-gG-Coq"/>
-                            <constraint firstAttribute="height" constant="10" id="MUH-aX-enI"/>
+                            <constraint firstAttribute="height" constant="18" id="9tW-dV-ger"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -41,7 +41,7 @@
                 <constraints>
                     <constraint firstItem="zPg-qJ-dti" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="1yc-pT-8dH"/>
                     <constraint firstItem="Wq0-Dy-hpB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="BP3-eE-IaV"/>
-                    <constraint firstItem="zPg-qJ-dti" firstAttribute="top" secondItem="Wq0-Dy-hpB" secondAttribute="bottom" constant="12" id="EqT-SH-29M"/>
+                    <constraint firstItem="zPg-qJ-dti" firstAttribute="top" secondItem="Wq0-Dy-hpB" secondAttribute="bottom" constant="4" id="Znp-kh-iiM"/>
                     <constraint firstAttribute="trailing" secondItem="zPg-qJ-dti" secondAttribute="trailing" constant="30" id="aEb-cg-sG7"/>
                     <constraint firstItem="Wq0-Dy-hpB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="fTX-QB-gOf"/>
                     <constraint firstAttribute="trailing" secondItem="Wq0-Dy-hpB" secondAttribute="trailing" constant="19" id="yCs-aR-wvv"/>

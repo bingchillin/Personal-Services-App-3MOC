@@ -23,6 +23,8 @@
 		2DA00E102A9EB96000F0F861 /* DoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DA00E0E2A9EB96000F0F861 /* DoneTableViewCell.xib */; };
 		2DA00E132A9ECE7B00F0F861 /* AllHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA00E112A9ECE7B00F0F861 /* AllHomeTableViewCell.swift */; };
 		2DA00E142A9ECE7B00F0F861 /* AllHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DA00E122A9ECE7B00F0F861 /* AllHomeTableViewCell.xib */; };
+		2DA00E162A9EF93F00F0F861 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA00E152A9EF93F00F0F861 /* Type.swift */; };
+		2DA00E182A9EF96E00F0F861 /* TypeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA00E172A9EF96E00F0F861 /* TypeFactory.swift */; };
 		2DB9AC982A92AD1000438B0F /* AllHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB9AC962A92AD1000438B0F /* AllHomeViewController.swift */; };
 		2DB9AC992A92AD1000438B0F /* AllHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB9AC972A92AD1000438B0F /* AllHomeViewController.xib */; };
 		2DFF40E02A661E5F008E68D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF40DF2A661E5F008E68D6 /* AppDelegate.swift */; };
@@ -71,6 +73,8 @@
 		2DA00E0E2A9EB96000F0F861 /* DoneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoneTableViewCell.xib; sourceTree = "<group>"; };
 		2DA00E112A9ECE7B00F0F861 /* AllHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHomeTableViewCell.swift; sourceTree = "<group>"; };
 		2DA00E122A9ECE7B00F0F861 /* AllHomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllHomeTableViewCell.xib; sourceTree = "<group>"; };
+		2DA00E152A9EF93F00F0F861 /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		2DA00E172A9EF96E00F0F861 /* TypeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeFactory.swift; sourceTree = "<group>"; };
 		2DB9AC962A92AD1000438B0F /* AllHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHomeViewController.swift; sourceTree = "<group>"; };
 		2DB9AC972A92AD1000438B0F /* AllHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllHomeViewController.xib; sourceTree = "<group>"; };
 		2DFF40DC2A661E5F008E68D6 /* GoldierHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldierHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +216,7 @@
 				2DFF41222A662620008E68D6 /* UserFactory.swift */,
 				2D0D8A012A9B5D7600C75940 /* RequeteFactory.swift */,
 				2D0D8A032A9B5DE200C75940 /* RequeteSubFactory.swift */,
+				2DA00E172A9EF96E00F0F861 /* TypeFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				2DFF41252A662647008E68D6 /* User.swift */,
 				2D0D89FD2A9B5C3A00C75940 /* Requete.swift */,
 				2D0D89FF2A9B5CB200C75940 /* RequeteSub.swift */,
+				2DA00E152A9EF93F00F0F861 /* Type.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -387,6 +393,8 @@
 				2DFF41352A663AAD008E68D6 /* AccountViewController.swift in Sources */,
 				D7EEF04F2A9CB3CE00C1A1B3 /* ModifyViewController.swift in Sources */,
 				2DFF41432A663E3B008E68D6 /* Utils.swift in Sources */,
+				2DA00E182A9EF96E00F0F861 /* TypeFactory.swift in Sources */,
+				2DA00E162A9EF93F00F0F861 /* Type.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

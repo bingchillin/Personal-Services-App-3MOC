@@ -1,6 +1,8 @@
 import {Router} from "express";
 import { RequeteSubRepository } from "./Repository";
 import { debug } from "console";
+import {UserRepository} from "../users/Repository";
+import usersController from "../users/Controller";
 
 const requetesSubController = Router();
 
@@ -66,7 +68,7 @@ requetesSubController.delete("/:id", async (req, res) => {
         const requete = await RequeteSubRepository.getRequetesSubById(req.params.id);
 
         if (requete) {
-            await RequeteSubRepository.deleteRequete(req.params.id);
+            await RequeteSubRepository.deleteRequeteSub(req.params.id);
             res.status(200).send({
                 status: 200,
                 message: "Deleted"

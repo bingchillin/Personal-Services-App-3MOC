@@ -35,6 +35,43 @@ export const RequeteRepository = {
     }
   },
 
+  getRequetesByIdAndDone: async (id: String): Promise<Requete | null> => {
+    try {
+      const connection: PoolConnection = await db.getConnection();
+
+      const [rows] = await connection.query('SELECT * FROM requetes WHERE id = ? AND done = true', [id]);
+
+      if (Array.isArray(rows) && rows.length > 0) {
+        const requete: Requete = rows[0] as Requete;
+        return requete;
+      } else {
+        return null;
+      }
+
+    } catch (error) {
+      throw error;
+    }
+  },
+
+  getRequetesByIdAndNotDone: async (id: String): Promise<Requete | null> => {
+    try {
+      const connection: PoolConnection = await db.getConnection();
+
+      const [rows] = await connection.query('SELECT * FROM requetes WHERE id = ? AND done = false', [id]);
+
+      if (Array.isArray(rows) && rows.length > 0) {
+        const requete: Requete = rows[0] as Requete;
+        return requete;
+      } else {
+        return null;
+      }
+
+    } catch (error) {
+      throw error;
+    }
+  },
+
+
   getRequeteByUser: async (id: String): Promise<Requete[] | null> => {
     try {
       const connection: PoolConnection = await db.getConnection();
@@ -53,6 +90,24 @@ export const RequeteRepository = {
     }
   },
 
+  getRequeteNotByUser: async (id: String): Promise<Requete[] | null> => {
+    try {
+      const connection: PoolConnection = await db.getConnection();
+
+      const [rows] = await connection.query('SELECT requetes.id, requetes.client, requetes.timer, requetes.type, requetes.title, requetes.slots, requetes.accepted, requetes.done FROM requetes INNER JOIN requetes_inscriptions ON requetes.id = requetes_inscriptions.requete WHERE user != ?', id);
+
+      if (Array.isArray(rows) && rows.length > 0) {
+        const requete = rows as Requete[];
+        return requete;
+      } else {
+        return null;
+      }
+
+    } catch (error) {
+      throw error;
+    }
+  },
+
   getRequeteByType: async (type: String): Promise<Requete[] | null> => {
     try {
       const connection: PoolConnection = await db.getConnection();
@@ -66,6 +121,24 @@ export const RequeteRepository = {
         return null;
       }
       
+    } catch (error) {
+      throw error;
+    }
+  },
+
+  getRequeteByTypeNotByUser: async (type: String, id: String): Promise<Requete[] | null> => {
+    try {
+      const connection: PoolConnection = await db.getConnection();
+
+      const [rows] = await connection.query('SELECT requetes.id, requetes.client, requetes.timer, requetes.type, requetes.title, requetes.slots, requetes.accepted, requetes.done FROM requetes INNER JOIN requetes_inscriptions ON requetes.id = requetes_inscriptions.requete WHERE type = ? AND user != ?', [type,id]);
+
+      if (Array.isArray(rows) && rows.length > 0) {
+        const requete = rows as Requete[];
+        return requete;
+      } else {
+        return null;
+      }
+
     } catch (error) {
       throw error;
     }

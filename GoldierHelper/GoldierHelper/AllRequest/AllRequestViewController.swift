@@ -48,7 +48,7 @@ class AllRequestViewController: UIViewController, UITableViewDataSource, UITable
         
         super.viewWillAppear(animated)
         
-        RequeteWebService.getHouseholdRequetes { householdRequests, _ in
+        RequeteWebService.getHouseholdRequetesExcludeUser(id: UserDefaults.standard.integer(forKey: "uId")) { householdRequests, _ in
             self.householdRequests = householdRequests
             print("Household Requests Count: \(self.householdRequests?.count ?? 0)")
 
@@ -58,7 +58,7 @@ class AllRequestViewController: UIViewController, UITableViewDataSource, UITable
             }
         }
         
-        RequeteWebService.getNutritionRequetes { nutritionRequests, _ in
+        RequeteWebService.getNutritionRequetesExcludeUser(id: UserDefaults.standard.integer(forKey: "uId")){ nutritionRequests, _ in
             self.nutritionRequests = nutritionRequests
             print("Nutrition Requests Count: \(self.nutritionRequests?.count ?? 0)")
 

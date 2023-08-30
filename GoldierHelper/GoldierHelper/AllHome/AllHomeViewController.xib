@@ -28,7 +28,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bonjour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1F-Ig-TLE">
-                    <rect key="frame" x="80" y="54" width="109" height="34"/>
+                    <rect key="frame" x="80" y="54" width="126" height="34"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -115,6 +115,7 @@
                 <constraint firstItem="dW3-8L-DUc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="7oW-B3-kfG"/>
                 <constraint firstItem="dW3-8L-DUc" firstAttribute="top" secondItem="fT7-AA-ZJR" secondAttribute="bottom" constant="38" id="9z4-fp-zg9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VUn-r6-HZV" secondAttribute="trailing" constant="80" id="C6r-Wa-5mQ"/>
+                <constraint firstItem="5Cy-py-6gu" firstAttribute="leading" secondItem="s1F-Ig-TLE" secondAttribute="trailing" id="H9P-Ge-bYf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Cy-py-6gu" secondAttribute="trailing" constant="80" id="Ij1-oa-3ye"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dW3-8L-DUc" secondAttribute="trailing" constant="80" id="N3Y-ae-YLe"/>
                 <constraint firstItem="VUn-r6-HZV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="Sqv-xE-DtL"/>
@@ -125,7 +126,7 @@
                 <constraint firstItem="VUn-r6-HZV" firstAttribute="top" secondItem="sft-1J-ta2" secondAttribute="bottom" constant="40" id="oQB-iI-2z7"/>
                 <constraint firstItem="s1F-Ig-TLE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="teF-Hl-3yw"/>
                 <constraint firstItem="sft-1J-ta2" firstAttribute="top" secondItem="s1F-Ig-TLE" secondAttribute="bottom" constant="20" id="uYk-FB-TV8"/>
-                <constraint firstItem="5Cy-py-6gu" firstAttribute="leading" secondItem="s1F-Ig-TLE" secondAttribute="trailing" constant="17" id="xGI-zh-5mo"/>
+                <constraint firstItem="5Cy-py-6gu" firstAttribute="leading" secondItem="s1F-Ig-TLE" secondAttribute="trailing" id="xGI-zh-5mo"/>
             </constraints>
             <point key="canvasLocation" x="96.610169491525426" y="19.756097560975608"/>
         </view>

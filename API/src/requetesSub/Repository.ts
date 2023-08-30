@@ -117,11 +117,11 @@ export const RequeteSubRepository = {
     }
   },
 
-  deleteRequete: async (id: String): Promise<void> => {
+  deleteRequeteSub: async (id: String): Promise<void> => {
     try {
       const connection: PoolConnection = await db.getConnection();
 
-      await connection.query('DELETE FROM requete WHERE id = ?', [id]);
+      await connection.query('DELETE FROM requetes_inscriptions WHERE id = ?', [id]);
     } catch (error) {
       throw error;
     }

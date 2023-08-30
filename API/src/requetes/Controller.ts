@@ -32,8 +32,64 @@ requetesController.get("/:id", async (req, res) => {
     res.status(200).send(requete)
 })
 
+requetesController.get("/done/:id", async (req, res) => {
+    const requete = await RequeteRepository.getRequetesByIdAndDone(req.params.id);
+
+    if (!requete) {
+        res.status(404).send({
+            status: 404,
+            message: "Not found"
+        })
+        return
+    }
+
+    res.status(200).send(requete)
+})
+
+requetesController.get("/notdone/:id", async (req, res) => {
+    const requete = await RequeteRepository.getRequetesByIdAndNotDone(req.params.id);
+
+    if (!requete) {
+        res.status(404).send({
+            status: 404,
+            message: "Not found"
+        })
+        return
+    }
+
+    res.status(200).send(requete)
+})
+
 requetesController.get("/user/:id", async (req, res) => {
     const requetes = await RequeteRepository.getRequeteByUser(req.params.id);
+
+    if (!requetes) {
+        res.status(404).send({
+            status: 404,
+            message: "Not found"
+        })
+        return
+    }
+
+    res.status(200).send(requetes)
+})
+
+requetesController.get("/notuser/:id", async (req, res) => {
+    const requetes = await RequeteRepository.getRequeteNotByUser(req.params.id);
+
+    if (!requetes) {
+        res.status(404).send({
+            status: 404,
+            message: "Not found"
+        })
+        return
+    }
+
+    res.status(200).send(requetes)
+})
+
+requetesController.get("/type/:type/notuser/:id", async (req, res) => {
+    const requetes = await RequeteRepository.getRequeteByTypeNotByUser(req.params.type,req.params.id);
 
     if (!requetes) {
         res.status(404).send({

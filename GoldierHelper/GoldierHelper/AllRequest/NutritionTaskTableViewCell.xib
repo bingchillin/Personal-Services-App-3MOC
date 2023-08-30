@@ -28,12 +28,12 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5d-0O-c3f">
-                        <rect key="frame" x="8" y="75" width="267" height="10"/>
+                        <rect key="frame" x="8" y="69" width="267" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="10" id="25i-1G-igg"/>
                             <constraint firstAttribute="width" constant="267" id="eTZ-ms-cZ9"/>
+                            <constraint firstAttribute="height" constant="20" id="roC-zB-aWW"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -42,9 +42,9 @@
                 <constraints>
                     <constraint firstItem="HNe-dX-baj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="6Wu-dE-S2Q"/>
                     <constraint firstAttribute="trailing" secondItem="HNe-dX-baj" secondAttribute="trailing" constant="7" id="Bhm-Sj-4KG"/>
-                    <constraint firstItem="e5d-0O-c3f" firstAttribute="top" secondItem="HNe-dX-baj" secondAttribute="bottom" constant="14" id="JBI-uT-pM8"/>
                     <constraint firstItem="e5d-0O-c3f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="MbT-Qy-Yc3"/>
                     <constraint firstItem="HNe-dX-baj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="XyP-Ac-Cjt"/>
+                    <constraint firstItem="e5d-0O-c3f" firstAttribute="top" secondItem="HNe-dX-baj" secondAttribute="bottom" constant="8" symbolic="YES" id="v5e-qG-ocj"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
