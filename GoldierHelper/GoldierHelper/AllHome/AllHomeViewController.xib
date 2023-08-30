@@ -28,7 +28,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bonjour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1F-Ig-TLE">
-                    <rect key="frame" x="80" y="54" width="109" height="34"/>
+                    <rect key="frame" x="80" y="54" width="126" height="34"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -67,12 +67,6 @@
                         <constraint firstItem="rKI-rJ-jfa" firstAttribute="leading" secondItem="VUn-r6-HZV" secondAttribute="leading" constant="30" id="zta-SB-LFY"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vos missions actuelles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fT7-AA-ZJR">
-                    <rect key="frame" x="80" y="457" width="287" height="34"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
-                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cy-py-6gu">
                     <rect key="frame" x="206" y="54" width="894" height="34"/>
                     <constraints>
@@ -105,6 +99,12 @@
                         <constraint firstItem="E27-DG-4SH" firstAttribute="top" secondItem="dW3-8L-DUc" secondAttribute="top" constant="18" id="zhB-Sf-sNK"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vos missions actuelles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fT7-AA-ZJR">
+                    <rect key="frame" x="80" y="478" width="287" height="34"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="background"/>
@@ -113,19 +113,20 @@
                 <constraint firstItem="sft-1J-ta2" firstAttribute="top" secondItem="5Cy-py-6gu" secondAttribute="bottom" constant="20" id="4Sv-Mo-MsY"/>
                 <constraint firstItem="s1F-Ig-TLE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="4sG-S0-wZO"/>
                 <constraint firstItem="dW3-8L-DUc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="7oW-B3-kfG"/>
-                <constraint firstItem="dW3-8L-DUc" firstAttribute="top" secondItem="fT7-AA-ZJR" secondAttribute="bottom" constant="38" id="9z4-fp-zg9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VUn-r6-HZV" secondAttribute="trailing" constant="80" id="C6r-Wa-5mQ"/>
+                <constraint firstItem="5Cy-py-6gu" firstAttribute="leading" secondItem="s1F-Ig-TLE" secondAttribute="trailing" id="H9P-Ge-bYf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Cy-py-6gu" secondAttribute="trailing" constant="80" id="Ij1-oa-3ye"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dW3-8L-DUc" secondAttribute="trailing" constant="80" id="N3Y-ae-YLe"/>
+                <constraint firstItem="fT7-AA-ZJR" firstAttribute="top" secondItem="VUn-r6-HZV" secondAttribute="bottom" constant="51" id="OAE-XY-u5O"/>
                 <constraint firstItem="VUn-r6-HZV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="Sqv-xE-DtL"/>
                 <constraint firstItem="sft-1J-ta2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="UNq-Ck-xmn"/>
                 <constraint firstItem="5Cy-py-6gu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="XPn-Of-dtM"/>
-                <constraint firstItem="fT7-AA-ZJR" firstAttribute="top" secondItem="VUn-r6-HZV" secondAttribute="bottom" constant="30" id="abD-N2-Xwh"/>
                 <constraint firstItem="fT7-AA-ZJR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="bT5-7q-Fe9"/>
                 <constraint firstItem="VUn-r6-HZV" firstAttribute="top" secondItem="sft-1J-ta2" secondAttribute="bottom" constant="40" id="oQB-iI-2z7"/>
                 <constraint firstItem="s1F-Ig-TLE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="teF-Hl-3yw"/>
                 <constraint firstItem="sft-1J-ta2" firstAttribute="top" secondItem="s1F-Ig-TLE" secondAttribute="bottom" constant="20" id="uYk-FB-TV8"/>
-                <constraint firstItem="5Cy-py-6gu" firstAttribute="leading" secondItem="s1F-Ig-TLE" secondAttribute="trailing" constant="17" id="xGI-zh-5mo"/>
+                <constraint firstItem="dW3-8L-DUc" firstAttribute="top" secondItem="fT7-AA-ZJR" secondAttribute="bottom" constant="17" id="w6T-tA-aLY"/>
+                <constraint firstItem="5Cy-py-6gu" firstAttribute="leading" secondItem="s1F-Ig-TLE" secondAttribute="trailing" id="xGI-zh-5mo"/>
             </constraints>
             <point key="canvasLocation" x="96.610169491525426" y="19.756097560975608"/>
         </view>

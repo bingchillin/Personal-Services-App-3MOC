@@ -68,6 +68,14 @@ class DetailsViewController: UIViewController {
         
         view.backgroundColor = .white
         self.titleLabel.text = "\(self.requete.title)"
+        self.nameLabel.text = "Une personne agée à besoin d'aide"
+        if self.requete.type == 1 {
+            self.subjectLabel.text = "Tâches ménagères"
+        }
+        if self.requete.type == 2 {
+            self.subjectLabel.text = "Alimentation"
+        }
+        
         
         view.addSubview(titleLabel)
         view.addSubview(userInfoView)
@@ -115,8 +123,35 @@ class DetailsViewController: UIViewController {
     }
     
     @objc func abandonButtonTapped() {
-        // Action when abandon button is tapped
+        if let userId = UserDefaults.standard.string(forKey: "uId"),
+           let requeteId = self.requete.id {
+        
+            // Créez ici les paramètres pour la soumission de la requête d'abandon
+            let abandonParameters = "{\n    \"requete\" : \(requeteId), \n    \"user\" : \"\(userId)\"\n}"
+            
+            // Appelez la fonction pour créer la requête d'abandon
+            RequeteSubWebService.createSubRequest(parameters: abandonParameters) { success in
+                DispatchQueue.main.async {
+                    if success {
+                        print("Abandon request creation success")
+                        let next = MyRequestViewController.newInstance()
+                        self.navigationController?.pushViewController(next, animated: true)
+
+                    } else {
+                        print("Abandon request creation failed")
+                        
+                        // Si la création de la requête d'abandon échoue, affichez un message d'erreur
+                        let alertController = UIAlertController(title: "Erreur", message: "Vous ne pouvez pas abandonner cette mission. Veuillez réessayer.", preferredStyle: .alert)
+                        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(alertController, animated: true, completion: nil)
+                    }
+                }
+            }
+        } else {
+            print("User ID or Requete ID not found")
+        }
     }
+
     
     @objc func registerTaskButtonTapped() {
         if let userId = UserDefaults.standard.string(forKey: "uId"),

@@ -60,6 +60,35 @@ class RequeteSubWebService {
         
         task.resume()
     }
+    
+    class func deleteSubRequest(id: Int, completion: @escaping (Bool) -> Void) {
+        guard let deleteURL = URL(string: "http://localhost:3000/requetesSub/\(id)") else {
+            print("Not found Delete SubRequest URL")
+            completion(false)
+            return
+        }
+        
+        var request = URLRequest(url: deleteURL)
+        request.httpMethod = "DELETE"
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print("Invalid HTTP response")
+                completion(false)
+                return
+            }
+            
+            print("HTTP status code:", httpResponse.statusCode)
+            
+            if httpResponse.statusCode == 200 {
+                completion(true) // Indicate success based on the HTTP status code
+            } else {
+                completion(false) // Indicate failure based on the HTTP status code
+            }
+        }
+        
+        task.resume()
+    }
 }
 
 

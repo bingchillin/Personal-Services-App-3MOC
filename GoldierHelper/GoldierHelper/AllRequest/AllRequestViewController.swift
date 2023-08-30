@@ -48,17 +48,20 @@ class AllRequestViewController: UIViewController, UITableViewDataSource, UITable
         
         super.viewWillAppear(animated)
         
-        RequeteWebService.getHouseholdRequetes { householdRequests, _ in
+        RequeteWebService.getHouseholdRequetesExcludeUser(id: UserDefaults.standard.integer(forKey: "uId")) { householdRequests, _ in
             self.householdRequests = householdRequests
+            print("Household Requests Count: \(self.householdRequests?.count ?? 0)")
+
             
             DispatchQueue.main.async {
                 self.householdTaskTableView.reloadData()
             }
         }
         
-        RequeteWebService.getNutritionRequetes { nutritionRequests, _ in
+        RequeteWebService.getNutritionRequetesExcludeUser(id: UserDefaults.standard.integer(forKey: "uId")){ nutritionRequests, _ in
             self.nutritionRequests = nutritionRequests
-            
+            print("Nutrition Requests Count: \(self.nutritionRequests?.count ?? 0)")
+
             DispatchQueue.main.async {
                 self.nutritionTableView.reloadData()
             }
@@ -77,11 +80,15 @@ class AllRequestViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == householdTaskTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: "HouseholdCellId", for: indexPath) as! AllRequestTableViewCell
-            cell.redraw(with: self.householdRequests![indexPath.row])
+            if let householdTask = self.householdRequests?[indexPath.row] {
+                cell.redraw(with: householdTask) // Use the unwrapped householdTask here
+            }
             return cell
         } else if tableView == nutritionTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: "NutritionCellId", for: indexPath) as! NutritionTaskTableViewCell
-            cell.redraw(with: self.nutritionRequests![indexPath.row])
+            if let nutritionTask = self.nutritionRequests?[indexPath.row] {
+                cell.redraw(with: nutritionTask) // Use the unwrapped nutritionTask here
+            }
             return cell
         }
         return UITableViewCell()
@@ -92,17 +99,21 @@ class AllRequestViewController: UIViewController, UITableViewDataSource, UITable
     }
  
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let householdTask = self.householdRequests![indexPath.row]
-        let nutritionTask = self.nutritionRequests![indexPath.row]
-        if tableView == householdTaskTableView {
-            let next = DetailsViewController.newInstance(requete: householdTask, isAll: true)
-            self.navigationController?.pushViewController(next, animated: true)
-                }
-        else if tableView == nutritionTableView {
-            let next = DetailsViewController.newInstance(requete: nutritionTask, isAll: true)
-            self.navigationController?.pushViewController(next, animated: true)
-                }
+        if tableView == householdTaskTableView, let householdRequests = self.householdRequests {
+            if indexPath.row < householdRequests.count {
+                let householdTask = householdRequests[indexPath.row]
+                let next = DetailsViewController.newInstance(requete: householdTask, isAll: true)
+                self.navigationController?.pushViewController(next, animated: true)
+            }
+        } else if tableView == nutritionTableView, let nutritionRequests = self.nutritionRequests {
+            if indexPath.row < nutritionRequests.count {
+                let nutritionTask = nutritionRequests[indexPath.row]
+                let next = DetailsViewController.newInstance(requete: nutritionTask, isAll: true)
+                self.navigationController?.pushViewController(next, animated: true)
+            }
+        }
     }
+
 
 
 

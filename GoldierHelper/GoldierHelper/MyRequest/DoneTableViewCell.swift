@@ -22,23 +22,17 @@ class DoneTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var acceptedLabel: UILabel!
-    @IBOutlet weak var doneLabel: UILabel!
-    
+
     func redraw(with request: Requete) {
         self.titleLabel.text = request.title
-        self.typeLabel.text = "\(request.type)"
-        
-        if let accepted = request.accepted {
-            self.acceptedLabel.text = accepted ? "Acceptée" : "Non acceptée"
-        } else {
-            self.acceptedLabel.text = "Non acceptée"
+        if request.type == 1{
+            self.typeLabel.text = "Aide ménagère"
         }
         
-        if let done = request.done {
-            self.doneLabel.text = done ? "Terminée" : "Non terminée"
-        } else {
-            self.doneLabel.text = "Non terminée"
+        if request.type == 2{
+            self.typeLabel.text = "Alimentation"
         }
+        
+
     }
 }

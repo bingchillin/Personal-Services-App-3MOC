@@ -123,18 +123,6 @@ class MyRequestViewController: UIViewController, UITableViewDataSource, UITableV
                         }
                     }
                 }
-            } else if tableView == doneTableView {
-                if let doneRequest = self.doneRequests?[indexPath.row] {
-                    // Obtenir les détails de la requête associée à ce RequeteSub
-                    RequeteWebService.getRequeteById(id: doneRequest.requete) { requete, _ in
-                        if let requeteDetails = requete {
-                            DispatchQueue.main.async {
-                                let next = DetailsViewController.newInstance(requete: requeteDetails, isAll: false)
-                                self.navigationController?.pushViewController(next, animated: true)
-                            }
-                        }
-                    }
-                }
             }
             
             tableView.deselectRow(at: indexPath, animated: true)

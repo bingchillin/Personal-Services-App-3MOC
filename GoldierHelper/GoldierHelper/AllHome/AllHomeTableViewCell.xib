@@ -10,75 +10,48 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllHomeCellId" id="KGk-i7-Jjw" customClass="AllHomeTableViewCell" customModule="GoldierHelper" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllHomeCellId" rowHeight="73" id="KGk-i7-Jjw" customClass="AllHomeTableViewCell" customModule="GoldierHelper" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="321" height="73"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="321" height="73"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcT-mc-bOh">
-                        <rect key="frame" x="21" y="4" width="207" height="21"/>
+                        <rect key="frame" x="21" y="16" width="207" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="207" id="9dl-Ix-eJ1"/>
                             <constraint firstAttribute="height" constant="21" id="Td2-Yj-ftM"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbI-fp-mLU">
-                        <rect key="frame" x="23" y="27" width="202" height="9"/>
+                        <rect key="frame" x="23" y="39" width="202" height="23"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="9" id="Hcx-ZE-p46"/>
+                            <constraint firstAttribute="height" constant="23" id="HgG-LU-E6A"/>
                             <constraint firstAttribute="width" constant="202" id="gZa-0P-vA1"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="7"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accepted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wey-Ki-q2c">
-                        <rect key="frame" x="243" y="10" width="30.5" height="9"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="30.5" id="B3i-s9-LTC"/>
-                            <constraint firstAttribute="height" constant="9" id="ezD-Di-snY"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="7"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qn-jU-gIu">
-                        <rect key="frame" x="243" y="27" width="17" height="9"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="9" id="Veq-Ps-dOd"/>
-                            <constraint firstAttribute="width" constant="17" id="jsP-Zb-s3w"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="7"/>
-                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" red="0.94901960780000005" green="0.56862745100000001" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="6qn-jU-gIu" firstAttribute="leading" secondItem="bbI-fp-mLU" secondAttribute="trailing" constant="18" id="6cp-bR-ke2"/>
-                    <constraint firstAttribute="trailing" secondItem="6qn-jU-gIu" secondAttribute="trailing" constant="60" id="A76-ac-gjp"/>
+                    <constraint firstItem="VcT-mc-bOh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="GJx-fY-ENK"/>
                     <constraint firstItem="bbI-fp-mLU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="23" id="GgF-TQ-W5r"/>
                     <constraint firstItem="bbI-fp-mLU" firstAttribute="top" secondItem="VcT-mc-bOh" secondAttribute="bottom" constant="2" id="Q7t-Dq-l6t"/>
                     <constraint firstItem="VcT-mc-bOh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="21" id="ZYg-7f-ndK"/>
-                    <constraint firstAttribute="bottom" secondItem="6qn-jU-gIu" secondAttribute="bottom" constant="8" id="eXM-H5-g3k"/>
-                    <constraint firstItem="VcT-mc-bOh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="fvt-u4-Qed"/>
-                    <constraint firstAttribute="trailing" secondItem="Wey-Ki-q2c" secondAttribute="trailing" constant="46.5" id="kdT-Y8-wkJ"/>
-                    <constraint firstItem="Wey-Ki-q2c" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="n3M-Qf-DOP"/>
-                    <constraint firstItem="Wey-Ki-q2c" firstAttribute="leading" secondItem="VcT-mc-bOh" secondAttribute="trailing" constant="15" id="oj3-L4-iTP"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="acceptedLabel" destination="Wey-Ki-q2c" id="GQg-Sp-KEN"/>
-                <outlet property="doneLabel" destination="6qn-jU-gIu" id="wCH-KJ-OmI"/>
                 <outlet property="titleLabel" destination="VcT-mc-bOh" id="4Jv-ms-bip"/>
                 <outlet property="typeLabel" destination="bbI-fp-mLU" id="gyg-s0-9Is"/>
             </connections>
-            <point key="canvasLocation" x="-4.3902439024390247" y="-12.203389830508476"/>
+            <point key="canvasLocation" x="-4.024390243902439" y="-4.8305084745762716"/>
         </tableViewCell>
     </objects>
 </document>

@@ -28,7 +28,13 @@ class NutritionTaskTableViewCell: UITableViewCell {
     
     func redraw(with request: Requete) {
         self.titleLabel.text = request.title
-        self.typeLabel.text = "\(request.type)"
+        if request.type == 1{
+            self.typeLabel.text = "Aide ménagère"
+        }
+        
+        if request.type == 2{
+            self.typeLabel.text = "Alimentation"
+        }
     }
     
 }

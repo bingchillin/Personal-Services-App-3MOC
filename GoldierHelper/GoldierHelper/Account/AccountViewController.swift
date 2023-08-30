@@ -101,8 +101,11 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(editProfileViewTapped))
-        editProfileView.addGestureRecognizer(tapGesture)
+        let editProfileTapGesture = UITapGestureRecognizer(target: self, action: #selector(editProfileViewTapped))
+        editProfileView.addGestureRecognizer(editProfileTapGesture)
+        
+        let logoutTapGesture = UITapGestureRecognizer(target: self, action: #selector(logoutButtonTapped))
+           logoutView.addGestureRecognizer(logoutTapGesture)
         
         view.backgroundColor = UIColor(named: "background")
         
@@ -204,6 +207,21 @@ class AccountViewController: UIViewController {
     }
     
     @objc func logoutButtonTapped() {
-        // Action when logout button is tapped
+        guard let userId = currentUser?.id else {
+               // There's no logged-in user, handle accordingly
+               return
+           }
+
+           // Construct a JSON body with userId for logout
+           let parameters = "{\"userId\": \(userId)}"
+
+           UserWebService.logoutUser(parameters: parameters) // Call the logout API
+
+           // Clear currentUser and userId from UserDefaults
+           UserDefaults.standard.removeObject(forKey: "uId")
+           currentUser = nil
+
+           // Navigate back to HomeViewController
+           navigationController?.popViewController(animated: true)
     }
 }
