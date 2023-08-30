@@ -118,4 +118,19 @@ requetesController.put("/:id", async (req, res) => {
     res.status(200).send(updatedRequete)
 })
 
+requetesController.get("/type/:type", async (req, res) => {
+    const type = req.params.type; // Parse the type parameter as an integer
+    const requetes = await RequeteRepository.getRequeteByType(type);
+
+    if (!requetes) {
+        res.status(404).send({
+            status: 404,
+            message: "Not found"
+        });
+        return;
+    }
+
+    res.status(200).send(requetes);
+});
+
 export default requetesController
