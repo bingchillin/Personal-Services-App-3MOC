@@ -65,6 +65,28 @@ class RequeteWebService{
             }
             task.resume()
         }
+    
+    class func getRequeteById(id: Int, completion: @escaping (Requete?, Error?) -> Void) {
+           guard let requeteURL = URL(string: "http://localhost:3000/requetes/\(id)") else {
+               return
+           }
+           let task = URLSession.shared.dataTask(with: requeteURL) { data, res, err in
+               guard err == nil, let d = data else {
+                   completion(nil, err)
+                   return
+               }
+               guard let json = try? JSONSerialization.jsonObject(with: d) as? [String: Any] else {
+                   completion(nil, NSError(domain: "com.esgi.requete.invalid-json", code: 1))
+                   return
+               }
+               if let requete = RequeteFactory.requete(from: json) {
+                   completion(requete, nil)
+               } else {
+                   completion(nil, NSError(domain: "com.esgi.requete.invalid-requete-data", code: 2))
+               }
+           }
+           task.resume()
+       }
      
     
 }

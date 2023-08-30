@@ -5,9 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38826e6d-a765-4c67-b0c3-2daf4c2dbee0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/AllHome/AllHomeTableViewCell.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/AllHome/AllHomeTableViewCell.xib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper.xcodeproj/project.xcworkspace/xcuserdata/thanudimadawala.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper.xcodeproj/project.xcworkspace/xcuserdata/thanudimadawala.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/AllHome/AllHomeViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/AllHome/AllHomeViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/AllHome/AllHomeViewController.xib" beforeDir="false" afterPath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/AllHome/AllHomeViewController.xib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/MyRequest/DoneTableViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/MyRequest/DoneTableViewCell.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/MyRequest/DoneTableViewCell.xib" beforeDir="false" afterPath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/MyRequest/DoneTableViewCell.xib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/MyRequest/MyRequestTableViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/MyRequest/MyRequestTableViewCell.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/MyRequest/MyRequestViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/MyRequest/MyRequestViewController.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/Webservices/RequeteSubWebService.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/Webservices/RequeteSubWebService.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/Webservices/RequeteWebService.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../GoldierHelper/GoldierHelper/Webservices/RequeteWebService.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

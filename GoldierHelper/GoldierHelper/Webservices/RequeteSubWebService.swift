@@ -8,6 +8,25 @@
 import Foundation
 
 class RequeteSubWebService {
+    class func getAllRequeteSub(completion: @escaping ([RequeteSub]?, Error?) -> Void) {
+        guard let requetesSubURL = URL(string: "http://localhost:3000/requetesSub/") else {
+            return
+        }
+        let task = URLSession.shared.dataTask(with: requetesSubURL) { data, res, err in
+            guard err == nil, let d = data else {
+                completion(nil, err)
+                return
+            }
+            guard let json = try? JSONSerialization.jsonObject(with: d) as? [ [String: Any] ] else {
+                completion(nil, NSError(domain: "com.esgi.requete.invalid-json", code: 1))
+                return
+            }
+            let requeteSubs = RequeteSubFactory.requeteSubs(from: json)
+           completion(requeteSubs, nil) // fin OK
+        }
+        task.resume()
+    }
+    
     class func createSubRequest(parameters: String, completion: @escaping (Bool) -> Void) {
         guard let subRequestURL = URL(string: "http://localhost:3000/requetesSub/") else {
             print("Not found SubRequest URL")
