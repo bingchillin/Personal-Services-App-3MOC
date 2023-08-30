@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
       routes: {
         UsersWidget.routeName: (context) => const UsersWidget(),
         RequestsWidget.routeName: (context) => const RequestsWidget(),
-        //MissionsWidget.routeName: (context) => const MissionsWidget(),
+        TypesWidget.routeName: (context) => const TypesWidget(),
       },
     );
   }
@@ -83,7 +83,7 @@ class _MyNavigationWidgetState extends State<MyNavigationWidget> {
                 MyHomePage(),
                 UsersWidget(),
                 RequestsWidget(),
-                //MissionsWidget(),
+                TypesWidget(),
               ],
             ),
           ),

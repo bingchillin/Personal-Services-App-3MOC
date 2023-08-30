@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../webservices/mission/mission_futurebuilder.dart';
+import '../../webservices/type/mission_futurebuilder.dart';
 
-class MissionsWidget extends StatelessWidget {
-  const MissionsWidget({super.key});
+class TypesWidget extends StatelessWidget {
+  const TypesWidget({super.key});
 
   static const String routeName = '/missions';
 
@@ -12,7 +12,7 @@ class MissionsWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
-          child: MissionFutureBuilder(),
+          child: TypesFutureBuilder(),
         ),
       ],
     );
