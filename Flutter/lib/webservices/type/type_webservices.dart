@@ -79,6 +79,8 @@ class TypesWebServices {
           return;
         default:
           debugPrint(response.statusCode.toString());
+          debugPrint(response.body);
+          debugPrint(json.encode(types.toJson()));
           throw Exception('Failed to add types');
       }
     } catch (error) {

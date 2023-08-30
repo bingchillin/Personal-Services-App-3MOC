@@ -1,9 +1,9 @@
 class Types {
-  final int id;
+  final int? id;
   final String name;
 
   Types({
-    required this.id,
+    this.id,
     required this.name,
   });
 

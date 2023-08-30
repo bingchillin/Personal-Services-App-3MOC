@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goldie_studio/pages/type/add_type.dart';
 import 'package:goldie_studio/webservices/type/type_class.dart';
 import 'package:goldie_studio/webservices/type/type_webservices.dart';
 
@@ -67,6 +68,26 @@ class _TypesFutureBuilderState extends State<TypesFutureBuilder> {
               labelText: 'Rechercher par nom',
             ),
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                onPressed: _loadTypes,
+                icon: const Icon(Icons.refresh),
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const TypeAddWidget(),
+                    ),
+                  );
+                },
+                icon: const Icon(Icons.add),
+              ),
+            ],
+          ),
           const SizedBox(height: 16),
           Expanded(
             child: ListView.builder(
@@ -91,6 +112,40 @@ class _TypesFutureBuilderState extends State<TypesFutureBuilder> {
                         Expanded(child: Text('${type.id}')),
                         const Spacer(),
                         Expanded(child: Text(type.name)),
+                        const Spacer(),
+                        ButtonBar(
+                          children: [
+                            IconButton(
+                              onPressed: () {
+                                /*Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        EditTypeWidget(type: type)
+                                  ),
+                                );*/
+                              },
+                              icon: const Icon(Icons.edit),
+                              color: Colors.blue,
+                            ),
+                            IconButton(
+                              onPressed: () async {
+                                bool deleted = await TypesWebServices.deleteTypes(type.id);
+                                if (deleted) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text('Type supprimé'),
+                                      backgroundColor: Colors.red,
+                                    ),
+                                  );
+                                }
+                                _loadTypes();
+                              },
+                              icon: const Icon(Icons.delete),
+                              color: Colors.red,
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),

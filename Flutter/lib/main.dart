@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:goldie_studio/pages/home.dart';
 import 'package:goldie_studio/pages/login.dart';
-import 'package:goldie_studio/pages/mission/list_mission.dart';
+import 'package:goldie_studio/pages/type/list_type.dart';
 import 'package:goldie_studio/pages/request/list_req.dart';
+import 'package:goldie_studio/pages/type/list_type.dart';
 import 'package:goldie_studio/pages/user/list_user.dart';
 import 'package:goldie_studio/widgets/navigation_rail.dart';
 import 'package:goldie_studio/widgets/app_bar.dart';

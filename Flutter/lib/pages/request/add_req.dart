@@ -42,7 +42,7 @@ class _RequestAddWidgetState extends State<RequestAddWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Ajouter un utilisateur'),
+        title: const Text('Ajouter une requête'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -70,7 +70,7 @@ class _RequestAddWidgetState extends State<RequestAddWidget> {
                 // Afficher une snackbar ou une boîte de dialogue pour confirmer la création
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
-                    content: Text('Utilisateur créé'),
+                    content: Text('Requête créé'),
                     backgroundColor: Colors.green,
                   ),
                 );
