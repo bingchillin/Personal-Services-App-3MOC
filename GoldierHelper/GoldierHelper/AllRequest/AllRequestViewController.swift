@@ -48,7 +48,7 @@ class AllRequestViewController: UIViewController, UITableViewDataSource, UITable
         
         super.viewWillAppear(animated)
         
-        RequeteWebService.getAllRequete { householdRequests, _ in
+        RequeteWebService.getHouseholdRequetes { householdRequests, _ in
             self.householdRequests = householdRequests
             
             DispatchQueue.main.async {
@@ -56,7 +56,7 @@ class AllRequestViewController: UIViewController, UITableViewDataSource, UITable
             }
         }
         
-        RequeteWebService.getAllRequete { nutritionRequests, _ in
+        RequeteWebService.getNutritionRequetes { nutritionRequests, _ in
             self.nutritionRequests = nutritionRequests
             
             DispatchQueue.main.async {
@@ -88,7 +88,7 @@ class AllRequestViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 100
     }
  
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

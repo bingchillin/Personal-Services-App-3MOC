@@ -66,6 +66,25 @@ class RequeteWebService{
             task.resume()
         }
     
+    class func getMedicalRequetes(completion: @escaping ([Requete]?, Error?) -> Void) {
+            guard let userURL = URL(string: "http://localhost:3000/requetes/type/3") else {
+                return
+            }
+            let task = URLSession.shared.dataTask(with: userURL) { data, res, err in
+                guard err == nil, let d = data else {
+                    completion(nil, err)
+                    return
+                }
+                guard let json = try? JSONSerialization.jsonObject(with: d) as? [[String: Any]] else {
+                    completion(nil, NSError(domain: "com.esgi.requete.nutrition.invalid-json", code: 1))
+                    return
+                }
+                let requetes = RequeteFactory.requetes(from: json)
+                completion(requetes, nil)
+            }
+            task.resume()
+        }
+    
     class func getRequeteById(id: Int, completion: @escaping (Requete?, Error?) -> Void) {
            guard let requeteURL = URL(string: "http://localhost:3000/requetes/\(id)") else {
                return
