@@ -93,7 +93,7 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                                             });
                                           },
                                         ),
-                                        Text('Male'),
+                                        const Text('Homme'),
                                         Checkbox(
                                           value: _isFemale,
                                           onChanged: (newValue) {
@@ -103,7 +103,7 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                                             });
                                           },
                                         ),
-                                        Text('Female'),
+                                        const Text('Femme'),
                                       ],
                                     )
                                   : TextField(

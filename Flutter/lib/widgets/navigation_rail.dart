@@ -41,11 +41,11 @@ class NavigationRailWidget extends StatelessWidget {
           selectedIcon: Icon(Icons.help_center_outlined),
           label: Text('Requêtes'),
         ),
-        NavigationRailDestination(
+        /*NavigationRailDestination(
           icon: Icon(Icons.request_page_outlined),
           selectedIcon: Icon(Icons.request_page_outlined),
           label: Text('Missions'),
-        )
+        )*/
       ],
     );
   }

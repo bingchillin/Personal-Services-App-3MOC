@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:goldie_studio/webservices/request/request_class.dart';
 import '../../webservices/request/request_webservices.dart';
+import '../../webservices/request/request_futurebuilder.dart';
 
 class RequestDetailsWidget extends StatefulWidget {
   final Request request;
@@ -20,6 +21,7 @@ class _RequestDetailsWidgetState extends State<RequestDetailsWidget> {
   @override
   void initState() {
     super.initState();
+
     _fieldList = [
       {'Titre': widget.request.title ?? ''},
       {'Timer': widget.request.timer ?? ''},
