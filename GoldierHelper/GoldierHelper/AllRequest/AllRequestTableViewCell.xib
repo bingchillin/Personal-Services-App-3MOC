@@ -32,7 +32,7 @@
                             <constraint firstAttribute="width" constant="287" id="1ZU-gG-Coq"/>
                             <constraint firstAttribute="height" constant="10" id="MUH-aX-enI"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="8"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
