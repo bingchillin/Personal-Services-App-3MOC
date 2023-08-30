@@ -10,6 +10,7 @@ import bodyParser from 'body-parser';
 const cors = require('cors');
 import tasksController from "./tasks/Controller";
 import typeTasksController from "./typetasks/Controller";
+import typeController from "./types/Controller";
 
 
 //Server
@@ -130,6 +131,8 @@ app.use("/requetesSub",requetesSubController)
 app.use("/tasks",tasksController)
 
 app.use("/typetasks",typeTasksController)
+
+app.use("/types",typeController)
 
 app.listen(process.env.PORT || port, () => {
     console.log('Server started');
